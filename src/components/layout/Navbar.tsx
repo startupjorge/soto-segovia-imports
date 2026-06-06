@@ -64,7 +64,7 @@ export default function Navbar() {
         borderBottom: scrolled ? "1px solid #222" : "1px solid transparent",
       }}
     >
-      <nav className="max-w-[1400px] mx-auto px-4 lg:px-10 h-[72px] flex items-center justify-between gap-8">
+      <nav className="max-w-[1400px] mx-auto px-5 lg:px-10 h-[72px] flex items-center justify-between gap-4 overflow-visible">
         {/* Logo */}
         <Logo size="sm" />
 

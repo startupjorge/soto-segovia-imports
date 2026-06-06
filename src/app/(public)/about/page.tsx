@@ -13,7 +13,7 @@ const team = [
   },
   {
     name: "Roberto Segovia Perez",
-    role: "Co-Founder & Chief Sourcing Officer",
+    role: "Co-Founder & President",
     bio: "A native of Seville, Roberto spent decades forging relationships with the finest artisan producers across Spain. His family has cultivated olive groves in Andalusia for four generations.",
   },
 ];

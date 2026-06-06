@@ -8,10 +8,10 @@ interface LogoProps {
 }
 
 const sizes = {
-  sm: { width: 140, height: 56 },
-  md: { width: 200, height: 80 },
-  lg: { width: 280, height: 112 },
-  xl: { width: 380, height: 152 },
+  sm: { width: 200, height: 80 },
+  md: { width: 260, height: 104 },
+  lg: { width: 340, height: 136 },
+  xl: { width: 460, height: 184 },
 };
 
 export default function Logo({ className = "", size = "md", linkTo = "/" }: LogoProps) {
@@ -24,7 +24,7 @@ export default function Logo({ className = "", size = "md", linkTo = "/" }: Logo
       width={width}
       height={height}
       className={className}
-      style={{ objectFit: "contain" }}
+      style={{ objectFit: "contain", mixBlendMode: "lighten" }}
       priority
     />
   );

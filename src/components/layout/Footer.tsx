@@ -34,7 +34,7 @@ export default function Footer() {
     <footer style={{ background: "#060604", borderTop: "1px solid #1A1A12" }}>
       {/* Trust badges */}
       <div
-        className="py-5 border-b flex flex-wrap items-center justify-center gap-8 px-6"
+        className="py-5 border-b flex flex-wrap items-center justify-center gap-4 md:gap-8 px-6"
         style={{ borderColor: "#1A1A12" }}
       >
         {[
@@ -55,7 +55,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-10">
         {/* Brand */}
         <div className="col-span-2 md:col-span-3 lg:col-span-1">
           <Logo size="sm" />

@@ -398,7 +398,7 @@ function DistributorSection() {
           </div>
 
           {/* Right: channel photo cards */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-2">
             {channels.map(({ img, label }) => (
               <div
                 key={label}
@@ -508,7 +508,7 @@ function RecipesSection() {
         </div>
 
         {/* 5-column recipe cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
           {recipes.map((recipe) => (
             <Link
               key={recipe.id}
@@ -594,7 +594,7 @@ function Newsletter() {
             </h3>
           </div>
 
-          <form className="flex gap-0 w-full max-w-[420px] flex-shrink-0">
+          <form className="flex gap-0 w-full md:max-w-[420px] flex-shrink-0">
             <input
               type="email"
               placeholder="Enter your email address"

@@ -8,8 +8,8 @@ function Hero() {
     <section className="relative h-[440px] md:h-[520px] flex items-center justify-center overflow-hidden" style={{ position: "relative" }}>
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=1600&q=80"
-          alt="Gourmet food gifting"
+          src="/hero-bg.jpg"
+          alt="Príncipe Azahar gourmet products from Altea, Spain"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
           priority
@@ -52,21 +52,21 @@ const featuredProducts = [
     name: "Gourmet Olive Oils From Spain",
     price: "$99.00 – $279.00 per box",
     description: "These artisanal oils are produced in the Altea region of Spain and come in various flavors including truffle, garlic, lemon, rosemary, and spicy peppers.",
-    image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80",
+    image: "/products/olive-oil-garlic.jpg",
     href: "/products?category=olive-oils",
   },
   {
     name: "Gourmet Salts From Spain",
     price: "$59.00 – $179.00 per box",
-    description: "These artisanal oils are produced in the Altea region of Spain and come in various flavors including truffle, garlic, lemon, rosemary, and spicy peppers.",
-    image: "https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=600&q=80",
+    description: "These artisanal salts are produced in the Altea region of Spain and come in various flavors including garlic, vanilla, rosemary, and natural sea flakes.",
+    image: "/products/salt-garlic.jpg",
     href: "/products?category=salts",
   },
   {
     name: "Gourmet Vinegars From Spain",
     price: "$99.00 – $279.00 per box",
-    description: "These artisanal oils are produced in the Altea region of Spain and come in various flavors including truffle, garlic, lemon, rosemary, and spicy peppers.",
-    image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=600&q=80",
+    description: "These artisanal vinegars are produced in the Altea region of Spain and aged 11+ years in oak barrels, available in orange, apple, and traditional varieties.",
+    image: "/products/vinegar-orange.jpg",
     href: "/products?category=vinegars",
   },
 ];

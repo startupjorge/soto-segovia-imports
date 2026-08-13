@@ -153,13 +153,21 @@ function HowItWorks() {
             </div>
           ))}
         </div>
-        <div className="flex justify-center">
+        <div className="flex items-center justify-center gap-5 flex-wrap">
           <Link
             href="/products"
-            className="px-10 py-3 bg-white font-bold text-sm hover:bg-gray-100 transition-all"
+            className="px-10 py-3 bg-white font-bold text-sm hover:bg-gray-100 transition-all rounded-sm"
             style={{ color: "#1A1A1A", fontFamily: "var(--font-cinzel), serif" }}
           >
             Get Started
+          </Link>
+          <span className="text-white font-semibold text-sm">or</span>
+          <Link
+            href="/contact"
+            className="text-sm font-bold underline underline-offset-2 text-white hover:text-gray-200 transition-colors"
+            style={{ fontFamily: "var(--font-cinzel), serif" }}
+          >
+            We'll Do It For You
           </Link>
         </div>
       </div>

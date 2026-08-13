@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "home": "INICIO",
+    "about": "NOSOTROS",
+    "products": "PRODUCTOS",
+    "recipes": "RECETAS",
+    "distributors": "DISTRIBUIDORES",
+    "contact": "CONTACTO",
+    "distributorLogin": "Portal de Distribuidor",
+    "cart": "CARRITO",
+    "allProducts": "Todos los Productos",
+    "oliveOils": "Aceites de Oliva",
+    "infusedOils": "Aceites Infusionados",
+    "vinegars": "Vinagres de Fruta",
+    "salts": "Sales Artesanales",
+    "wines": "Vinos de Fruta",
+    "liqueurs": "Licores",
+    "baskets": "Cestas Gourmet",
+    "gifts": "Cajas de Regalo"
+  },
+  "hero": {
+    "eyebrow": "Importado de España",
+    "title1": "Lo Mejor de España",
+    "title2": "Alimentos Gourmet",
+    "subtitle": "Aceites de Oliva Artesanales · Vinagres · Sales y Especialidades",
+    "tagline": "Importado de España con Pasión y Herencia.",
+    "body": "Cada botella cuenta la historia de generaciones de artesanos españoles dedicados a una calidad sin compromiso.",
+    "shopCta": "Ver Colección",
+    "distributorCta": "Ser Distribuidor",
+    "stamp": "Arraigado en la Herencia · Elaborado en España · Compartido con el Mundo"
+  },
+  "collection": {
+    "heading": "Nuestra Colección Destacada",
+    "shopNow": "Comprar",
+    "shopAll": "Ver Todos los Productos"
+  },
+  "story": {
+    "eyebrow": "Nuestra Historia",
+    "heading": "Una Amistad. Una Herencia. Una Pasión por lo Mejor de España.",
+    "p1": "Jorge Soto y Roberto Segovia Pérez se conocieron en Marsella, Francia, mientras Jorge estaba de luna de miel con su esposa. Lo que comenzó como un encuentro casual se convirtió rápidamente en una amistad de por vida basada en el amor compartido por la comida, la cultura y la conexión.",
+    "p2": "Años después, mientras Roberto visitaba Miami, soñaron con llevar los sabores auténticos de España al mundo. Inspirados por la herencia española de Jorge y generaciones de tradición familiar, nació Soto & Segovia Imports.",
+    "p3": "Hoy continuamos ese legado — seleccionando los mejores productos artesanales de España y compartiéndolos con quienes valoran la calidad, la autenticidad y la excelencia.",
+    "cta": "Conozca Más Sobre Nuestra Historia"
+  },
+  "distributors": {
+    "eyebrow": "Para Nuestros Distribuidores",
+    "heading": "Eleve Su Oferta.",
+    "subheading": "Asóciese con una Marca que Sus Clientes Amarán.",
+    "body": "Suministramos con orgullo a tiendas de lujo, hoteles cinco estrellas y restaurantes galardonados con productos premium, servicio excepcional y soporte dedicado.",
+    "becomeCta": "Ser Distribuidor",
+    "loginCta": "¿Ya es socio? Portal de Acceso",
+    "grocers": "Tiendas\nde Lujo",
+    "hotels": "Hoteles\nde Lujo",
+    "restaurants": "Restaurantes\nde Alta Cocina",
+    "perks": [
+      "Precios al por Mayor y Descuentos por Volumen",
+      "Surtidos Especiales y Marca Privada",
+      "Gerente de Cuenta Dedicado y Soporte",
+      "Reordenamiento Fácil y Gestión de Cuenta"
+    ],
+    "stats": [
+      { "value": "500+", "label": "Socios Distribuidores" },
+      { "value": "28", "label": "Estados de EE.UU." },
+      { "value": "15+", "label": "Años de Excelencia" },
+      { "value": "200+", "label": "SKUs Disponibles" }
+    ]
+  },
+  "recipes": {
+    "eyebrow": "Inspiración Culinaria",
+    "heading": "Lleve España a Su Mesa",
+    "viewAll": "Ver Todas las Recetas"
+  },
+  "newsletter": {
+    "eyebrow": "Manténgase Inspirado",
+    "heading": "Suscríbase para Recetas, Novedades y Ofertas Exclusivas",
+    "placeholder": "Ingrese su correo electrónico",
+    "cta": "Suscribirse",
+    "badges": ["🚢 Importado de España", "✨ Calidad Artesanal", "🌿 Pequeños Lotes", "🍃 Auténtico y Natural", "⭐ Servicio Excepcional"]
+  },
+  "footer": {
+    "description": "Llevando los mejores productos gourmet de España a chefs, conocedores y hogares que aprecian la verdadera calidad.",
+    "legacy": "Un Legado de Sabor · Un Compromiso con la Excelencia",
+    "copyright": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "eyebrow": "Nos Encantaría Saber de Usted",
+    "send": "Enviar Mensaje",
+    "sent": "Mensaje Recibido",
+    "sentBody": "Gracias por comunicarse. Un miembro de nuestro equipo responderá dentro de 24 horas hábiles."
+  },
+  "about": {
+    "title": "Nosotros",
+    "eyebrow": "Nuestra Historia",
+    "heading": "Una Amistad Construida sobre Herencia, Pasión y lo Mejor de España"
+  }
+}

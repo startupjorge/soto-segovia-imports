@@ -53,7 +53,7 @@ function Hero() {
               alt="Soto & Segovia Imports"
               width={480}
               height={182}
-              style={{ objectFit: "contain", mixBlendMode: "lighten" }}
+              style={{ objectFit: "contain", height: "auto" }}
               priority
             />
           </div>

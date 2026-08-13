@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "products": "PRODUCTS",
+    "recipes": "RECIPES",
+    "distributors": "DISTRIBUTORS",
+    "contact": "CONTACT",
+    "distributorLogin": "Distributor Login",
+    "cart": "CART",
+    "allProducts": "All Products",
+    "oliveOils": "Olive Oils",
+    "infusedOils": "Infused Olive Oils",
+    "vinegars": "Fruit Vinegars",
+    "salts": "Artisan Salts",
+    "wines": "Fruit Wines",
+    "liqueurs": "Liqueurs",
+    "baskets": "Gourmet Baskets",
+    "gifts": "Gift Boxes"
+  },
+  "hero": {
+    "eyebrow": "Imported from Spain",
+    "title1": "Spain's Finest",
+    "title2": "Gourmet Foods",
+    "subtitle": "Artisan Olive Oils · Vinegars · Salts & Specialty Foods",
+    "tagline": "Imported from Spain with Passion and Heritage.",
+    "body": "Every bottle tells the story of generations of Spanish artisans dedicated to uncompromising quality.",
+    "shopCta": "Shop Collection",
+    "distributorCta": "Become a Distributor",
+    "stamp": "Rooted in Heritage · Crafted in Spain · Shared with the World"
+  },
+  "collection": {
+    "heading": "Our Featured Collection",
+    "shopNow": "Shop Now",
+    "shopAll": "Shop All Products"
+  },
+  "story": {
+    "eyebrow": "Our Story",
+    "heading": "A Friendship. A Heritage. A Passion for Spain's Finest.",
+    "p1": "Jorge Soto and Roberto Segovia Perez met in Marseille, France while Jorge was on his honeymoon with his wife. What began as a chance meeting quickly became a lifelong friendship built on a shared love for food, culture, and connection.",
+    "p2": "Years later, while Roberto was visiting Miami, they dreamed of bringing the authentic flavors of Spain to the world. Inspired by Jorge's Spanish heritage and generations of family tradition, Soto & Segovia Imports was born.",
+    "p3": "Today, we continue that legacy — curating the finest artisan products from Spain and sharing them with those who value quality, authenticity, and excellence.",
+    "cta": "Learn More About Our Journey"
+  },
+  "distributors": {
+    "eyebrow": "For Our Distributor Partners",
+    "heading": "Elevate Your Offering.",
+    "subheading": "Partner with a Brand Your Customers Will Love.",
+    "body": "We proudly supply luxury grocery stores, five-star hotels, and award-winning restaurants with premium products, exceptional service, and dedicated support.",
+    "becomeCta": "Become a Distributor",
+    "loginCta": "Already a partner? Login Portal",
+    "grocers": "Luxury\nGrocers",
+    "hotels": "Luxury\nHotels",
+    "restaurants": "Fine Dining\nRestaurants",
+    "perks": [
+      "Wholesale Pricing & Volume Discounts",
+      "Curated Assortments & Private Label",
+      "Dedicated Account Manager & Support",
+      "Easy Reordering & Account Management"
+    ],
+    "stats": [
+      { "value": "500+", "label": "Distributor Partners" },
+      { "value": "28", "label": "U.S. States Served" },
+      { "value": "15+", "label": "Years of Excellence" },
+      { "value": "200+", "label": "SKUs Available" }
+    ]
+  },
+  "recipes": {
+    "eyebrow": "Culinary Inspiration",
+    "heading": "Bring Spain to Your Table",
+    "viewAll": "View All Recipes"
+  },
+  "newsletter": {
+    "eyebrow": "Stay Inspired",
+    "heading": "Sign up for Recipes, New Arrivals & Exclusive Offers",
+    "placeholder": "Enter your email address",
+    "cta": "Subscribe",
+    "badges": ["🚢 Imported from Spain", "✨ Artisan Quality", "🌿 Small Batch", "🍃 Authentic & Natural", "⭐ Exceptional Service"]
+  },
+  "footer": {
+    "description": "Bringing Spain's finest gourmet products to chefs, connoisseurs, and homes that appreciate true quality.",
+    "legacy": "A Legacy of Flavor · A Commitment to Excellence",
+    "copyright": "All rights reserved."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "eyebrow": "We'd Love to Hear from You",
+    "send": "Send Message",
+    "sent": "Message Received",
+    "sentBody": "Thank you for reaching out. A member of our team will respond within 24 business hours."
+  },
+  "about": {
+    "title": "About Us",
+    "eyebrow": "Our Story",
+    "heading": "A Friendship Built on Heritage, Passion & the Finest from Spain"
+  }
+}

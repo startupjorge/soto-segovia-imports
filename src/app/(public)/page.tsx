@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, SlidersHorizontal } from "lucide-react";
+import { SlidersHorizontal, PackageSearch, UserRound, NotebookPen, CreditCard } from "lucide-react";
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
 function Hero() {
@@ -119,10 +119,10 @@ function BrowseProducts() {
 
 // ── How It Works ──────────────────────────────────────────────────────────────
 const steps = [
-  { num: 1, label: "Browse and select boxes" },
-  { num: 2, label: "Add recipient contact Info" },
-  { num: 3, label: "Customize gift notes" },
-  { num: 4, label: "Checkout and place order" },
+  { num: 1, label: "Browse and select boxes", Icon: PackageSearch },
+  { num: 2, label: "Add recipient contact Info", Icon: UserRound },
+  { num: 3, label: "Customize gift notes", Icon: NotebookPen },
+  { num: 4, label: "Checkout and place order", Icon: CreditCard },
 ];
 
 function HowItWorks() {
@@ -134,12 +134,18 @@ function HowItWorks() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-14">
           {steps.map((step) => (
-            <div key={step.num} className="flex flex-col items-center text-center gap-4">
+            <div key={step.num} className="flex flex-col items-center text-center gap-3">
               <div
-                className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
-                style={{ background: "#1A1A1A", fontFamily: "var(--font-cinzel), serif" }}
+                className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0 relative"
+                style={{ background: "#1A1A1A" }}
               >
-                {step.num}
+                <step.Icon size={24} color="white" />
+                <span
+                  className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
+                  style={{ background: "#C9A227", color: "#fff", fontFamily: "var(--font-cinzel), serif" }}
+                >
+                  {step.num}
+                </span>
               </div>
               <p className="font-bold text-sm text-white leading-snug" style={{ fontFamily: "var(--font-cinzel), serif" }}>
                 {step.label}

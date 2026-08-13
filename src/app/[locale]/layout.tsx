@@ -42,7 +42,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${cormorant.variable} ${cinzel.variable} h-full`}>
       <body
-        className="min-h-full flex flex-col bg-black text-white"
+        className="min-h-full flex flex-col bg-white text-[#1A1A1A]"
         style={{ fontFamily: "var(--font-cormorant), Georgia, serif" }}
       >
         <NextIntlClientProvider messages={messages}>

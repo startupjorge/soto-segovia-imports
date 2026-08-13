@@ -1,194 +1,59 @@
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
-  title: "About Us | Soto & Segovia Imports",
-};
-
 const team = [
-  {
-    name: "Jorge Soto",
-    role: "Co-Founder & CEO",
-    bio: "Born in Miami to a Spanish family, Jorge grew up with a deep reverence for the traditions of Spanish cuisine. A seasoned entrepreneur with 20 years of experience in luxury goods distribution.",
-  },
-  {
-    name: "Roberto Segovia Perez",
-    role: "Co-Founder & President",
-    bio: "A native of Seville, Roberto spent decades forging relationships with the finest artisan producers across Spain. His family has cultivated olive groves in Andalusia for four generations.",
-  },
+  { name: "Jorge Soto", role: "Co-Founder & CEO", bio: "Born with a passion for Spanish culture and cuisine, Jorge has dedicated his career to bringing authentic gourmet flavors to the world." },
+  { name: "Roberto Segovia Perez", role: "Co-Founder & President", bio: "Roberto's deep roots in Spain's Altea region and lifelong expertise in artisan food production guide every product we source." },
 ];
 
 const values = [
-  {
-    icon: "🫒",
-    title: "Authenticity",
-    body: "Every product we import carries a DOP or IGP certification, guaranteeing its Spanish origin and adherence to centuries-old production methods.",
-  },
-  {
-    icon: "✨",
-    title: "Excellence",
-    body: "We personally visit every producer, taste every batch, and accept only what meets our uncompromising standards — less than 10% of products we evaluate make the cut.",
-  },
-  {
-    icon: "🤝",
-    title: "Partnership",
-    body: "We see our producers, distributors, and clients not as transactions but as long-term relationships built on mutual respect, trust, and shared passion.",
-  },
-  {
-    icon: "🌿",
-    title: "Sustainability",
-    body: "We prioritize producers who use traditional, sustainable farming methods — protecting both the land and the extraordinary flavors it yields.",
-  },
-];
-
-const milestones = [
-  { year: "2005", event: "Jorge and Roberto meet in Marseille, France" },
-  { year: "2007", event: "Soto & Segovia Imports officially founded in Miami, FL" },
-  { year: "2009", event: "First 50 distributor accounts signed across Florida and New York" },
-  { year: "2012", event: "Expanded portfolio to include vinegars, salts, and liqueurs" },
-  { year: "2016", event: "Awarded Best Specialty Food Importer — Fine Food America" },
-  { year: "2019", event: "Surpassed 300 distributor partners across 20 U.S. states" },
-  { year: "2021", event: "Launched private label program for hotel and restaurant clients" },
-  { year: "2024", event: "500+ partners, 28 states, and a new digital portal launched" },
+  { title: "Authenticity", body: "Every product is sourced directly from artisan producers in Spain who have perfected their craft over generations." },
+  { title: "Quality", body: "We personally visit each farm and producer to ensure the highest standards before any product bears our name." },
+  { title: "Excellence", body: "From sourcing to delivery, we are committed to an exceptional experience for every client and partner." },
+  { title: "Heritage", body: "We preserve the traditions of Spanish gastronomy and share them with the world through every bottle and jar." },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="pt-24 min-h-screen" style={{ background: "#0A0A08" }}>
-      {/* Hero */}
-      <section
-        className="py-24 text-center border-b"
-        style={{
-          background: "radial-gradient(ellipse at center, #1a1810 0%, #080806 100%)",
-          borderColor: "#1E1E14",
-        }}
-      >
-        <p
-          className="text-[9px] tracking-[0.3em] uppercase mb-4"
-          style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
-        >
-          Our Story
-        </p>
-        <h1
-          className="text-5xl md:text-6xl font-bold mb-6 max-w-3xl mx-auto leading-tight px-6"
-          style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-        >
-          A Friendship Built on Heritage, Passion &amp; the Finest from Spain
-        </h1>
-        <p className="max-w-xl mx-auto text-base leading-relaxed px-6" style={{ color: "#666" }}>
-          What started as a chance encounter in Marseille became a 20-year mission to bring
-          Spain&apos;s greatest artisan foods to tables across North America.
-        </p>
-      </section>
+    <div className="bg-white">
+      {/* Header */}
+      <div className="border-b border-gray-100 py-10 px-6 text-center" style={{ background: "#F8F8F4" }}>
+        <div className="max-w-[700px] mx-auto">
+          <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Our Story</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>A Friendship Built on Heritage &amp; Passion</h1>
+          <p className="text-sm leading-relaxed" style={{ color: "#666" }}>Two friends, one vision — to bring the finest gourmet foods from Spain to the world.</p>
+        </div>
+      </div>
 
-      {/* Founders story */}
-      <section className="py-20 max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <h2
-              className="text-4xl font-bold mb-8 leading-tight"
-              style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-            >
-              How It All Began
-            </h2>
-            <div className="flex flex-col gap-5 text-base leading-relaxed" style={{ color: "#888" }}>
-              <p>
-                It was the summer of 2005. Jorge Soto was on his honeymoon in the South of France
-                when he struck up a conversation with a fellow traveler at a small tapas bar in
-                Marseille. That man was Roberto Segovia Perez, a Sevillano visiting his French
-                cousin.
-              </p>
-              <p>
-                Over a bottle of Manzanilla and a plate of jamón ibérico, the two discovered a
-                shared obsession: the extraordinary, often overlooked world of Spanish artisan
-                foods. They stayed in touch, and two years later, with Roberto&apos;s family
-                connections to some of Andalusia&apos;s greatest olive estates, Soto &amp;
-                Segovia Imports was born.
-              </p>
-              <p>
-                Starting with just three products — an Arbequina EVOO, a Sherry vinegar, and a
-                fleur de sel — they approached Miami&apos;s finest restaurants. The response was
-                immediate. Within 18 months, they had 50 accounts and a waiting list.
-              </p>
-              <p>
-                Today, Soto &amp; Segovia represents over 200 SKUs from more than 40 artisan
-                producers across every corner of Spain, from the salt marshes of Cádiz to the
-                saffron fields of La Mancha.
-              </p>
-            </div>
+      {/* Story */}
+      <section className="max-w-[1200px] mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+          <Image src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Spanish cuisine" fill style={{ objectFit: "cover" }} sizes="(max-width: 1024px) 100vw, 50vw" />
+        </div>
+        <div>
+          <p className="text-[11px] tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>How It Started</p>
+          <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>A Chance Meeting in Marseille</h2>
+          <div className="flex flex-col gap-4 text-sm leading-relaxed" style={{ color: "#555" }}>
+            <p>Jorge Soto and Roberto Segovia Perez met in Marseille, France while Jorge was on his honeymoon with his wife. What began as a chance meeting quickly became a lifelong friendship built on a shared love for food, culture, and connection.</p>
+            <p>Years later, while Roberto was visiting Miami, they dreamed of bringing the authentic flavors of Spain to the world. Inspired by Jorge's Spanish heritage and generations of family tradition, Soto & Segovia Imports was born.</p>
+            <p>Today, we continue that legacy — curating the finest artisan products from Spain and sharing them with those who value quality, authenticity, and excellence.</p>
           </div>
-
-          {/* Timeline */}
-          <div>
-            <h3
-              className="text-2xl font-bold mb-8"
-              style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-            >
-              Our Journey
-            </h3>
-            <div className="relative">
-              <div className="absolute left-[72px] top-0 bottom-0 w-px" style={{ background: "#2A2A1A" }} />
-              {milestones.map(({ year, event }) => (
-                <div key={year} className="flex gap-5 mb-6 relative">
-                  <div
-                    className="text-[11px] font-bold w-14 flex-shrink-0 text-right pt-0.5"
-                    style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
-                  >
-                    {year}
-                  </div>
-                  <div className="relative flex-shrink-0 w-8 flex justify-center pt-2">
-                    <div
-                      className="w-2 h-2 rounded-full"
-                      style={{ background: "#D4AF37", border: "2px solid #0A0A08" }}
-                    />
-                  </div>
-                  <p className="text-sm leading-relaxed pt-0.5" style={{ color: "#888" }}>
-                    {event}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <Link href="/contact" className="inline-block mt-8 px-8 py-3 text-[11px] tracking-wider font-bold border border-[#C9A227] text-[#C9A227] hover:bg-[#C9A227] hover:text-white transition-all" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+            Contact Us
+          </Link>
         </div>
       </section>
 
       {/* Values */}
-      <section
-        className="py-20 border-t"
-        style={{ background: "#0D0D0A", borderColor: "#1E1E14" }}
-      >
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <div className="text-center mb-14">
-            <p
-              className="text-[9px] tracking-[0.3em] uppercase mb-3"
-              style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
-            >
-              What Drives Us
-            </p>
-            <h2
-              className="text-4xl font-bold"
-              style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-            >
-              Our Core Values
-            </h2>
-          </div>
+      <section className="py-14 px-6" style={{ background: "#F8F8F4" }}>
+        <div className="max-w-[1200px] mx-auto">
+          <h2 className="text-xl font-bold mb-10 text-center" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Our Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map(({ icon, title, body }) => (
-              <div
-                key={title}
-                className="p-8 border"
-                style={{ background: "#0F0F0C", borderColor: "#2A2A1A" }}
-              >
-                <div className="text-4xl mb-4">{icon}</div>
-                <h4
-                  className="text-lg font-bold mb-3"
-                  style={{ color: "#D4AF37", fontFamily: "var(--font-cormorant), serif" }}
-                >
-                  {title}
-                </h4>
-                <p className="text-sm leading-relaxed" style={{ color: "#666" }}>
-                  {body}
-                </p>
+            {values.map((v) => (
+              <div key={v.title} className="bg-white p-6 border border-gray-100">
+                <div className="w-8 h-0.5 mb-4" style={{ background: "#C9A227" }} />
+                <h3 className="font-bold text-[13px] mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{v.title}</h3>
+                <p className="text-[12px] leading-relaxed" style={{ color: "#666" }}>{v.body}</p>
               </div>
             ))}
           </div>
@@ -196,91 +61,28 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section id="story" className="py-20 max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="text-center mb-14">
-          <p
-            className="text-[9px] tracking-[0.3em] uppercase mb-3"
-            style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
-          >
-            The People Behind the Brand
-          </p>
-          <h2
-            className="text-4xl font-bold"
-            style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-          >
-            Meet the Founders
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          {team.map(({ name, role, bio }) => (
-            <div
-              key={name}
-              className="p-8 border text-center"
-              style={{ background: "#0F0F0C", borderColor: "#2A2A1A" }}
-            >
-              <div
-                className="w-20 h-20 rounded-full mx-auto mb-5 flex items-center justify-center text-3xl"
-                style={{ background: "#1E1C10", border: "2px solid #D4AF37" }}
-              >
-                👤
+      <section className="max-w-[1200px] mx-auto px-6 py-16">
+        <h2 className="text-xl font-bold mb-10 text-center" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Meet the Founders</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[800px] mx-auto">
+          {team.map((member) => (
+            <div key={member.name} className="text-center">
+              <div className="w-28 h-28 rounded-full mx-auto mb-5 overflow-hidden border-2 border-gray-100">
+                <Image src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80" alt={member.name} width={112} height={112} style={{ objectFit: "cover" }} />
               </div>
-              <h3
-                className="text-2xl font-bold mb-1"
-                style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-              >
-                {name}
-              </h3>
-              <p
-                className="text-[9px] tracking-[0.2em] uppercase mb-5"
-                style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
-              >
-                {role}
-              </p>
-              <p className="text-sm leading-relaxed" style={{ color: "#777" }}>
-                {bio}
-              </p>
+              <h3 className="font-bold text-[14px] mb-1" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{member.name}</h3>
+              <p className="text-[11px] tracking-wider mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>{member.role}</p>
+              <p className="text-[12px] leading-relaxed" style={{ color: "#666" }}>{member.bio}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section
-        className="py-16 text-center border-t"
-        style={{ borderColor: "#1E1E14", background: "#080806" }}
-      >
-        <h3
-          className="text-3xl font-bold mb-4"
-          style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-        >
-          Ready to Bring Spain to Your Table?
-        </h3>
-        <p className="mb-8 text-sm" style={{ color: "#666" }}>
-          Explore our full collection or get in touch to discuss wholesale opportunities.
-        </p>
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-3 px-8 py-4 text-[10px] tracking-[0.2em] uppercase font-semibold transition-opacity hover:opacity-90"
-            style={{
-              background: "linear-gradient(135deg, #8B6914, #C9A227, #FFE566, #C9A227, #8B6914)",
-              color: "#000",
-              fontFamily: "var(--font-cinzel), serif",
-            }}
-          >
-            Shop Collection <ArrowRight size={12} />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 text-[10px] tracking-[0.2em] uppercase font-semibold border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37]"
-            style={{
-              borderColor: "#333",
-              color: "#999",
-              fontFamily: "var(--font-cinzel), serif",
-            }}
-          >
-            Contact Us
-          </Link>
+      <section className="py-12 text-center" style={{ background: "#C9A227" }}>
+        <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-cinzel), serif" }}>Ready to Partner With Us?</h2>
+        <div className="flex justify-center gap-4 flex-wrap">
+          <Link href="/distributors" className="px-8 py-3 bg-white text-[#1A1A1A] font-bold text-[12px] hover:bg-gray-100 transition-all" style={{ fontFamily: "var(--font-cinzel), serif" }}>Become a Distributor</Link>
+          <Link href="/contact" className="px-8 py-3 border border-white text-white font-bold text-[12px] hover:bg-white hover:text-[#1A1A1A] transition-all" style={{ fontFamily: "var(--font-cinzel), serif" }}>Contact Us</Link>
         </div>
       </section>
     </div>

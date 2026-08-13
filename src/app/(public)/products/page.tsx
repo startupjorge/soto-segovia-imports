@@ -1,83 +1,51 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
-import { categories, products } from "@/lib/data";
-import { productImages } from "@/lib/images";
+import { SlidersHorizontal } from "lucide-react";
 
-export const metadata = {
-  title: "Products | Soto & Segovia Imports",
-};
+const allProducts = [
+  { name: "Garlic Olive Oil", category: "olive-oils", price: "$99.00 – $179.00 per box", image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80", description: "Infused with fresh Spanish garlic for a rich, savory flavor." },
+  { name: "Truffle Olive Oil", category: "olive-oils", price: "$149.00 – $279.00 per box", image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80", description: "Luxurious black truffle infused extra virgin olive oil." },
+  { name: "Lemon Olive Oil", category: "olive-oils", price: "$99.00 – $179.00 per box", image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80", description: "Bright citrus notes from cold-pressed Spanish lemons." },
+  { name: "Rosemary Olive Oil", category: "infused-oils", price: "$99.00 – $179.00 per box", image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80", description: "Fresh rosemary from the hills of Altea, Spain." },
+  { name: "Fleur de Sel", category: "salts", price: "$59.00 – $119.00 per box", image: "https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=600&q=80", description: "Hand-harvested sea salt from the Spanish coastline." },
+  { name: "Smoked Salt", category: "salts", price: "$59.00 – $119.00 per box", image: "https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=600&q=80", description: "Cold-smoked over Spanish oak for a deep, smoky finish." },
+  { name: "Sherry Vinegar", category: "vinegars", price: "$99.00 – $199.00 per box", image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=600&q=80", description: "Aged 10+ years in oak barrels in Jerez, Spain." },
+  { name: "Fig Balsamic", category: "vinegars", price: "$99.00 – $179.00 per box", image: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=600&q=80", description: "Sweet fig reduction with aged Spanish balsamic." },
+  { name: "Gourmet Gift Box — Olive Oil", category: "gifts", price: "$149.00 – $299.00", image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80", description: "A curated selection of our finest olive oils, beautifully boxed." },
+  { name: "Executive Gift Basket", category: "baskets", price: "$199.00 – $399.00", image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80", description: "Premium assortment of oils, salts, and vinegars for the discerning palate." },
+];
 
-export default async function ProductsPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ category?: string; sort?: string }>;
-}) {
-  const { category, sort } = await searchParams;
+const categories = [
+  { slug: "all", label: "All Products" },
+  { slug: "olive-oils", label: "Olive Oils" },
+  { slug: "infused-oils", label: "Infused Oils" },
+  { slug: "salts", label: "Salts" },
+  { slug: "vinegars", label: "Vinegars" },
+  { slug: "gifts", label: "Gift Boxes" },
+  { slug: "baskets", label: "Baskets" },
+];
 
-  const filtered = category
-    ? products.filter((p) => p.category === category)
-    : products;
-
-  const sorted =
-    sort === "price-asc"
-      ? [...filtered].sort((a, b) => a.price - b.price)
-      : sort === "price-desc"
-      ? [...filtered].sort((a, b) => b.price - a.price)
-      : filtered;
-
-  const activeCategory = categories.find((c) => c.slug === category);
-
+export default function ProductsPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
   return (
-    <div className="pt-28 min-h-screen" style={{ background: "#0A0A08" }}>
+    <div className="bg-white min-h-screen">
       {/* Page header */}
-      <div
-        className="py-16 text-center border-b"
-        style={{ borderColor: "#1E1E14", background: "#0D0D0A" }}
-      >
-        <p
-          className="text-[9px] tracking-[0.3em] uppercase mb-3"
-          style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
-        >
-          Artisan Imports from Spain
-        </p>
-        <h1
-          className="text-5xl font-bold"
-          style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-        >
-          {activeCategory ? activeCategory.label : "All Products"}
-        </h1>
-        {sorted.length > 0 && (
-          <p className="mt-2 text-sm" style={{ color: "#555" }}>
-            {sorted.length} product{sorted.length !== 1 ? "s" : ""}
-          </p>
-        )}
+      <div className="border-b border-gray-100 py-8 px-6" style={{ background: "#F8F8F4" }}>
+        <div className="max-w-[1200px] mx-auto">
+          <h1 className="text-2xl font-bold mb-1" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Our Products</h1>
+          <p className="text-sm" style={{ color: "#666" }}>Premium gourmet foods imported directly from Spain</p>
+        </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12">
-        {/* Category filter chips */}
-        <div className="flex flex-wrap gap-2 mb-12">
-          <Link
-            href="/products"
-            className="px-4 py-2 text-[9px] tracking-[0.15em] uppercase border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37]"
-            style={{
-              borderColor: !category ? "#D4AF37" : "#2A2A1A",
-              color: !category ? "#D4AF37" : "#666",
-              fontFamily: "var(--font-cinzel), serif",
-            }}
-          >
-            All
-          </Link>
+      <div className="max-w-[1200px] mx-auto px-6 py-10">
+        {/* Category filters */}
+        <div className="flex items-center gap-2 mb-8 flex-wrap">
+          <SlidersHorizontal size={16} className="text-gray-500 mr-1" />
           {categories.map((cat) => (
             <Link
               key={cat.slug}
-              href={`/products?category=${cat.slug}`}
-              className="px-4 py-2 text-[9px] tracking-[0.15em] uppercase border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37]"
-              style={{
-                borderColor: category === cat.slug ? "#D4AF37" : "#2A2A1A",
-                color: category === cat.slug ? "#D4AF37" : "#666",
-                fontFamily: "var(--font-cinzel), serif",
-              }}
+              href={cat.slug === "all" ? "/products" : `/products?category=${cat.slug}`}
+              className="px-4 py-1.5 text-[11px] tracking-wider border transition-all hover:border-[#C9A227] hover:text-[#C9A227]"
+              style={{ fontFamily: "var(--font-cinzel), serif", borderColor: "#ddd", color: "#555" }}
             >
               {cat.label}
             </Link>
@@ -85,95 +53,21 @@ export default async function ProductsPage({
         </div>
 
         {/* Products grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {sorted.map((product) => (
-            <Link
-              key={product.id}
-              href={`/products/${product.slug}`}
-              className="group flex flex-col border transition-all duration-300 hover:border-[#D4AF37]/50 overflow-hidden"
-              style={{ background: "#0F0F0C", borderColor: "#1E1E18" }}
-            >
-              {/* Product image */}
-              <div className="relative aspect-square overflow-hidden">
-                <Image
-                  src={productImages[product.category]}
-                  alt={product.name}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="transition-transform duration-500 group-hover:scale-105"
-                />
-                {/* Dark tint */}
-                <div
-                  className="absolute inset-0"
-                  style={{ background: "rgba(0,0,0,0.3)" }}
-                />
-                {/* Category badge */}
-                <div className="absolute top-3 left-3">
-                  <span
-                    className="px-2 py-1 text-[7px] tracking-[0.15em] uppercase"
-                    style={{
-                      background: "rgba(0,0,0,0.75)",
-                      color: "#D4AF37",
-                      fontFamily: "var(--font-cinzel), serif",
-                      border: "1px solid rgba(212,175,55,0.3)",
-                    }}
-                  >
-                    {categories.find((c) => c.slug === product.category)?.label}
-                  </span>
-                </div>
-                {/* Quick add overlay on hover */}
-                <div
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: "rgba(0,0,0,0.4)" }}
-                >
-                  <button
-                    className="flex items-center gap-2 px-5 py-2.5 text-[9px] tracking-[0.15em] uppercase font-bold"
-                    style={{
-                      background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)",
-                      color: "#000",
-                      fontFamily: "var(--font-cinzel), serif",
-                    }}
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <ShoppingCart size={12} />
-                    Add to Cart
-                  </button>
-                </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {allProducts.map((product) => (
+            <div key={product.name} className="flex flex-col border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="relative aspect-[4/3] overflow-hidden bg-gray-50">
+                <Image src={product.image} alt={product.name} fill style={{ objectFit: "cover" }} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
               </div>
-
               <div className="p-5 flex flex-col flex-1">
-                <p
-                  className="text-[8px] tracking-[0.15em] uppercase mb-1.5"
-                  style={{ color: "#666", fontFamily: "var(--font-cinzel), serif" }}
-                >
-                  {product.origin}
-                </p>
-                <h3
-                  className="text-lg font-semibold leading-tight mb-2 group-hover:text-[#D4AF37] transition-colors"
-                  style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-                >
-                  {product.name}
-                </h3>
-                <p className="text-xs leading-relaxed flex-1 mb-4" style={{ color: "#555" }}>
-                  {product.description.slice(0, 90)}…
-                </p>
-                <div className="flex items-center justify-between border-t pt-4" style={{ borderColor: "#1E1E18" }}>
-                  <span
-                    className="text-2xl font-bold gold-text"
-                    style={{ fontFamily: "var(--font-cormorant), serif" }}
-                  >
-                    ${product.price.toFixed(2)}
-                  </span>
-                  <span
-                    className="text-[8px] tracking-[0.1em] uppercase"
-                    style={{ color: "#444", fontFamily: "var(--font-cinzel), serif" }}
-                  >
-                    {product.details[0]}
-                  </span>
-                </div>
+                <h3 className="font-bold text-[14px] mb-1.5" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{product.name}</h3>
+                <p className="text-[12px] font-semibold mb-2" style={{ color: "#C9A227" }}>{product.price}</p>
+                <p className="text-[12px] leading-relaxed mb-4 flex-1" style={{ color: "#777" }}>{product.description}</p>
+                <button className="w-full py-2 text-[11px] font-bold tracking-wider border border-[#1A1A1A] hover:bg-[#C9A227] hover:border-[#C9A227] hover:text-white transition-all" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
+                  Add to Cart
+                </button>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

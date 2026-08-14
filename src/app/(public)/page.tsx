@@ -19,7 +19,7 @@ function Hero() {
       </div>
       <div className="relative z-10 text-center text-white px-6 max-w-3xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4" style={{ fontFamily: "var(--font-cinzel), serif" }}>
-          Spanish Gourmet Food Gifting for<br /><span style={{ color: "#C9A227" }}>Executives and Corporate Clients</span>
+          Gourmet Spanish Foods for<br /><span style={{ color: "#C9A227" }}>Executives and Corporate Clients</span>
         </h1>
         <p className="text-sm md:text-base mb-8" style={{ color: "#ddd" }}>
           We specialize in providing premium olive oils, salts, and vinegars<br className="hidden md:block" />

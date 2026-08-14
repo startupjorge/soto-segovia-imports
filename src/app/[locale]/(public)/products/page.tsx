@@ -1,81 +1,62 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
-import { categories, products } from "@/lib/data";
-import { productImages } from "@/lib/images";
+import { allProducts, categories } from "@/lib/products";
 
 export const metadata = {
-  title: "Products | Soto & Segovia Imports",
+  title: "Nuestros Productos | Soto & Segovia Imports",
+  description: "Aceites de oliva, sales artesanas, vinagres y vinos de naranja de España. Colección completa de Príncipe Azahar.",
 };
 
-export default async function ProductsPage({
+export default async function ProductsPageES({
   searchParams,
 }: {
-  searchParams: Promise<{ category?: string; sort?: string }>;
+  searchParams: Promise<{ category?: string }>;
 }) {
-  const { category, sort } = await searchParams;
+  const { category } = await searchParams;
 
-  const filtered = category
-    ? products.filter((p) => p.category === category)
-    : products;
+  const filtered = category && category !== "all"
+    ? allProducts.filter((p) => p.category === category)
+    : allProducts;
 
-  const sorted =
-    sort === "price-asc"
-      ? [...filtered].sort((a, b) => a.price - b.price)
-      : sort === "price-desc"
-      ? [...filtered].sort((a, b) => b.price - a.price)
-      : filtered;
+  const catLabels: Record<string, string> = {
+    "olive-oils": "Aceites de Oliva",
+    salts: "Sales Artesanas",
+    vinegars: "Vinagres",
+    wine: "Vino de Naranja",
+    spirits: "Licores",
+  };
 
-  const activeCategory = categories.find((c) => c.slug === category);
+  const catLabelsES: Record<string, string> = {
+    all: "Todos",
+    "olive-oils": "Aceites de Oliva",
+    salts: "Sales",
+    vinegars: "Vinagres",
+    wine: "Vino de Naranja",
+    spirits: "Licores",
+  };
 
   return (
-    <div className="pt-28 min-h-screen" style={{ background: "#0A0A08" }}>
-      {/* Page header */}
-      <div
-        className="py-16 text-center border-b"
-        style={{ borderColor: "#1E1E14", background: "#0D0D0A" }}
-      >
-        <p
-          className="text-[9px] tracking-[0.3em] uppercase mb-3"
-          style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
-        >
-          Artisan Imports from Spain
-        </p>
-        <h1
-          className="text-5xl font-bold"
-          style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-        >
-          {activeCategory ? activeCategory.label : "All Products"}
-        </h1>
-        {sorted.length > 0 && (
-          <p className="mt-2 text-sm" style={{ color: "#555" }}>
-            {sorted.length} product{sorted.length !== 1 ? "s" : ""}
-          </p>
-        )}
+    <div className="bg-white">
+      {/* Header */}
+      <div className="border-b border-gray-100 py-10 px-6 text-center" style={{ background: "#F8F8F4" }}>
+        <div className="max-w-[600px] mx-auto">
+          <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Príncipe Azahar · Altea, España</p>
+          <h1 className="text-3xl font-bold mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Nuestros Productos</h1>
+          <p className="text-sm" style={{ color: "#666" }}>Aceites de oliva virgen extra, sales artesanas, vinagres envejecidos y vino de naranja de la costa mediterránea española.</p>
+        </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-12">
-        {/* Category filter chips */}
-        <div className="flex flex-wrap gap-2 mb-12">
-          <Link
-            href="/products"
-            className="px-4 py-2 text-[9px] tracking-[0.15em] uppercase border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37]"
-            style={{
-              borderColor: !category ? "#D4AF37" : "#2A2A1A",
-              color: !category ? "#D4AF37" : "#666",
-              fontFamily: "var(--font-cinzel), serif",
-            }}
-          >
-            All
-          </Link>
-          {categories.map((cat) => (
+      <div className="max-w-[1200px] mx-auto px-6 py-10">
+        {/* Category filter */}
+        <div className="flex flex-wrap gap-2 mb-10">
+          {[{ slug: "all", label: "Todos" }, ...categories.filter(c => c.slug !== "all").map(c => ({ slug: c.slug, label: catLabelsES[c.slug] ?? c.label }))].map((cat) => (
             <Link
               key={cat.slug}
-              href={`/products?category=${cat.slug}`}
-              className="px-4 py-2 text-[9px] tracking-[0.15em] uppercase border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37]"
+              href={cat.slug === "all" ? "/es/products" : `/es/products?category=${cat.slug}`}
+              className="px-4 py-2 text-[10px] tracking-widest uppercase border transition-all hover:border-[#C9A227] hover:text-[#C9A227]"
               style={{
-                borderColor: category === cat.slug ? "#D4AF37" : "#2A2A1A",
-                color: category === cat.slug ? "#D4AF37" : "#666",
+                borderColor: (category === cat.slug || (!category && cat.slug === "all")) ? "#C9A227" : "#e5e5e5",
+                color: (category === cat.slug || (!category && cat.slug === "all")) ? "#C9A227" : "#888",
                 fontFamily: "var(--font-cinzel), serif",
               }}
             >
@@ -85,93 +66,32 @@ export default async function ProductsPage({
         </div>
 
         {/* Products grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {sorted.map((product) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filtered.map((product) => (
             <Link
-              key={product.id}
-              href={`/products/${product.slug}`}
-              className="group flex flex-col border transition-all duration-300 hover:border-[#D4AF37]/50 overflow-hidden"
-              style={{ background: "#0F0F0C", borderColor: "#1E1E18" }}
+              key={product.slug}
+              href={`/es/products/${product.slug}`}
+              className="group flex flex-col border border-gray-100 hover:border-[#C9A227] hover:shadow-md transition-all"
             >
-              {/* Product image */}
-              <div className="relative aspect-square overflow-hidden">
+              <div className="relative aspect-square overflow-hidden bg-gray-50">
                 <Image
-                  src={productImages[product.category]}
-                  alt={product.name}
+                  src={product.image}
+                  alt={product.nameEs}
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "contain", padding: "16px" }}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="transition-transform duration-500 group-hover:scale-105"
+                  className="group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* Dark tint */}
-                <div
-                  className="absolute inset-0"
-                  style={{ background: "rgba(0,0,0,0.3)" }}
-                />
-                {/* Category badge */}
-                <div className="absolute top-3 left-3">
-                  <span
-                    className="px-2 py-1 text-[7px] tracking-[0.15em] uppercase"
-                    style={{
-                      background: "rgba(0,0,0,0.75)",
-                      color: "#D4AF37",
-                      fontFamily: "var(--font-cinzel), serif",
-                      border: "1px solid rgba(212,175,55,0.3)",
-                    }}
-                  >
-                    {categories.find((c) => c.slug === product.category)?.label}
-                  </span>
-                </div>
-                {/* Quick add overlay on hover */}
-                <div
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: "rgba(0,0,0,0.4)" }}
-                >
-                  <button
-                    className="flex items-center gap-2 px-5 py-2.5 text-[9px] tracking-[0.15em] uppercase font-bold"
-                    style={{
-                      background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)",
-                      color: "#000",
-                      fontFamily: "var(--font-cinzel), serif",
-                    }}
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <ShoppingCart size={12} />
-                    Add to Cart
-                  </button>
-                </div>
               </div>
-
-              <div className="p-5 flex flex-col flex-1">
-                <p
-                  className="text-[8px] tracking-[0.15em] uppercase mb-1.5"
-                  style={{ color: "#666", fontFamily: "var(--font-cinzel), serif" }}
-                >
-                  {product.origin}
+              <div className="p-4 flex flex-col flex-1">
+                <p className="text-[9px] tracking-widest uppercase font-bold mb-1" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+                  {catLabels[product.category] ?? product.category}
                 </p>
-                <h3
-                  className="text-lg font-semibold leading-tight mb-2 group-hover:text-[#D4AF37] transition-colors"
-                  style={{ color: "#F5F0E8", fontFamily: "var(--font-cormorant), serif" }}
-                >
-                  {product.name}
+                <h3 className="font-bold text-[13px] mb-1 group-hover:text-[#C9A227] transition-colors" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
+                  {product.nameEs}
                 </h3>
-                <p className="text-xs leading-relaxed flex-1 mb-4" style={{ color: "#555" }}>
-                  {product.description.slice(0, 90)}…
-                </p>
-                <div className="flex items-center justify-between border-t pt-4" style={{ borderColor: "#1E1E18" }}>
-                  <span
-                    className="text-2xl font-bold gold-text"
-                    style={{ fontFamily: "var(--font-cormorant), serif" }}
-                  >
-                    ${product.price.toFixed(2)}
-                  </span>
-                  <span
-                    className="text-[8px] tracking-[0.1em] uppercase"
-                    style={{ color: "#444", fontFamily: "var(--font-cinzel), serif" }}
-                  >
-                    {product.details[0]}
-                  </span>
-                </div>
+                <p className="text-[11px] italic mb-2" style={{ color: "#aaa" }}>{product.name}</p>
+                <p className="text-[11px] leading-relaxed line-clamp-2" style={{ color: "#777" }}>{product.description}</p>
               </div>
             </Link>
           ))}

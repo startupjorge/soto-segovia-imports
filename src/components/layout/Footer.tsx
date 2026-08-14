@@ -1,74 +1,188 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useLang } from "@/components/LanguageContext";
 
-const footerLinks = {
-  "Our Services": [
-    { label: "Corporate Gifting", href: "/corporate-gifting" },
-    { label: "Personal Gifting", href: "/personal-gifting" },
-    { label: "Self Service Gifting", href: "/products" },
-    { label: "Luxury Hospitality Gifting", href: "/distributors" },
-    { label: "Gifts for CEOs", href: "/corporate-gifting" },
-    { label: "Gifts for Executives", href: "/corporate-gifting" },
-  ],
-  "Our Products": [
-    { label: "Gourmet Olive Oils", href: "/products?category=olive-oils" },
-    { label: "Gourmet Salts", href: "/products?category=salts" },
-    { label: "Gourmet Vinegars", href: "/products?category=vinegars" },
-    { label: "Garlic Olive Oil", href: "/products?category=olive-oils" },
-    { label: "Truffle Olive Oil", href: "/products?category=olive-oils" },
-    { label: "Organic Salts", href: "/products?category=salts" },
-    { label: "Gourmet Foods", href: "/products" },
-  ],
-  "Blog": [
-    { label: "Olive Oil Guide", href: "/blog/what-is-extra-virgin-olive-oil-spain" },
-    { label: "Artisan Salts Guide", href: "/blog/spanish-artisan-salts-guide" },
-    { label: "Spanish Orange Wine", href: "/blog/spanish-orange-wine-guide" },
-    { label: "Spanish Charcuterie Board", href: "/blog/how-to-build-spanish-charcuterie-board" },
-    { label: "Artisan Vinegars", href: "/blog/artisan-vinegars-spain-guide" },
-  ],
-  "Recipes": [
-    { label: "Patatas Bravas", href: "/recipes/patatas-bravas" },
-    { label: "Gambas al Ajillo", href: "/recipes/gambas-al-ajillo" },
-    { label: "Pan Con Tomate", href: "/recipes/pan-con-tomate" },
-    { label: "Truffle Olive Oil Pasta", href: "/recipes/truffle-pasta" },
-    { label: "Lemon Olive Oil Cake", href: "/recipes/lemon-cake" },
-  ],
-  "Company": [
-    { label: "About Us", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Refund Policy", href: "#" },
-  ],
+const footerData = {
+  EN: {
+    services: {
+      heading: "Our Services",
+      links: [
+        { label: "Corporate Gifting", href: "/corporate-gifting" },
+        { label: "Personal Gifting", href: "/personal-gifting" },
+        { label: "Self Service Gifting", href: "/products" },
+        { label: "Luxury Hospitality Gifting", href: "/distributors" },
+        { label: "Gifts for CEOs", href: "/corporate-gifting" },
+        { label: "Gifts for Executives", href: "/corporate-gifting" },
+      ],
+    },
+    products: {
+      heading: "Our Products",
+      links: [
+        { label: "Gourmet Olive Oils", href: "/products?category=olive-oils" },
+        { label: "Gourmet Salts", href: "/products?category=salts" },
+        { label: "Gourmet Vinegars", href: "/products?category=vinegars" },
+        { label: "Garlic Olive Oil", href: "/products?category=olive-oils" },
+        { label: "Truffle Olive Oil", href: "/products?category=olive-oils" },
+        { label: "Organic Salts", href: "/products?category=salts" },
+        { label: "Gourmet Foods", href: "/products" },
+      ],
+    },
+    blog: {
+      heading: "Blog",
+      links: [
+        { label: "Corporate Gifting Strategy", href: "/blog/why-premium-food-gifts-outperform-branded-swag" },
+        { label: "Fix Your Gifting Strategy", href: "/blog/corporate-gifting-strategy-b2b-client-retention" },
+        { label: "Personal Gifting for Sales", href: "/blog/personal-gifting-occasions-build-real-relationships" },
+        { label: "Corporate Gifting Calendar", href: "/blog/spanish-gourmet-food-corporate-gifting-seasons" },
+        { label: "Choosing an Import Partner", href: "/blog/what-to-look-for-in-a-luxury-food-import-partner" },
+      ],
+    },
+    recipes: {
+      heading: "Recipes",
+      links: [
+        { label: "Patatas Bravas", href: "/recipes/patatas-bravas" },
+        { label: "Gambas al Ajillo", href: "/recipes/gambas-al-ajillo" },
+        { label: "Pan Con Tomate", href: "/recipes/pan-con-tomate" },
+        { label: "Truffle Olive Oil Pasta", href: "/recipes/truffle-pasta" },
+        { label: "Lemon Olive Oil Cake", href: "/recipes/lemon-cake" },
+      ],
+    },
+    industries: {
+      heading: "Industries",
+      links: [
+        { label: "Startups", href: "/corporate-gifting" },
+        { label: "Fortune 500 Companies", href: "/corporate-gifting" },
+        { label: "Hospitality", href: "/corporate-gifting" },
+        { label: "Manufacturing", href: "/corporate-gifting" },
+        { label: "Software", href: "/corporate-gifting" },
+        { label: "Financial Services", href: "/corporate-gifting" },
+        { label: "Venture Capital", href: "/corporate-gifting" },
+      ],
+    },
+    company: {
+      heading: "Company",
+      links: [
+        { label: "About Us", href: "/about" },
+        { label: "Contact Us", href: "/contact" },
+        { label: "Privacy Policy", href: "#" },
+        { label: "Terms of Service", href: "#" },
+        { label: "Refund Policy", href: "#" },
+      ],
+    },
+    tagline1: "Headquarters in Miami, FL",
+    tagline2: "Products Made in Spain",
+    copyright: "All rights reserved.",
+  },
+  ES: {
+    services: {
+      heading: "Nuestros Servicios",
+      links: [
+        { label: "Regalos Corporativos", href: "/es/corporate-gifting" },
+        { label: "Regalos Personales", href: "/es/personal-gifting" },
+        { label: "Regalos Autoservicio", href: "/es/products" },
+        { label: "Regalos de Lujo para Hostelería", href: "/distributors" },
+        { label: "Regalos para CEOs", href: "/es/corporate-gifting" },
+        { label: "Regalos para Ejecutivos", href: "/es/corporate-gifting" },
+      ],
+    },
+    products: {
+      heading: "Nuestros Productos",
+      links: [
+        { label: "Aceites de Oliva Gourmet", href: "/es/products?category=olive-oils" },
+        { label: "Sales Gourmet", href: "/es/products?category=salts" },
+        { label: "Vinagres Gourmet", href: "/es/products?category=vinegars" },
+        { label: "Aceite de Ajo", href: "/es/products?category=olive-oils" },
+        { label: "Aceite de Trufa", href: "/es/products?category=olive-oils" },
+        { label: "Sales Artesanas", href: "/es/products?category=salts" },
+        { label: "Productos Gourmet", href: "/es/products" },
+      ],
+    },
+    blog: {
+      heading: "Blog",
+      links: [
+        { label: "Estrategia de Regalos Corporativos", href: "/es/blog/why-premium-food-gifts-outperform-branded-swag" },
+        { label: "Mejora tu Estrategia de Regalos", href: "/es/blog/corporate-gifting-strategy-b2b-client-retention" },
+        { label: "Regalos Personales para Ventas", href: "/es/blog/personal-gifting-occasions-build-real-relationships" },
+        { label: "Calendario de Regalos Corporativos", href: "/es/blog/spanish-gourmet-food-corporate-gifting-seasons" },
+        { label: "Elegir un Socio Importador", href: "/es/blog/what-to-look-for-in-a-luxury-food-import-partner" },
+      ],
+    },
+    recipes: {
+      heading: "Recetas",
+      links: [
+        { label: "Patatas Bravas", href: "/recipes/patatas-bravas" },
+        { label: "Gambas al Ajillo", href: "/recipes/gambas-al-ajillo" },
+        { label: "Pan Con Tomate", href: "/recipes/pan-con-tomate" },
+        { label: "Pasta con Aceite de Trufa", href: "/recipes/truffle-pasta" },
+        { label: "Bizcocho de Aceite de Limón", href: "/recipes/lemon-cake" },
+      ],
+    },
+    industries: {
+      heading: "Industrias",
+      links: [
+        { label: "Startups", href: "/es/corporate-gifting" },
+        { label: "Empresas Fortune 500", href: "/es/corporate-gifting" },
+        { label: "Hostelería", href: "/es/corporate-gifting" },
+        { label: "Manufactura", href: "/es/corporate-gifting" },
+        { label: "Software", href: "/es/corporate-gifting" },
+        { label: "Servicios Financieros", href: "/es/corporate-gifting" },
+        { label: "Capital Riesgo", href: "/es/corporate-gifting" },
+      ],
+    },
+    company: {
+      heading: "Empresa",
+      links: [
+        { label: "Quiénes Somos", href: "/es/about" },
+        { label: "Contacto", href: "/es/contact" },
+        { label: "Política de Privacidad", href: "#" },
+        { label: "Términos de Servicio", href: "#" },
+        { label: "Política de Devoluciones", href: "#" },
+      ],
+    },
+    tagline1: "Sede en Miami, FL",
+    tagline2: "Productos Elaborados en España",
+    copyright: "Todos los derechos reservados.",
+  },
 };
 
 export default function Footer() {
+  const { lang } = useLang();
+  const d = footerData[lang];
+
+  const columns = [d.services, d.products, d.blog, d.recipes, d.industries, d.company];
+
   return (
     <footer style={{ background: "#141414", color: "#ccc" }}>
-      <div className="max-w-[1200px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-6 gap-8">
-        <div className="md:col-span-1">
-          <Image src="/logo.png" alt="Soto & Segovia Imports" width={160} height={60} className="block" style={{ height: "auto", width: "160px", maxWidth: "160px" }} />
+      <div className="max-w-[1400px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-7 gap-8">
+        {/* Logo column */}
+        <div className="md:col-span-1" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+          <Image
+            src="/logo.png"
+            alt="Soto & Segovia Imports"
+            width={160}
+            height={60}
+            style={{ height: "auto", width: "160px", maxWidth: "160px", display: "block" }}
+          />
           <p className="mt-4 text-xs leading-relaxed" style={{ color: "#666" }}>
             Soto &amp; Segovia Imports LLC {new Date().getFullYear()}
           </p>
-          <p className="mt-2 text-xs" style={{ color: "#666" }}>Headquarters in Miami, FL</p>
-          <p className="text-xs" style={{ color: "#666" }}>Products Made in Spain</p>
+          <p className="mt-2 text-xs" style={{ color: "#666" }}>{d.tagline1}</p>
+          <p className="text-xs" style={{ color: "#666" }}>{d.tagline2}</p>
           <div className="mt-5 flex items-center gap-3">
-            {/* Facebook official icon */}
             <a href="https://www.facebook.com/people/Soto-Segovia-Imports/61593123997294/" target="_blank" rel="noopener noreferrer"
               className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 512 512" fill="currentColor">
                 <path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256z"/>
               </svg>
             </a>
-            {/* Instagram official icon */}
             <a href="https://www.instagram.com/sotosegoviaimports/" target="_blank" rel="noopener noreferrer"
               className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 448 512" fill="currentColor">
                 <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
               </svg>
             </a>
-            {/* LinkedIn official icon */}
             <a href="https://www.linkedin.com/feed/update/urn:li:share:7493808628458557440/?actorCompanyId=130364778" target="_blank" rel="noopener noreferrer"
               className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 448 512" fill="currentColor">
@@ -77,11 +191,13 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        {Object.entries(footerLinks).map(([col, links]) => (
-          <div key={col}>
-            <h4 className="text-[11px] font-bold tracking-widest uppercase mb-4" style={{ color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>{col}</h4>
+
+        {/* Link columns */}
+        {columns.map((col) => (
+          <div key={col.heading}>
+            <h4 className="text-[11px] font-bold tracking-widest uppercase mb-4" style={{ color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>{col.heading}</h4>
             <ul className="flex flex-col gap-2.5">
-              {links.map((link) => (
+              {col.links.map((link) => (
                 <li key={link.label}>
                   <Link href={link.href} className="text-[12px] transition-colors hover:text-[#C9A227]" style={{ color: "#888" }}>{link.label}</Link>
                 </li>
@@ -91,7 +207,7 @@ export default function Footer() {
         ))}
       </div>
       <div className="border-t border-gray-800 px-6 py-4 text-center">
-        <p className="text-[11px]" style={{ color: "#444" }}>© {new Date().getFullYear()} Soto &amp; Segovia Imports. All rights reserved.</p>
+        <p className="text-[11px]" style={{ color: "#444" }}>© {new Date().getFullYear()} Soto &amp; Segovia Imports. {d.copyright}</p>
       </div>
     </footer>
   );

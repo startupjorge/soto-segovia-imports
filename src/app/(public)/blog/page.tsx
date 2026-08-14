@@ -3,12 +3,33 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { allPosts } from "@/lib/blog";
 
+const authorAvatars: Record<string, string> = {
+  "Jorge Soto": "/jorge-soto.jpg",
+  "Roberto Segovia": "/roberto-segovia.jpg",
+  "Maite Aranaz": "/maite-aranaz.jpg",
+};
+
+function AuthorAvatar({ author, size = 28 }: { author: string; size?: number }) {
+  const src = authorAvatars[author];
+  if (!src) return null;
+  return (
+    <Image
+      src={src}
+      alt={author}
+      width={size}
+      height={size}
+      className="rounded-full object-cover flex-shrink-0"
+      style={{ width: size, height: size, borderRadius: "50%", objectFit: "cover" }}
+    />
+  );
+}
+
 export const metadata: Metadata = {
-  title: "Journal | Soto & Segovia Imports, Spanish Gourmet Food Blog",
-  description: "Explore our journal: guides to Spanish extra virgin olive oil, artisan salts, orange wine, charcuterie boards, and the culinary culture of Spain's Mediterranean coast.",
+  title: "Blog | Soto & Segovia Imports — Corporate Gifting, B2B Sales & Marketing Strategy",
+  description: "Sales strategy, corporate gifting guides, B2B and B2C marketing insights, and tips for sales leaders — from the team at Soto & Segovia Imports.",
   openGraph: {
-    title: "Journal | Soto & Segovia Imports",
-    description: "Guides, stories, and culinary inspiration from the producers and importers of Spain's finest gourmet foods.",
+    title: "Blog | Soto & Segovia Imports",
+    description: "Corporate gifting strategy, B2B sales insights, and marketing tips for sales leaders and gifting professionals.",
     type: "website",
   },
 };
@@ -37,9 +58,9 @@ export default function BlogPage() {
         {/* Header */}
         <div className="border-b border-gray-100 py-10 px-6 text-center" style={{ background: "#F8F8F4" }}>
           <div className="max-w-[600px] mx-auto">
-            <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>From Altea to Your Table</p>
+            <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>From Spain to Your Table</p>
             <h1 className="text-3xl font-bold mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>The Blog</h1>
-            <p className="text-sm" style={{ color: "#666" }}>Guides, stories, and culinary inspiration from the Mediterranean coast of Spain.</p>
+            <p className="text-sm" style={{ color: "#666" }}>Corporate gifting strategy, B2B and B2C sales insights, marketing tips for sales leaders, and the art of building business relationships that last.</p>
           </div>
         </div>
 
@@ -58,6 +79,7 @@ export default function BlogPage() {
                 <h2 className="text-2xl font-bold mb-3 group-hover:text-[#C9A227] transition-colors leading-snug" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{featured.title}</h2>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: "#666" }}>{featured.excerpt}</p>
                 <div className="flex items-center gap-3">
+                  <AuthorAvatar author={featured.author} size={28} />
                   <span className="text-[12px] font-bold" style={{ color: "#1A1A1A", fontFamily: "var(--font-cinzel), serif" }}>{featured.author}</span>
                   <span style={{ color: "#ddd" }}>·</span>
                   <span className="text-[12px]" style={{ color: "#aaa" }}>{new Date(featured.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>

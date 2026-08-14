@@ -4,6 +4,12 @@ import { notFound } from "next/navigation";
 import { allPosts } from "@/lib/blog";
 import { allProducts } from "@/lib/products";
 
+const authorAvatars: Record<string, string> = {
+  "Jorge Soto": "/jorge-soto.jpg",
+  "Roberto Segovia": "/roberto-segovia.jpg",
+  "Maite Aranaz": "/maite-aranaz.jpg",
+};
+
 export async function generateStaticParams() {
   return allPosts.map((p) => ({ slug: p.slug }));
 }
@@ -88,9 +94,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <h1 className="text-3xl font-bold mb-4 leading-snug" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{post.title}</h1>
           <p className="text-[16px] leading-relaxed mb-6" style={{ color: "#666" }}>{post.subtitle}</p>
           <div className="flex items-center gap-3 text-[12px]" style={{ color: "#888", fontFamily: "var(--font-cinzel), serif" }}>
-            <span className="font-bold" style={{ color: "#1A1A1A" }}>{post.author}</span>
-            <span style={{ color: "#ddd" }}>·</span>
-            <time dateTime={post.date}>{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time>
+            {authorAvatars[post.author] && (
+              <Image src={authorAvatars[post.author]} alt={post.author} width={36} height={36} style={{ width: 36, height: 36, borderRadius: "50%", objectFit: "cover" }} />
+            )}
+            <div>
+              <span className="font-bold block" style={{ color: "#1A1A1A" }}>{post.author}</span>
+              <time dateTime={post.date}>{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time>
+            </div>
           </div>
         </div>
 

@@ -2,13 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { SlidersHorizontal } from "lucide-react";
 import WaitlistModal from "@/components/WaitlistModal";
 import { allProducts, categories } from "@/lib/products";
 
 export default function ProductsPage() {
-  const [active, setActive] = useState("all");
+  const searchParams = useSearchParams();
+  const [active, setActive] = useState(searchParams.get("category") ?? "all");
+
+  useEffect(() => {
+    setActive(searchParams.get("category") ?? "all");
+  }, [searchParams]);
   const [waitlistOpen, setWaitlistOpen] = useState(false);
 
   const filtered = active === "all" ? allProducts : allProducts.filter(p => p.category === active);

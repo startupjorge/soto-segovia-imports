@@ -11,25 +11,25 @@ const leftLinks = {
   EN: [
     { label: "Corporate Gifting", href: "/corporate-gifting" },
     { label: "Personal Gifting", href: "/personal-gifting" },
+    { label: "Our Products", href: "/products" },
     { label: "Gourmet Recipes", href: "/recipes" },
-    { label: "Blog", href: "/blog" },
   ],
   ES: [
     { label: "Regalos Corporativos", href: "/corporate-gifting" },
     { label: "Regalos Personales", href: "/personal-gifting" },
+    { label: "Nuestros Productos", href: "/products" },
     { label: "Recetas Gourmet", href: "/recipes" },
-    { label: "Blog", href: "/blog" },
   ],
 };
 
 const rightLinks = {
   EN: [
-    { label: "Our Products", href: "/products" },
+    { label: "Blog", href: "/blog" },
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
   ES: [
-    { label: "Nuestros Productos", href: "/products" },
+    { label: "Blog", href: "/blog" },
     { label: "Quiénes Somos", href: "/about" },
     { label: "Contacto", href: "/contact" },
   ],
@@ -42,16 +42,28 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const { lang } = useLang();
 
+  const isES = lang === "ES";
+  const prefix = isES ? "/es" : "";
+
   function switchLang(code: "EN" | "ES") {
     setLangOpen(false);
     if (code === "ES") {
       router.push("/es");
     } else {
-      router.push("/");
+      // Strip /es prefix to get back to EN version of current page
+      const currentWithoutEs = pathname.replace(/^\/es/, "") || "/";
+      router.push(currentWithoutEs);
     }
   }
 
-  const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href));
+  function localHref(href: string) {
+    return isES ? `/es${href}` : href;
+  }
+
+  const isActive = (href: string) => {
+    const full = localHref(href);
+    return pathname === full || (full !== "/" && full !== "/es" && pathname.startsWith(full));
+  };
 
   const linkStyle = (href: string) => ({
     color: isActive(href) ? "#C9A227" : "#cccccc",
@@ -67,7 +79,7 @@ export default function Navbar() {
           {leftLinks[lang].map((l) => (
             <Link
               key={l.href}
-              href={l.href}
+              href={localHref(l.href)}
               className="text-[12px] tracking-wide font-medium hover:text-[#C9A227] transition-colors"
               style={linkStyle(l.href)}
             >
@@ -77,7 +89,7 @@ export default function Navbar() {
         </div>
 
         {/* Center logo */}
-        <Link href="/" className="flex-shrink-0 mx-6">
+        <Link href={isES ? "/es" : "/"} className="flex-shrink-0 mx-6">
           <Image
             src="/logo.png"
             alt="Soto & Segovia Imports"
@@ -93,7 +105,7 @@ export default function Navbar() {
           {rightLinks[lang].map((l) => (
             <Link
               key={l.href}
-              href={l.href}
+              href={localHref(l.href)}
               className="text-[12px] tracking-wide font-medium hover:text-[#C9A227] transition-colors"
               style={linkStyle(l.href)}
             >
@@ -142,7 +154,7 @@ export default function Navbar() {
 
       {/* Mobile */}
       <nav className="lg:hidden px-5 h-[60px] flex items-center justify-between">
-        <Link href="/">
+        <Link href={isES ? "/es" : "/"}>
           <Image src="/logo.png" alt="Soto & Segovia Imports" width={120} height={45} style={{ objectFit: "contain", height: "auto" }} priority />
         </Link>
         <button onClick={() => setMobileOpen(!mobileOpen)} className="text-[#C9A227]">
@@ -155,7 +167,7 @@ export default function Navbar() {
           {[...leftLinks[lang], ...rightLinks[lang]].map((l) => (
             <Link
               key={l.href}
-              href={l.href}
+              href={localHref(l.href)}
               onClick={() => setMobileOpen(false)}
               className="block px-6 py-3.5 text-[13px] font-medium hover:text-[#C9A227] transition-colors"
               style={{ color: isActive(l.href) ? "#C9A227" : "#cccccc", fontFamily: "var(--font-cinzel), serif" }}

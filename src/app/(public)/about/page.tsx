@@ -190,6 +190,37 @@ export default function AboutPage() {
       </section>
 
       {/* Closing */}
+      {/* Altea Facility teaser */}
+      <section className="py-20 px-6" style={{ background: "#141414" }}>
+        <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Príncipe Azahar · Altea, España</p>
+            <h2 className="text-3xl font-bold text-white mb-5" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+              Where Every Product<br />Is Born
+            </h2>
+            <p className="text-[15px] leading-relaxed mb-4" style={{ color: "#aaa" }}>
+              On the Mediterranean coast of Spain, in the historic village of Altea, our partner Príncipe Azahar has spent generations perfecting artisan food production. Every olive oil, salt, vinegar, and wine we import is crafted by hand in this facility.
+            </p>
+            <p className="text-[15px] leading-relaxed mb-8" style={{ color: "#aaa" }}>
+              [Placeholder — add 1–2 sentences about what makes this facility and its people exceptional. Certifications, heritage, tradition.]
+            </p>
+            <Link
+              href="/facility"
+              className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider"
+              style={{ background: "#C9A227", color: "#fff", fontFamily: "var(--font-cinzel), serif" }}
+            >
+              See the Facility
+            </Link>
+          </div>
+          {/* Placeholder for facility photo */}
+          <div className="aspect-video flex items-center justify-center border border-gray-800" style={{ background: "#1e1e1e" }}>
+            <p className="text-[10px] tracking-widest uppercase text-center px-8" style={{ color: "#555", fontFamily: "var(--font-cinzel), serif" }}>
+              [Placeholder — Altea facility photo]
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="max-w-[700px] mx-auto px-6 py-16 text-center">
         <p className="text-[11px] tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Looking Ahead</p>
         <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Our Journey Is Just Beginning</h2>

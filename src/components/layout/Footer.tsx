@@ -65,6 +65,7 @@ const footerData = {
       heading: "Company",
       links: [
         { label: "About Us", href: "/about" },
+        { label: "Our Altea Facility", href: "/facility" },
         { label: "Contact Us", href: "/contact" },
         { label: "Privacy Policy", href: "#" },
         { label: "Terms of Service", href: "#" },
@@ -135,6 +136,7 @@ const footerData = {
       heading: "Empresa",
       links: [
         { label: "Quiénes Somos", href: "/es/about" },
+        { label: "Nuestra Planta en Altea", href: "/facility" },
         { label: "Contacto", href: "/es/contact" },
         { label: "Política de Privacidad", href: "#" },
         { label: "Términos de Servicio", href: "#" },

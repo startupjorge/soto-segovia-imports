@@ -41,7 +41,7 @@ export default function Footer() {
     <footer style={{ background: "#141414", color: "#ccc" }}>
       <div className="max-w-[1200px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-5 gap-10">
         <div className="md:col-span-1">
-          <Image src="/logo.png" alt="Soto & Segovia Imports" width={130} height={50} style={{ objectFit: "contain", height: "auto" }} />
+          <Image src="/logo.png" alt="Soto & Segovia Imports" width={200} height={75} style={{ objectFit: "contain", height: "auto" }} />
           <p className="mt-4 text-xs leading-relaxed" style={{ color: "#666" }}>
             Soto &amp; Segovia Imports LLC {new Date().getFullYear()}
           </p>

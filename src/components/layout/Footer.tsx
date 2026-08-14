@@ -19,12 +19,18 @@ const footerLinks = {
     { label: "Organic Salts", href: "/products?category=salts" },
     { label: "Gourmet Foods", href: "/products" },
   ],
+  "Journal": [
+    { label: "Olive Oil Guide", href: "/blog/what-is-extra-virgin-olive-oil-spain" },
+    { label: "Artisan Salts Guide", href: "/blog/spanish-artisan-salts-guide" },
+    { label: "Spanish Orange Wine", href: "/blog/spanish-orange-wine-guide" },
+    { label: "Spanish Charcuterie Board", href: "/blog/how-to-build-spanish-charcuterie-board" },
+    { label: "Artisan Vinegars", href: "/blog/artisan-vinegars-spain-guide" },
+  ],
   "Recipes": [
     { label: "Patatas Bravas", href: "/recipes/patatas-bravas" },
     { label: "Gambas al Ajillo", href: "/recipes/gambas-al-ajillo" },
     { label: "Pan Con Tomate", href: "/recipes/pan-con-tomate" },
     { label: "Truffle Olive Oil Pasta", href: "/recipes/truffle-pasta" },
-    { label: "Sherry Vinegar Chicken", href: "/recipes/sherry-chicken" },
     { label: "Lemon Olive Oil Cake", href: "/recipes/lemon-cake" },
   ],
   "Company": [
@@ -39,7 +45,7 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer style={{ background: "#141414", color: "#ccc" }}>
-      <div className="max-w-[1200px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-5 gap-10">
+      <div className="max-w-[1200px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-6 gap-8">
         <div className="md:col-span-1 flex flex-col items-start">
           <Image src="/logo.png" alt="Soto & Segovia Imports" width={160} height={60} style={{ objectFit: "contain", height: "auto", width: "160px" }} />
           <p className="mt-4 text-xs leading-relaxed" style={{ color: "#666" }}>

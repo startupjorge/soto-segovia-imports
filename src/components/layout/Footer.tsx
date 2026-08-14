@@ -20,10 +20,12 @@ const footerLinks = {
     { label: "Gourmet Foods", href: "/products" },
   ],
   "Recipes": [
-    { label: "Olive Oil Recipes", href: "/recipes" },
-    { label: "Spanish Tapas", href: "/recipes" },
-    { label: "Vinegar Recipes", href: "/recipes" },
-    { label: "Spanish Foods", href: "/recipes" },
+    { label: "Patatas Bravas", href: "/recipes/patatas-bravas" },
+    { label: "Gambas al Ajillo", href: "/recipes/gambas-al-ajillo" },
+    { label: "Pan Con Tomate", href: "/recipes/pan-con-tomate" },
+    { label: "Truffle Olive Oil Pasta", href: "/recipes/truffle-pasta" },
+    { label: "Sherry Vinegar Chicken", href: "/recipes/sherry-chicken" },
+    { label: "Lemon Olive Oil Cake", href: "/recipes/lemon-cake" },
   ],
   "Company": [
     { label: "About Us", href: "/about" },

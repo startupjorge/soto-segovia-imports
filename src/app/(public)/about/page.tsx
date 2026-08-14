@@ -114,8 +114,8 @@ export default function AboutPage() {
           {/* Maite */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div className="flex justify-center">
-              <div className="w-56 h-56 rounded-full overflow-hidden border-2 border-gray-200 flex-shrink-0 flex items-center justify-center" style={{ background: "#F8F8F4" }}>
-                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#C9A227" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              <div className="w-56 h-56 rounded-full overflow-hidden border-2 border-gray-200 flex-shrink-0">
+                <Image src="/maite-aranaz.jpg" alt="Maite Aranaz Soto" width={224} height={224} style={{ objectFit: "cover", objectPosition: "center top" }} />
               </div>
             </div>
             <div>

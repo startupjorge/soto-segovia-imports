@@ -26,7 +26,7 @@ export default function AboutPage() {
           {[
             { src: "/city-marseille.jpg", city: "Marseille", country: "France", note: "Where it began" },
             { src: "/city-altea.jpg",     city: "Altea",     country: "Spain",  note: "Production" },
-            { src: "/city-madrid.jpg",    city: "Madrid",    country: "Spain",  note: "Heart of operations" },
+            { src: "/city-madrid.jpg",    city: "Madrid",    country: "Spain",  note: "Regional Office" },
             { src: "/city-miami.jpg",     city: "Miami",     country: "USA",    note: "Headquarters" },
           ].map((item, i) => (
             <div key={item.city} className="relative overflow-hidden group">

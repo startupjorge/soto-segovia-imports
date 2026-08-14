@@ -23,7 +23,7 @@ function Hero() {
         </h1>
         <p className="text-sm md:text-base mb-8" style={{ color: "#ddd" }}>
           We specialize in providing premium olive oils, salts, and vinegars<br className="hidden md:block" />
-          cultivated in organic farms Spain.
+          cultivated in organic farms in Spain.
         </p>
         <div className="flex items-center justify-center gap-5 flex-wrap">
           <Link

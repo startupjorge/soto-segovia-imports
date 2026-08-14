@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 h-[90vh]">
           {[
             { src: "/city-marseille.jpg", city: "Marseille", country: "France", note: "Where it began" },
-            { src: "/city-altea.jpg",     city: "Altea",     country: "Spain",  note: "Roots of a craft" },
+            { src: "/city-altea.jpg",     city: "Altea",     country: "Spain",  note: "Production" },
             { src: "/city-madrid.jpg",    city: "Madrid",    country: "Spain",  note: "Heart of operations" },
             { src: "/city-miami.jpg",     city: "Miami",     country: "USA",    note: "Headquarters" },
           ].map((item, i) => (

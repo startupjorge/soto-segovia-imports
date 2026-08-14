@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 const footerLinks = {
   "Our Services": [
@@ -44,10 +45,18 @@ export default function Footer() {
             Soto &amp; Segovia Imports LLC {new Date().getFullYear()}
           </p>
           <div className="mt-5 flex items-center gap-3">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all text-xs font-bold">f</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all text-xs">ig</a>
+            <a href="https://www.facebook.com/people/Soto-Segovia-Imports/61593123997294/" target="_blank" rel="noopener noreferrer"
+              className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all">
+              <Facebook size={14} />
+            </a>
+            <a href="https://www.instagram.com/sotosegoviaimports/" target="_blank" rel="noopener noreferrer"
+              className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all">
+              <Instagram size={14} />
+            </a>
+            <a href="https://www.linkedin.com/feed/update/urn:li:share:7493808628458557440/?actorCompanyId=130364778" target="_blank" rel="noopener noreferrer"
+              className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all">
+              <Linkedin size={14} />
+            </a>
           </div>
         </div>
         {Object.entries(footerLinks).map(([col, links]) => (

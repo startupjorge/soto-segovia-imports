@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import { useLang } from "@/components/LanguageContext";
@@ -33,9 +33,19 @@ const rightLinks = {
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const { lang, setLang } = useLang();
+  const { lang } = useLang();
+
+  function switchLang(code: "EN" | "ES") {
+    setLangOpen(false);
+    if (code === "ES") {
+      router.push("/es");
+    } else {
+      router.push("/");
+    }
+  }
 
   const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href));
 
@@ -104,7 +114,7 @@ export default function Navbar() {
                 {[{ code: "EN", label: "English" }, { code: "ES", label: "Español" }].map(({ code, label }) => (
                   <button
                     key={code}
-                    onClick={() => { setLang(code as "EN" | "ES"); setLangOpen(false); }}
+                    onClick={() => switchLang(code as "EN" | "ES")}
                     className="w-full text-left px-4 py-2 text-[11px] hover:bg-white/10 hover:text-[#C9A227] transition-colors"
                     style={{ color: lang === code ? "#C9A227" : "#aaa", fontFamily: "var(--font-cinzel), serif" }}
                   >
@@ -154,7 +164,7 @@ export default function Navbar() {
           </Link>
           <div className="flex gap-3 px-6 py-3.5">
             {["EN", "ES"].map((code) => (
-              <button key={code} onClick={() => setLang(code as "EN" | "ES")}
+              <button key={code} onClick={() => switchLang(code as "EN" | "ES")}
                 className="text-[11px] px-3 py-1 border transition-all"
                 style={{ borderColor: lang === code ? "#C9A227" : "#ddd", color: lang === code ? "#C9A227" : "#888", fontFamily: "var(--font-cinzel), serif" }}>
                 {code}

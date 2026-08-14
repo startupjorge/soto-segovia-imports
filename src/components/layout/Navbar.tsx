@@ -5,23 +5,37 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { useLang } from "@/components/LanguageContext";
 
-const leftLinks = [
-  { label: "Corporate Gifting", href: "/corporate-gifting" },
-  { label: "Personal Gifting", href: "/personal-gifting" },
-];
+const leftLinks = {
+  EN: [
+    { label: "Corporate Gifting", href: "/corporate-gifting" },
+    { label: "Personal Gifting", href: "/personal-gifting" },
+  ],
+  ES: [
+    { label: "Regalos Corporativos", href: "/corporate-gifting" },
+    { label: "Regalos Personales", href: "/personal-gifting" },
+  ],
+};
 
-const rightLinks = [
-  { label: "Our Products", href: "/products" },
-  { label: "About Us", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+const rightLinks = {
+  EN: [
+    { label: "Our Products", href: "/products" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ],
+  ES: [
+    { label: "Nuestros Productos", href: "/products" },
+    { label: "Quiénes Somos", href: "/about" },
+    { label: "Contacto", href: "/contact" },
+  ],
+};
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [lang, setLang] = useState<"EN" | "ES">("EN");
+  const { lang, setLang } = useLang();
 
   const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href));
 
@@ -36,7 +50,7 @@ export default function Navbar() {
       <nav className="max-w-[1200px] mx-auto px-6 h-[70px] hidden lg:flex items-center justify-between">
         {/* Left links */}
         <div className="flex items-center gap-8 flex-1">
-          {leftLinks.map((l) => (
+          {leftLinks[lang].map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -62,7 +76,7 @@ export default function Navbar() {
 
         {/* Right links */}
         <div className="flex items-center gap-8 flex-1 justify-end">
-          {rightLinks.map((l) => (
+          {rightLinks[lang].map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -107,7 +121,7 @@ export default function Navbar() {
             className="text-[11px] tracking-wider px-4 py-2 border border-[#C9A227] text-[#C9A227] hover:bg-[#C9A227] hover:text-white transition-all"
             style={{ fontFamily: "var(--font-cinzel), serif" }}
           >
-            Client Login
+            {lang === "ES" ? "Acceso Clientes" : "Client Login"}
           </Link>
         </div>
       </nav>
@@ -124,7 +138,7 @@ export default function Navbar() {
 
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray-800 divide-y divide-gray-800" style={{ background: "#111111" }}>
-          {[...leftLinks, ...rightLinks].map((l) => (
+          {[...leftLinks[lang], ...rightLinks[lang]].map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -136,7 +150,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/portal/login" onClick={() => setMobileOpen(false)} className="block px-6 py-3.5 text-[13px] font-medium text-[#C9A227]" style={{ fontFamily: "var(--font-cinzel), serif" }}>
-            Client Login
+            {lang === "ES" ? "Acceso Clientes" : "Client Login"}
           </Link>
           <div className="flex gap-3 px-6 py-3.5">
             {["EN", "ES"].map((code) => (

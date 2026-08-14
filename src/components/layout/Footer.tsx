@@ -43,6 +43,8 @@ export default function Footer() {
           <p className="mt-4 text-xs leading-relaxed" style={{ color: "#666" }}>
             Soto &amp; Segovia Imports LLC {new Date().getFullYear()}
           </p>
+          <p className="mt-2 text-xs" style={{ color: "#666" }}>Headquarters in Miami, FL</p>
+          <p className="text-xs" style={{ color: "#666" }}>Products Made in Spain</p>
           <div className="mt-5 flex items-center gap-3">
             {/* Facebook official icon */}
             <a href="https://www.facebook.com/people/Soto-Segovia-Imports/61593123997294/" target="_blank" rel="noopener noreferrer"

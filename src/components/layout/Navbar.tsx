@@ -53,9 +53,9 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Soto & Segovia Imports"
-            width={160}
-            height={60}
-            style={{ objectFit: "contain", height: "auto" }}
+            width={200}
+            height={67}
+            style={{ objectFit: "contain", height: "auto", background: "transparent" }}
             priority
           />
         </Link>

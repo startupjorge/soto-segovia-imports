@@ -95,7 +95,7 @@ export default function AboutPage() {
           </div>
 
           {/* Roberto */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mb-16">
             <div className="flex justify-center md:order-last">
               <div className="w-56 h-56 rounded-full overflow-hidden border-2 border-gray-200 flex-shrink-0">
                 <Image src="/roberto-segovia.jpg" alt="Roberto Segovia Pérez" width={224} height={224} style={{ objectFit: "cover", objectPosition: "center top" }} />
@@ -107,6 +107,22 @@ export default function AboutPage() {
               <div className="flex flex-col gap-4 text-[14px] leading-relaxed" style={{ color: "#555" }}>
                 <p>Based in Madrid, Spain, Roberto Segovia Pérez is a Spanish entrepreneur with a passion for gourmet food, exceptional products, and extraordinary client service.</p>
                 <p>Living at the source gives Roberto a unique connection to the producers, traditions, and culinary culture behind the products Soto &amp; Segovia Imports brings to America. His commitment is simple: find exceptional Spanish products and deliver an experience worthy of them.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Maite */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div className="flex justify-center">
+              <div className="w-56 h-56 rounded-full overflow-hidden border-2 border-gray-200 flex-shrink-0 flex items-center justify-center" style={{ background: "#F8F8F4" }}>
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#C9A227" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Maite Aranaz Soto</h3>
+              <p className="text-[11px] tracking-wider mb-5 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Operations Manager</p>
+              <div className="flex flex-col gap-4 text-[14px] leading-relaxed" style={{ color: "#555" }}>
+                <p>Maite Aranaz Soto brings precision, care, and a personal connection to every aspect of Soto &amp; Segovia Imports' operations. Her commitment to excellence ensures that every order, every relationship, and every detail reflects the quality our clients expect.</p>
               </div>
             </div>
           </div>

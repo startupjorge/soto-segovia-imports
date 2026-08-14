@@ -11,7 +11,7 @@ const recipes = [
   { title: "Gambas al Ajillo", category: "Tapas", time: "15 min", image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80", slug: "gambas-al-ajillo", product: "Garlic Olive Oil" },
   { title: "Sasha's Salted Mangos", category: "Dessert", time: "5 min", image: "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=600&q=80", slug: "sashas-salted-mangos", product: "Mint Salt" },
   { title: "Spanish Pan Con Tomate", category: "Tapas", time: "10 min", image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80", slug: "pan-con-tomate", product: "Tomato Salt + Garlic Olive Oil" },
-  { title: "Garlic Olive Oil Bruschetta", category: "Tapas", time: "10 min", image: "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=600&q=80", slug: "garlic-bruschetta", product: "Garlic Olive Oil + Wild Salt" },
+  { title: "Garlic Olive Oil Bruschetta", category: "Tapas", time: "10 min", image: "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?w=600&q=80", slug: "garlic-bruschetta", product: "Garlic Olive Oil + Wild Salt" },
   // Mains
   { title: "Orange Wine Mussels", category: "Main Course", time: "20 min", image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80", slug: "orange-wine-mussels", product: "Orange Wine + Lemon Olive Oil" },
   { title: "Truffle Olive Oil Pasta", category: "Main Course", time: "20 min", image: "https://images.unsplash.com/photo-1551183053-bf91798d702b?w=600&q=80", slug: "truffle-pasta", product: "Truffle Olive Oil + Rose Salt" },

@@ -7,8 +7,8 @@ import { X } from "lucide-react";
 
 const recipes = [
   // Tapas
-  { title: "Patatas Bravas", category: "Tapas", time: "30 min", image: "https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=600&q=80", slug: "patatas-bravas", product: "Garlic Olive Oil + Paprika Salt" },
-  { title: "Gambas al Ajillo", category: "Tapas", time: "15 min", image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80", slug: "gambas-al-ajillo", product: "Garlic Olive Oil" },
+  { title: "Patatas Bravas", category: "Tapas", time: "30 min", image: "/recipes-patatas-bravas.png", slug: "patatas-bravas", product: "Garlic Olive Oil + Paprika Salt" },
+  { title: "Gambas al Ajillo", category: "Tapas", time: "15 min", image: "/recipes-gambas.jpg", slug: "gambas-al-ajillo", product: "Garlic Olive Oil" },
   { title: "Sasha's Salted Mangos", category: "Dessert", time: "5 min", image: "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=600&q=80", slug: "sashas-salted-mangos", product: "Mint Salt" },
   { title: "Spanish Pan Con Tomate", category: "Tapas", time: "10 min", image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80", slug: "pan-con-tomate", product: "Tomato Salt + Garlic Olive Oil" },
   { title: "Garlic Olive Oil Bruschetta", category: "Tapas", time: "10 min", image: "https://images.unsplash.com/photo-1506280754576-f6fa8a873550?w=600&q=80", slug: "garlic-bruschetta", product: "Garlic Olive Oil + Wild Salt" },

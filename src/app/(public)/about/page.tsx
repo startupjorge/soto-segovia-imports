@@ -134,7 +134,11 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Jorge Soto</h3>
-              <p className="text-[11px] tracking-wider mb-5 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Co-Founder &amp; CEO</p>
+              <p className="text-[11px] tracking-wider mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Co-Founder &amp; CEO</p>
+              <a href="https://www.linkedin.com/in/startupjorge" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[11px] text-gray-400 hover:text-[#C9A227] transition-colors mb-4">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                linkedin.com/in/startupjorge
+              </a>
               <div className="flex flex-col gap-4 text-[14px] leading-relaxed" style={{ color: "#555" }}>
                 <p>A lifelong entrepreneur, Jorge Soto has spent more than 25 years in technology, media, startups, and entrepreneurship. His career has taken him from Silicon Valley to New York and ultimately back to his hometown of Miami, working with and helping build companies ranging from early-stage startups to global technology brands, including Twitter (now X).</p>
                 <p>Having traveled extensively around the world, Jorge developed an even greater appreciation for the food, culture, and traditions connected to his Spanish ancestry. Soto &amp; Segovia Imports brings together his entrepreneurial experience with something deeply personal: celebrating his heritage and introducing exceptional Spanish foods to a new generation of customers.</p>
@@ -168,7 +172,11 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Maite Aranaz Soto</h3>
-              <p className="text-[11px] tracking-wider mb-5 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Operations Manager</p>
+              <p className="text-[11px] tracking-wider mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Operations Manager</p>
+              <a href="https://www.linkedin.com/in/maitearanazsoto/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[11px] text-gray-400 hover:text-[#C9A227] transition-colors mb-4">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                linkedin.com/in/maitearanazsoto
+              </a>
               <div className="flex flex-col gap-4 text-[14px] leading-relaxed" style={{ color: "#555" }}>
                 <p>Maite Aranaz Soto brings precision, care, and a personal connection to every aspect of Soto &amp; Segovia Imports' operations. Her commitment to excellence ensures that every order, every relationship, and every detail reflects the quality our clients expect.</p>
               </div>

@@ -160,12 +160,11 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-7 gap-8">
         {/* Logo column */}
         <div className="md:col-span-1" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-          <Image
-            src="/logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-footer.png"
             alt="Soto & Segovia Imports"
-            width={160}
-            height={60}
-            style={{ height: "auto", width: "160px", maxWidth: "160px", display: "block" }}
+            style={{ width: "160px", height: "auto", display: "block", marginLeft: 0 }}
           />
           <p className="mt-4 text-xs leading-relaxed" style={{ color: "#666" }}>
             Soto &amp; Segovia Imports LLC {new Date().getFullYear()}

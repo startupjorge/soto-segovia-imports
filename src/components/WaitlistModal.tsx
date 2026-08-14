@@ -50,11 +50,10 @@ export default function WaitlistModal({ open, onClose }: Props) {
     e.preventDefault();
     setStatus("loading");
     try {
-      await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
+      const params = new URLSearchParams({ ...form, lang });
+      await fetch(`${APPS_SCRIPT_URL}?${params.toString()}`, {
+        method: "GET",
         mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, lang }),
       });
       setStatus("success");
     } catch {

@@ -67,9 +67,58 @@ View all signups: https://docs.google.com/spreadsheets/d/${SHEET_ID}
   }
 }
 
-// Required for CORS preflight
 function doGet(e) {
-  return ContentService
-    .createTextOutput(JSON.stringify({ status: "ok" }))
-    .setMimeType(ContentService.MimeType.JSON);
+  try {
+    const data = e.parameter;
+
+    if (!data.email) {
+      return ContentService
+        .createTextOutput(JSON.stringify({ status: "ok" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+
+    const sheet = SpreadsheetApp.openById(SHEET_ID).getActiveSheet();
+
+    if (sheet.getLastRow() === 0) {
+      sheet.appendRow([
+        "Timestamp", "First Name", "Last Name", "Email",
+        "Company", "Location", "Mobile Phone", "Message", "Language"
+      ]);
+      sheet.getRange(1, 1, 1, 9).setFontWeight("bold").setBackground("#C9A227").setFontColor("#FFFFFF");
+    }
+
+    sheet.appendRow([
+      new Date().toLocaleString("en-US", { timeZone: "America/New_York" }),
+      data.firstName, data.lastName, data.email,
+      data.company, data.location, data.phone, data.message,
+      data.lang === "ES" ? "Spanish" : "English"
+    ]);
+
+    const body =
+      "New Waitlist Signup — Soto & Segovia Imports\n\n" +
+      "Name:     " + data.firstName + " " + data.lastName + "\n" +
+      "Email:    " + data.email + "\n" +
+      "Company:  " + data.company + "\n" +
+      "Location: " + data.location + "\n" +
+      "Phone:    " + data.phone + "\n" +
+      "Message:  " + data.message + "\n" +
+      "Language: " + (data.lang === "ES" ? "Spanish" : "English") + "\n" +
+      "Time:     " + new Date().toLocaleString("en-US", { timeZone: "America/New_York" }) + " ET\n\n" +
+      "View sheet: https://docs.google.com/spreadsheets/d/" + SHEET_ID;
+
+    GmailApp.sendEmail(
+      NOTIFY_EMAILS.join(","),
+      "New Waitlist Signup — " + data.firstName + " " + data.lastName,
+      body
+    );
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: true }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ success: false, error: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
 }

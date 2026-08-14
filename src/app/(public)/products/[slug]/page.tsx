@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allProducts } from "@/lib/products";
+import { allRecipes } from "@/lib/recipes";
 import WaitlistButton from "./WaitlistButton";
 
 export async function generateStaticParams() {
@@ -31,6 +32,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const related = allProducts
     .filter((p) => p.category === product.category && p.slug !== product.slug)
     .slice(0, 3);
+
+  const relatedRecipes = allRecipes.filter((r) =>
+    r.products.some((rp) => rp.toLowerCase() === product.name.toLowerCase())
+  );
 
   return (
     <div className="bg-white">
@@ -106,7 +111,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
             {/* CTA */}
             <div className="mt-2">
-              <WaitlistButton />
+              <WaitlistButton productName={product.name} />
               <p className="text-center text-[11px] mt-3" style={{ color: "#aaa" }}>
                 We are accepting orders for select distributors and retailers.
               </p>
@@ -114,6 +119,35 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </div>
+
+      {/* Recipes using this product */}
+      {relatedRecipes.length > 0 && (
+        <div className="border-t border-gray-100 max-w-[1200px] mx-auto px-6 py-12">
+          <p className="text-[11px] tracking-[0.3em] uppercase font-bold mb-8" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+            Recipes Using This Product
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {relatedRecipes.map((recipe) => (
+              <Link key={recipe.slug} href={`/recipes/${recipe.slug}`} className="group flex gap-4 border border-gray-100 p-4 hover:shadow-md transition-shadow items-center">
+                <div className="relative w-20 h-20 flex-shrink-0 overflow-hidden bg-gray-50">
+                  <Image
+                    src={recipe.image}
+                    alt={recipe.title}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="80px"
+                    className="group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div>
+                  <p className="text-[10px] tracking-wider uppercase font-bold mb-1" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>{recipe.category} · {recipe.time}</p>
+                  <p className="font-bold text-[13px] leading-snug" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{recipe.title}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Related products */}
       {related.length > 0 && (

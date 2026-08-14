@@ -3,11 +3,15 @@
 import { useState } from "react";
 import WaitlistModal from "@/components/WaitlistModal";
 
-export default function WaitlistButton() {
+export default function WaitlistButton({ productName }: { productName: string }) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <WaitlistModal open={open} onClose={() => setOpen(false)} />
+      <WaitlistModal
+        open={open}
+        onClose={() => setOpen(false)}
+        initialMessage={`Interest in ${productName}`}
+      />
       <button
         onClick={() => setOpen(true)}
         className="w-full py-4 text-[12px] font-bold tracking-wider uppercase transition-all hover:bg-[#C9A227]"

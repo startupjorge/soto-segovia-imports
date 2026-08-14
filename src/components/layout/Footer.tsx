@@ -40,8 +40,8 @@ export default function Footer() {
   return (
     <footer style={{ background: "#141414", color: "#ccc" }}>
       <div className="max-w-[1200px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-5 gap-10">
-        <div className="md:col-span-1">
-          <Image src="/logo.png" alt="Soto & Segovia Imports" width={200} height={75} style={{ objectFit: "contain", height: "auto" }} />
+        <div className="md:col-span-1 flex flex-col items-start">
+          <Image src="/logo.png" alt="Soto & Segovia Imports" width={160} height={60} style={{ objectFit: "contain", height: "auto", width: "160px" }} />
           <p className="mt-4 text-xs leading-relaxed" style={{ color: "#666" }}>
             Soto &amp; Segovia Imports LLC {new Date().getFullYear()}
           </p>

@@ -7,11 +7,12 @@ import { useLang } from "@/components/LanguageContext";
 interface Props {
   open: boolean;
   onClose: () => void;
+  initialMessage?: string;
 }
 
 const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_WAITLIST_SCRIPT_URL || "";
 
-export default function WaitlistModal({ open, onClose }: Props) {
+export default function WaitlistModal({ open, onClose, initialMessage = "" }: Props) {
   const { lang } = useLang();
   const [form, setForm] = useState({
     firstName: "",
@@ -20,7 +21,7 @@ export default function WaitlistModal({ open, onClose }: Props) {
     company: "",
     location: "",
     phone: "",
-    message: "",
+    message: initialMessage,
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 

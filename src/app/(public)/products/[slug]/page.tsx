@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { allProducts } from "@/lib/products";
 import { allRecipes } from "@/lib/recipes";
 import WaitlistButton from "./WaitlistButton";
+import ProductGallery from "./ProductGallery";
 
 export async function generateStaticParams() {
   return allProducts.map((p) => ({ slug: p.slug }));
@@ -80,17 +81,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       {/* Main product section */}
       <div className="bg-white max-w-[1200px] mx-auto px-6 py-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Product image */}
-          <div className="relative aspect-square overflow-hidden bg-gray-50 border border-gray-100">
-            <Image
-              src={p.image}
-              alt={p.name}
-              fill
-              style={{ objectFit: "contain", padding: "24px" }}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
-          </div>
+          {/* Product image gallery */}
+          <ProductGallery
+            images={p.gallery && p.gallery.length > 1 ? p.gallery : [p.image]}
+            name={p.name}
+          />
 
           {/* Product info */}
           <div className="flex flex-col gap-6">

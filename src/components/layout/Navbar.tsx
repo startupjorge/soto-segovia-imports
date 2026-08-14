@@ -47,12 +47,11 @@ export default function Navbar() {
 
   function switchLang(code: "EN" | "ES") {
     setLangOpen(false);
+    const base = pathname.replace(/^\/es/, "") || "/";
     if (code === "ES") {
-      router.push("/es");
+      router.push(base === "/" ? "/es" : `/es${base}`);
     } else {
-      // Strip /es prefix to get back to EN version of current page
-      const currentWithoutEs = pathname.replace(/^\/es/, "") || "/";
-      router.push(currentWithoutEs);
+      router.push(base);
     }
   }
 

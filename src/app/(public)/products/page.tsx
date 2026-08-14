@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { SlidersHorizontal } from "lucide-react";
 import WaitlistModal from "@/components/WaitlistModal";
 import { allProducts, categories } from "@/lib/products";
 
-export default function ProductsPage() {
+function ProductsInner() {
   const searchParams = useSearchParams();
   const [active, setActive] = useState(searchParams.get("category") ?? "all");
 
@@ -102,5 +102,13 @@ export default function ProductsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense>
+      <ProductsInner />
+    </Suspense>
   );
 }

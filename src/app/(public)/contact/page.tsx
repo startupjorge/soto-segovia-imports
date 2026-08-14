@@ -16,7 +16,6 @@ export default function ContactPage() {
           <div className="flex flex-col gap-5">
             {[
               { label: "Email", value: "sales@sotosegoviaimports.com", href: "mailto:sales@sotosegoviaimports.com" },
-              { label: "Phone", value: "(305) 555-0198", href: "tel:+13055550198" },
               { label: "Location", value: "Miami, Florida, USA", href: null },
             ].map((item) => (
               <div key={item.label}>

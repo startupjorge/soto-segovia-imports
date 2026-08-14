@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const recipes = [
-  { title: "Spanish Garlic Shrimp (Gambas al Ajillo)", category: "Tapas", time: "15 min", image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80", slug: "gambas-al-ajillo" },
+  { title: "Patatas Bravas", category: "Tapas", time: "30 min", image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=600&q=80", slug: "patatas-bravas" },
+  { title: "Gambas al Ajillo", category: "Tapas", time: "15 min", image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80", slug: "gambas-al-ajillo" },
   { title: "Truffle Olive Oil Pasta", category: "Main Course", time: "20 min", image: "https://images.unsplash.com/photo-1551183053-bf91798d702b?w=600&q=80", slug: "truffle-pasta" },
   { title: "Sherry Vinegar Glazed Chicken", category: "Main Course", time: "40 min", image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=600&q=80", slug: "sherry-chicken" },
   { title: "Fleur de Sel Chocolate Bark", category: "Dessert", time: "30 min", image: "https://images.unsplash.com/photo-1481391319762-47dff72954d9?w=600&q=80", slug: "chocolate-bark" },

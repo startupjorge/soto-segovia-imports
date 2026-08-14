@@ -132,10 +132,12 @@ export default function Navbar() {
                   <button
                     key={code}
                     onClick={() => switchLang(code as "EN" | "ES")}
-                    className="w-full text-left px-4 py-2 text-[11px] hover:bg-white/10 hover:text-[#C9A227] transition-colors"
+                    className="w-full px-4 py-2 text-[11px] hover:bg-white/10 hover:text-[#C9A227] transition-colors flex items-center gap-2"
                     style={{ color: lang === code ? "#C9A227" : "#aaa", fontFamily: "var(--font-cinzel), serif" }}
                   >
-                    <span style={{ fontSize: "13px", marginRight: "6px" }}>{flags[code]}</span>{label} {lang === code && "✓"}
+                    <span style={{ fontSize: "13px" }}>{flags[code]}</span>
+                    <span style={{ flex: 1, textAlign: "left" }}>{label}</span>
+                    {lang === code && <span style={{ fontSize: "10px" }}>✓</span>}
                   </button>
                 ))}
               </div>

@@ -4,7 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+
+const flags: Record<string, string> = { EN: "🇺🇸", ES: "🇪🇸" };
 import { useLang } from "@/components/LanguageContext";
 
 const leftLinks = {
@@ -120,7 +122,7 @@ export default function Navbar() {
               className="flex items-center gap-1 text-[11px] tracking-wider font-medium text-gray-400 hover:text-[#C9A227] transition-colors"
               style={{ fontFamily: "var(--font-cinzel), serif" }}
             >
-              <Globe size={13} />
+              <span style={{ fontSize: "14px", lineHeight: 1 }}>{flags[lang]}</span>
               {lang}
               <ChevronDown size={11} />
             </button>
@@ -133,7 +135,7 @@ export default function Navbar() {
                     className="w-full text-left px-4 py-2 text-[11px] hover:bg-white/10 hover:text-[#C9A227] transition-colors"
                     style={{ color: lang === code ? "#C9A227" : "#aaa", fontFamily: "var(--font-cinzel), serif" }}
                   >
-                    {label} {lang === code && "✓"}
+                    <span style={{ fontSize: "13px", marginRight: "6px" }}>{flags[code]}</span>{label} {lang === code && "✓"}
                   </button>
                 ))}
               </div>
@@ -182,7 +184,7 @@ export default function Navbar() {
               <button key={code} onClick={() => switchLang(code as "EN" | "ES")}
                 className="text-[11px] px-3 py-1 border transition-all"
                 style={{ borderColor: lang === code ? "#C9A227" : "#ddd", color: lang === code ? "#C9A227" : "#888", fontFamily: "var(--font-cinzel), serif" }}>
-                {code}
+                <span style={{ marginRight: "4px" }}>{flags[code]}</span>{code}
               </button>
             ))}
           </div>

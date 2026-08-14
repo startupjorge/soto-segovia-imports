@@ -12,7 +12,7 @@ const leftLinks = {
     { label: "Corporate Gifting", href: "/corporate-gifting" },
     { label: "Personal Gifting", href: "/personal-gifting" },
     { label: "Gourmet Recipes", href: "/recipes" },
-    { label: "Journal", href: "/blog" },
+    { label: "Blog", href: "/blog" },
   ],
   ES: [
     { label: "Regalos Corporativos", href: "/corporate-gifting" },

@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {/* Breadcrumb */}
         <div className="border-b border-gray-100" style={{ background: "#F8F8F4" }}>
           <div className="max-w-[800px] mx-auto px-6 py-3 flex items-center gap-2 text-[11px]" style={{ color: "#aaa", fontFamily: "var(--font-cinzel), serif" }}>
-            <Link href="/blog" className="hover:text-[#C9A227] transition-colors">Journal</Link>
+            <Link href="/blog" className="hover:text-[#C9A227] transition-colors">Blog</Link>
             <span>/</span>
             <span style={{ color: "#C9A227" }}>{post.category}</span>
           </div>
@@ -165,7 +165,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {related.length > 0 && (
           <div className="max-w-[1200px] mx-auto px-6 py-12">
             <p className="text-[11px] tracking-[0.3em] uppercase font-bold mb-8" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-              More from the Journal
+              More from the Blog
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {related.map((p) => (
@@ -187,7 +187,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {/* Back */}
         <div className="max-w-[1200px] mx-auto px-6 pb-10">
           <Link href="/blog" className="text-[12px] font-bold tracking-wider hover:text-[#C9A227] transition-colors" style={{ color: "#888", fontFamily: "var(--font-cinzel), serif" }}>
-            ← Back to Journal
+            Back to Blog
           </Link>
         </div>
       </div>

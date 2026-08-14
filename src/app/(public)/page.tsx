@@ -66,7 +66,7 @@ const featuredProducts = {
       description: "These artisanal oils are produced in the Altea region of Spain and come in various flavors including truffle, garlic, lemon, rosemary, and spicy peppers.",
       image: "/products/olive-oil-garlic.jpg",
       href: "/products?category=olive-oils",
-      cta: "add to cart",
+      cta: "View Products",
     },
     {
       name: "Gourmet Salts From Spain",
@@ -74,7 +74,7 @@ const featuredProducts = {
       description: "These artisanal salts are produced in the Altea region of Spain and come in various flavors including garlic, vanilla, rosemary, and natural sea flakes.",
       image: "/products/salt-garlic.jpg",
       href: "/products?category=salts",
-      cta: "add to cart",
+      cta: "View Products",
     },
     {
       name: "Gourmet Vinegars From Spain",
@@ -82,7 +82,7 @@ const featuredProducts = {
       description: "These artisanal vinegars are produced in the Altea region of Spain and aged 11+ years in oak barrels, available in orange, apple, and traditional varieties.",
       image: "/products/vinegar-orange.jpg",
       href: "/products?category=vinegars",
-      cta: "add to cart",
+      cta: "View Products",
     },
   ],
   ES: [
@@ -92,7 +92,7 @@ const featuredProducts = {
       description: "Estos aceites artesanales se producen en la región de Altea, España, y vienen en distintos sabores: trufa, ajo, limón, romero y pimientos picantes.",
       image: "/products/olive-oil-garlic.jpg",
       href: "/products?category=olive-oils",
-      cta: "añadir al carrito",
+      cta: "Ver Productos",
     },
     {
       name: "Sales Gourmet de España",
@@ -100,7 +100,7 @@ const featuredProducts = {
       description: "Estas sales artesanales se producen en la región de Altea, España, en sabores como ajo, vainilla, romero y escamas de sal marina natural.",
       image: "/products/salt-garlic.jpg",
       href: "/products?category=salts",
-      cta: "añadir al carrito",
+      cta: "Ver Productos",
     },
     {
       name: "Vinagres Gourmet de España",
@@ -108,7 +108,7 @@ const featuredProducts = {
       description: "Estos vinagres artesanales se producen en Altea, España, y se envejecen más de 11 años en barricas de roble. Disponibles en naranja, manzana y variedad tradicional.",
       image: "/products/vinegar-orange.jpg",
       href: "/products?category=vinegars",
-      cta: "añadir al carrito",
+      cta: "Ver Productos",
     },
   ],
 };
@@ -127,7 +127,7 @@ function BrowseProducts() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((product) => (
-            <div key={product.name} className="flex flex-col border border-gray-100">
+            <Link key={product.name} href={product.href} className="group flex flex-col border border-gray-100 hover:border-[#C9A227] hover:shadow-md transition-all">
               <div className="relative aspect-[4/3] overflow-hidden bg-gray-50">
                 <Image
                   src={product.image}
@@ -135,6 +135,7 @@ function BrowseProducts() {
                   fill
                   style={{ objectFit: "cover" }}
                   sizes="(max-width: 768px) 100vw, 33vw"
+                  className="group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
@@ -145,15 +146,14 @@ function BrowseProducts() {
                 <p className="text-[12px] leading-relaxed mb-4 flex-1" style={{ color: "#777" }}>
                   {product.description}
                 </p>
-                <Link
-                  href={product.href}
-                  className="text-[12px] font-semibold hover:text-[#C9A227] transition-colors text-center underline underline-offset-2"
-                  style={{ color: "#555", fontFamily: "var(--font-cinzel), serif" }}
+                <span
+                  className="text-[12px] font-bold tracking-wider uppercase text-center group-hover:text-[#C9A227] transition-colors"
+                  style={{ color: "#1A1A1A", fontFamily: "var(--font-cinzel), serif" }}
                 >
                   {product.cta}
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

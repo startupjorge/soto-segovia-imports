@@ -8,7 +8,7 @@ export default function PatatasBravasPage() {
         <div className="max-w-[600px] mx-auto">
           <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Tapas · 30 min</p>
           <h1 className="text-3xl font-bold mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Patatas Bravas</h1>
-          <p className="text-sm" style={{ color: "#666" }}>Crispy fried potatoes with a bold, smoky bravas sauce — Spain's most beloved tapa.</p>
+          <p className="text-sm" style={{ color: "#666" }}>Crispy fried potatoes with a bold, smoky bravas sauce, Spain's most beloved tapa.</p>
         </div>
       </div>
 
@@ -62,7 +62,7 @@ export default function PatatasBravasPage() {
             <ol className="flex flex-col gap-4 text-sm" style={{ color: "#555" }}>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center text-[11px] font-bold text-white" style={{ background: "#C9A227" }}>1</span>
-                <p>Peel and cut potatoes into 2cm cubes. Pat completely dry with paper towels — this is the key to crispiness.</p>
+                <p>Peel and cut potatoes into 2cm cubes. Pat completely dry with paper towels, this is the key to crispiness.</p>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center text-[11px] font-bold text-white" style={{ background: "#C9A227" }}>2</span>
@@ -86,7 +86,7 @@ export default function PatatasBravasPage() {
 
         <div className="mt-12 p-6 border-l-2" style={{ borderColor: "#C9A227", background: "#F8F8F4" }}>
           <p className="text-[11px] font-bold tracking-wider uppercase mb-2" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Chef's Tip</p>
-          <p className="text-sm leading-relaxed" style={{ color: "#555" }}>The secret to truly crispy patatas bravas is cutting the potatoes into cubes and drying them completely before frying — no boiling needed. Frying in Soto &amp; Segovia Garlic Olive Oil adds a subtle savory depth, and finishing with Paprika Salt delivers that unmistakable Spanish pimentón character.</p>
+          <p className="text-sm leading-relaxed" style={{ color: "#555" }}>The secret to truly crispy patatas bravas is cutting the potatoes into cubes and drying them completely before frying, no boiling needed. Frying in Soto &amp; Segovia Garlic Olive Oil adds a subtle savory depth, and finishing with Paprika Salt delivers that unmistakable Spanish pimentón character.</p>
         </div>
 
         <div className="mt-12 flex justify-between items-center">

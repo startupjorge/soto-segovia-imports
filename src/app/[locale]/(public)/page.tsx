@@ -23,7 +23,7 @@ function Hero() {
           priority
           sizes="100vw"
         />
-        {/* Dark overlay — heavier on the left so text reads cleanly */}
+        {/* Dark overlay, heavier on the left so text reads cleanly */}
         <div
           className="absolute inset-0"
           style={{
@@ -155,7 +155,7 @@ function FeaturedCollection() {
           />
         </div>
 
-        {/* Category grid — 8 columns on large screens */}
+        {/* Category grid, 8 columns on large screens */}
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2">
           {categories.map((cat) => (
             <Link
@@ -224,11 +224,11 @@ function OurStory() {
     <section className="overflow-hidden" style={{ background: "#F5F0E8" }}>
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          {/* Image — full bleed in its column */}
+          {/* Image, full bleed in its column */}
           <div className="relative min-h-[520px] lg:min-h-[600px]">
             <Image
               src={storyImage}
-              alt="Jorge Soto and Roberto Segovia — founders of Soto & Segovia Imports"
+              alt="Jorge Soto and Roberto Segovia, founders of Soto & Segovia Imports"
               fill
               style={{ objectFit: "cover", objectPosition: "center top" }}
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -296,7 +296,7 @@ function OurStory() {
                 family tradition, Soto &amp; Segovia Imports was born.
               </p>
               <p>
-                Today, we continue that legacy — curating the finest artisan products from Spain and
+                Today, we continue that legacy, curating the finest artisan products from Spain and
                 sharing them with those who value quality, authenticity, and excellence.
               </p>
             </div>

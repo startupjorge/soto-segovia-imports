@@ -19,11 +19,11 @@ const BASE = "https://www.sotosegoviaimports.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: {
-    default: "Soto & Segovia Imports | Premium Spanish Gourmet Foods — Olive Oils, Salts & Vinegars",
+    default: "Soto & Segovia Imports | Premium Spanish Gourmet Foods, Olive Oils, Salts & Vinegars",
     template: "%s | Soto & Segovia Imports",
   },
   description:
-    "Soto & Segovia Imports brings premium artisan Spanish gourmet foods to the US market — extra virgin olive oils, artisan salts, aged vinegars, and orange wine from Príncipe Azahar in Altea, Spain. Wholesale and gifting available.",
+    "Soto & Segovia Imports brings premium artisan Spanish gourmet foods to the US market, extra virgin olive oils, artisan salts, aged vinegars, and orange wine from Príncipe Azahar in Altea, Spain. Wholesale and gifting available.",
   keywords: [
     "Spanish gourmet food", "extra virgin olive oil Spain", "artisan Spanish salt",
     "Príncipe Azahar", "Spanish olive oil importer", "gourmet food gifts",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Soto & Segovia Imports | Premium Spanish Gourmet Foods",
     description:
       "Premium importer of artisan olive oils, salts, aged vinegars, and orange wine from Altea, Spain. Wholesale, corporate gifting, and retail available.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soto & Segovia Imports — Spanish Gourmet Foods" }],
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soto & Segovia Imports, Spanish Gourmet Foods" }],
   },
   twitter: {
     card: "summary_large_image",

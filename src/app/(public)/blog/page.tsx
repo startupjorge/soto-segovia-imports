@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { allPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Journal | Soto & Segovia Imports — Spanish Gourmet Food Blog",
+  title: "Journal | Soto & Segovia Imports, Spanish Gourmet Food Blog",
   description: "Explore our journal: guides to Spanish extra virgin olive oil, artisan salts, orange wine, charcuterie boards, and the culinary culture of Spain's Mediterranean coast.",
   openGraph: {
     title: "Journal | Soto & Segovia Imports",
@@ -38,7 +38,7 @@ export default function BlogPage() {
         <div className="border-b border-gray-100 py-10 px-6 text-center" style={{ background: "#F8F8F4" }}>
           <div className="max-w-[600px] mx-auto">
             <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>From Altea to Your Table</p>
-            <h1 className="text-3xl font-bold mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>The Journal</h1>
+            <h1 className="text-3xl font-bold mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>The Blog</h1>
             <p className="text-sm" style={{ color: "#666" }}>Guides, stories, and culinary inspiration from the Mediterranean coast of Spain.</p>
           </div>
         </div>

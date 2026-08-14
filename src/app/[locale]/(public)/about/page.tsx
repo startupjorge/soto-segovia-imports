@@ -27,7 +27,7 @@ const values = [
   {
     icon: "✨",
     title: "Excellence",
-    body: "We personally visit every producer, taste every batch, and accept only what meets our uncompromising standards — less than 10% of products we evaluate make the cut.",
+    body: "We personally visit every producer, taste every batch, and accept only what meets our uncompromising standards, less than 10% of products we evaluate make the cut.",
   },
   {
     icon: "🤝",
@@ -37,7 +37,7 @@ const values = [
   {
     icon: "🌿",
     title: "Sustainability",
-    body: "We prioritize producers who use traditional, sustainable farming methods — protecting both the land and the extraordinary flavors it yields.",
+    body: "We prioritize producers who use traditional, sustainable farming methods, protecting both the land and the extraordinary flavors it yields.",
   },
 ];
 
@@ -46,7 +46,7 @@ const milestones = [
   { year: "2007", event: "Soto & Segovia Imports officially founded in Miami, FL" },
   { year: "2009", event: "First 50 distributor accounts signed across Florida and New York" },
   { year: "2012", event: "Expanded portfolio to include vinegars, salts, and liqueurs" },
-  { year: "2016", event: "Awarded Best Specialty Food Importer — Fine Food America" },
+  { year: "2016", event: "Awarded Best Specialty Food Importer, Fine Food America" },
   { year: "2019", event: "Surpassed 300 distributor partners across 20 U.S. states" },
   { year: "2021", event: "Launched private label program for hotel and restaurant clients" },
   { year: "2024", event: "500+ partners, 28 states, and a new digital portal launched" },
@@ -106,8 +106,8 @@ export default function AboutPage() {
                 Segovia Imports was born.
               </p>
               <p>
-                Starting with just three products — an Arbequina EVOO, a Sherry vinegar, and a
-                fleur de sel — they approached Miami&apos;s finest restaurants. The response was
+                Starting with just three products, an Arbequina EVOO, a Sherry vinegar, and a
+                fleur de sel, they approached Miami&apos;s finest restaurants. The response was
                 immediate. Within 18 months, they had 50 accounts and a waiting list.
               </p>
               <p>

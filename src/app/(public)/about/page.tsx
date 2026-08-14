@@ -42,7 +42,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 transition-opacity duration-500"
                 style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.3) 100%)" }} />
 
-              {/* connector arrow — hidden on last panel */}
+              {/* connector arrow, hidden on last panel */}
               {i < 3 && (
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center w-8">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A227" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -98,7 +98,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>From Spain, With Purpose</h2>
           <div className="flex flex-col gap-4 text-[15px] leading-relaxed" style={{ color: "#555" }}>
             <p>Soto &amp; Segovia Imports specializes in premium Spanish gourmet foods and thoughtfully curated gifting experiences.</p>
-            <p>Beginning with corporate gifting — executive gifts, client appreciation, and luxury gifting — the company serves businesses and individuals looking for something more memorable than the traditional gift basket: authentic products from Spain selected for their quality, provenance, and craftsmanship.</p>
+            <p>Beginning with corporate gifting, executive gifts, client appreciation, and luxury gifting, the company serves businesses and individuals looking for something more memorable than the traditional gift basket: authentic products from Spain selected for their quality, provenance, and craftsmanship.</p>
             <p>From extra virgin olive oils and infused oils to artisan salts, vinegars, and other Spanish specialties, every product is chosen to offer a genuine taste of Spain.</p>
           </div>
         </div>

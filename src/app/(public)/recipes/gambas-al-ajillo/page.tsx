@@ -8,7 +8,7 @@ export default function GambasAlAjilloPage() {
         <div className="max-w-[600px] mx-auto">
           <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Tapas · 15 min</p>
           <h1 className="text-3xl font-bold mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Gambas al Ajillo</h1>
-          <p className="text-sm" style={{ color: "#666" }}>Sizzling garlic shrimp in olive oil with a touch of chili — a classic Spanish tapa from Madrid.</p>
+          <p className="text-sm" style={{ color: "#666" }}>Sizzling garlic shrimp in olive oil with a touch of chili, a classic Spanish tapa from Madrid.</p>
         </div>
       </div>
 
@@ -63,7 +63,7 @@ export default function GambasAlAjilloPage() {
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center text-[11px] font-bold text-white" style={{ background: "#C9A227" }}>2</span>
-                <p>Pour olive oil into a small heavy skillet or cazuela (earthenware dish) over medium heat. Add garlic and chili. Cook gently until garlic turns golden, about 2–3 minutes — do not let it burn.</p>
+                <p>Pour olive oil into a small heavy skillet or cazuela (earthenware dish) over medium heat. Add garlic and chili. Cook gently until garlic turns golden, about 2–3 minutes, do not let it burn.</p>
               </li>
               <li className="flex gap-3">
                 <span className="flex-shrink-0 w-6 h-6 flex items-center justify-center text-[11px] font-bold text-white" style={{ background: "#C9A227" }}>3</span>
@@ -83,7 +83,7 @@ export default function GambasAlAjilloPage() {
 
         <div className="mt-12 p-6 border-l-2" style={{ borderColor: "#C9A227", background: "#F8F8F4" }}>
           <p className="text-[11px] font-bold tracking-wider uppercase mb-2" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Chef's Tip</p>
-          <p className="text-sm leading-relaxed" style={{ color: "#555" }}>Serve directly in the skillet or cazuela while it's still bubbling — that theatrical sizzle is part of the experience. The quality of the olive oil is everything in this dish; a premium Spanish extra virgin olive oil transforms the sauce into something extraordinary.</p>
+          <p className="text-sm leading-relaxed" style={{ color: "#555" }}>Serve directly in the skillet or cazuela while it's still bubbling, that theatrical sizzle is part of the experience. The quality of the olive oil is everything in this dish; a premium Spanish extra virgin olive oil transforms the sauce into something extraordinary.</p>
         </div>
 
         <div className="mt-12 flex justify-between items-center">

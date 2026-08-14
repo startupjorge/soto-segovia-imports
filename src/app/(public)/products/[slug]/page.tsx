@@ -136,7 +136,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <div className="mt-2">
               <WaitlistButton productName={p.name} />
               <p className="text-center text-[11px] mt-3" style={{ color: "#aaa" }}>
-                We are accepting orders for select distributors and retailers.
+                We are accepting pre-orders for select clients, distributors, and retailers.
               </p>
             </div>
           </div>

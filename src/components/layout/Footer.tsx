@@ -19,7 +19,7 @@ const footerLinks = {
     { label: "Organic Salts", href: "/products?category=salts" },
     { label: "Gourmet Foods", href: "/products" },
   ],
-  "Journal": [
+  "Blog": [
     { label: "Olive Oil Guide", href: "/blog/what-is-extra-virgin-olive-oil-spain" },
     { label: "Artisan Salts Guide", href: "/blog/spanish-artisan-salts-guide" },
     { label: "Spanish Orange Wine", href: "/blog/spanish-orange-wine-guide" },
@@ -46,8 +46,8 @@ export default function Footer() {
   return (
     <footer style={{ background: "#141414", color: "#ccc" }}>
       <div className="max-w-[1200px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-6 gap-8">
-        <div className="md:col-span-1 flex flex-col items-start">
-          <Image src="/logo.png" alt="Soto & Segovia Imports" width={160} height={60} style={{ objectFit: "contain", height: "auto", width: "160px" }} />
+        <div className="md:col-span-1">
+          <Image src="/logo.png" alt="Soto & Segovia Imports" width={160} height={60} className="block" style={{ height: "auto", width: "160px", maxWidth: "160px" }} />
           <p className="mt-4 text-xs leading-relaxed" style={{ color: "#666" }}>
             Soto &amp; Segovia Imports LLC {new Date().getFullYear()}
           </p>

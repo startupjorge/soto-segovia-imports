@@ -1,12 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SlidersHorizontal, PackageSearch, UserRound, NotebookPen, CreditCard } from "lucide-react";
 import { useLang } from "@/components/LanguageContext";
+import WaitlistModal from "@/components/WaitlistModal";
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
-function Hero() {
+function Hero({ onWaitlist }: { onWaitlist: () => void }) {
   const { lang } = useLang();
   return (
     <section className="relative h-[440px] md:h-[520px] flex items-center justify-center overflow-hidden" style={{ position: "relative" }}>
@@ -35,13 +37,13 @@ function Hero() {
             : "We specialize in providing premium olive oils, salts, and vinegars cultivated in organic farms in Spain."}
         </p>
         <div className="flex items-center justify-center gap-5 flex-wrap">
-          <Link
-            href="/products"
+          <button
+            onClick={onWaitlist}
             className="px-8 py-3 font-bold text-sm bg-white text-[#1A1A1A] hover:bg-[#C9A227] hover:text-white transition-all"
             style={{ fontFamily: "var(--font-cinzel), serif" }}
           >
             {lang === "ES" ? "Únete a la Lista de Espera" : "Join The Waitlist"}
-          </Link>
+          </button>
           <Link
             href="#how-it-works"
             className="text-sm font-semibold underline underline-offset-2 hover:text-[#C9A227] transition-colors"
@@ -175,7 +177,7 @@ const steps = {
   ],
 };
 
-function HowItWorks() {
+function HowItWorks({ onWaitlist }: { onWaitlist: () => void }) {
   const { lang } = useLang();
   return (
     <section id="how-it-works" className="py-16" style={{ background: "#C9A227" }}>
@@ -205,13 +207,13 @@ function HowItWorks() {
           ))}
         </div>
         <div className="flex items-center justify-center gap-5 flex-wrap">
-          <Link
-            href="/products"
+          <button
+            onClick={onWaitlist}
             className="px-10 py-3 bg-white font-bold text-sm hover:bg-gray-100 transition-all rounded-sm"
             style={{ color: "#1A1A1A", fontFamily: "var(--font-cinzel), serif" }}
           >
             {lang === "ES" ? "Únete a la Lista de Espera" : "Join The Waitlist"}
-          </Link>
+          </button>
           <span className="text-white font-semibold text-sm">{lang === "ES" ? "o" : "or"}</span>
           <Link
             href="/contact"
@@ -247,11 +249,13 @@ function HelpBanner() {
 }
 
 export default function HomePage() {
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
   return (
     <>
-      <Hero />
+      <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
+      <Hero onWaitlist={() => setWaitlistOpen(true)} />
       <BrowseProducts />
-      <HowItWorks />
+      <HowItWorks onWaitlist={() => setWaitlistOpen(true)} />
       <HelpBanner />
     </>
   );

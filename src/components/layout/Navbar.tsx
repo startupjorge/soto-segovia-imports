@@ -47,7 +47,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-800 shadow-sm" style={{ background: "#111111" }}>
       {/* Desktop */}
-      <nav className="max-w-[1200px] mx-auto px-6 h-[70px] hidden lg:flex items-center justify-between">
+      <nav className="max-w-[1200px] mx-auto px-6 h-[86px] hidden lg:flex items-center justify-between">
         {/* Left links */}
         <div className="flex items-center gap-8 flex-1">
           {leftLinks[lang].map((l) => (

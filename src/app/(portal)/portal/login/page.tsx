@@ -35,7 +35,7 @@ export default function PortalLoginPage() {
             className="mt-4 text-[9px] tracking-[0.25em] uppercase"
             style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
           >
-            Distributor Portal
+            Client Portal
           </p>
         </div>
 

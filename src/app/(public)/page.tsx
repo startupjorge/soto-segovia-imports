@@ -31,7 +31,7 @@ function Hero() {
             className="px-8 py-3 font-bold text-sm bg-white text-[#1A1A1A] hover:bg-[#C9A227] hover:text-white transition-all"
             style={{ fontFamily: "var(--font-cinzel), serif" }}
           >
-            Get Started
+            Join The Waitlist
           </Link>
           <Link
             href="#how-it-works"
@@ -159,7 +159,7 @@ function HowItWorks() {
             className="px-10 py-3 bg-white font-bold text-sm hover:bg-gray-100 transition-all rounded-sm"
             style={{ color: "#1A1A1A", fontFamily: "var(--font-cinzel), serif" }}
           >
-            Get Started
+            Join The Waitlist
           </Link>
           <span className="text-white font-semibold text-sm">or</span>
           <Link

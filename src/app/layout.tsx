@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Soto & Segovia Imports",
   },
   description:
-    "Soto & Segovia Imports brings premium artisan Spanish gourmet foods to the US market, extra virgin olive oils, artisan salts, aged vinegars, and orange wine from Príncipe Azahar in Altea, Spain. Wholesale and gifting available.",
+    "Spanish Gourmet Food Gifts for Executives & Corporate Clients. We specialize in premium olive oils, salts, and vinegars from organic farms in Spain. Perfect for account-based marketing, corporate gifting, and executive relationship programs.",
   keywords: [
     "Spanish gourmet food", "extra virgin olive oil Spain", "artisan Spanish salt",
     "Príncipe Azahar", "Spanish olive oil importer", "gourmet food gifts",
@@ -40,16 +40,17 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: BASE,
     siteName: "Soto & Segovia Imports",
-    title: "Soto & Segovia Imports | Premium Spanish Gourmet Foods",
+    title: "Soto & Segovia Imports | Premium Spanish Gourmet Food Gifts",
     description:
-      "Premium importer of artisan olive oils, salts, aged vinegars, and orange wine from Altea, Spain. Wholesale, corporate gifting, and retail available.",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Soto & Segovia Imports, Spanish Gourmet Foods" }],
+      "Spanish Gourmet Food Gifts for Executives & Corporate Clients. Artisan olive oils, salts, aged vinegars, and orange wine from Altea, Spain. Corporate gifting, ABM programs, and wholesale available.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Soto & Segovia Imports — Premium Spanish Gourmet Food Gifts" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soto & Segovia Imports | Premium Spanish Gourmet Foods",
-    description: "Premium artisan olive oils, salts, vinegars, and orange wine from Altea, Spain.",
-    images: ["/og-image.jpg"],
+    title: "Soto & Segovia Imports | Premium Spanish Gourmet Food Gifts",
+    description:
+      "Spanish Gourmet Food Gifts for Executives & Corporate Clients. Artisan olive oils, salts, vinegars, and orange wine from Altea, Spain.",
+    images: ["/opengraph-image"],
   },
   alternates: { canonical: BASE },
 };

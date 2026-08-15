@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { MessageCircle, X, Send, ChevronDown } from "lucide-react";
+import { Send, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 type Message = { role: "user" | "concierge"; text: string; time: string; sender?: string };
 
@@ -18,15 +19,43 @@ const TEAM = [
   { name: "Maite", photo: "/maite-aranaz.jpg", title: "Concierge" },
 ];
 
+const COPY = {
+  en: {
+    greeting: "Hola! 👋 I'm Jorge, co-founder of Soto & Segovia. Along with Roberto and our concierge Maite, we hand-source every product from small artisan producers in Altea, Spain. Whether you need the perfect corporate gift or have a question about an order — we're personally here to help.",
+    greetingReply: (name: string) => `So nice to meet you, ${name}! 🙏 Roberto, Maite, and I are all here. What can we help you with — a corporate gift, a product question, or something else?`,
+    autoReply: "Thanks for reaching out! We'll personally get back to you very soon. In the meantime, feel free to browse our curated gift boxes — designed specifically for executives and corporate gifting. 🎁",
+    online: "All online · reply within minutes",
+    namePlaceholder: "Your name",
+    emailPlaceholder: "Your email",
+    intro: "Tell us your name so we can greet you personally:",
+    startBtn: "Chat with Us",
+    inputPlaceholder: "Message us…",
+    needHelp: "💬 Need Help?",
+    typing: "Maite is typing…",
+  },
+  es: {
+    greeting: "¡Hola! 👋 Soy Jorge, cofundador de Soto & Segovia. Junto con Roberto y nuestra concierge Maite, seleccionamos cada producto de pequeños productores artesanales en Altea, España. Ya sea que necesites el regalo corporativo perfecto o tengas una pregunta sobre un pedido — estamos aquí para ayudarte personalmente.",
+    greetingReply: (name: string) => `¡Qué bueno conocerte, ${name}! 🙏 Roberto, Maite y yo estamos disponibles. ¿En qué podemos ayudarte — un regalo corporativo, una pregunta sobre un producto, o algo más?`,
+    autoReply: "¡Gracias por contactarnos! Te responderemos personalmente muy pronto. Mientras tanto, echa un vistazo a nuestras cajas de regalo exclusivas — diseñadas especialmente para ejecutivos y regalos corporativos. 🎁",
+    online: "Todos disponibles · respuesta en minutos",
+    namePlaceholder: "Tu nombre",
+    emailPlaceholder: "Tu correo",
+    intro: "Dinos tu nombre para saludarte personalmente:",
+    startBtn: "Chatear con nosotros",
+    inputPlaceholder: "Escríbenos…",
+    needHelp: "💬 ¿Necesitas ayuda?",
+    typing: "Maite está escribiendo…",
+  },
+};
+
 export default function ChatBubble() {
+  const pathname = usePathname();
+  const isEs = pathname?.startsWith("/es");
+  const t = isEs ? COPY.es : COPY.en;
+
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "concierge",
-      sender: "Jorge",
-      text: "Hola! 👋 I'm Jorge, co-founder of Soto & Segovia. Along with Roberto and our concierge Maite, we hand-source every product from small artisan producers in Altea, Spain. Whether you need the perfect corporate gift or have a question about an order — we're personally here to help.",
-      time: now(),
-    },
+    { role: "concierge", sender: "Jorge", text: t.greeting, time: now() },
   ]);
   const [input, setInput] = useState("");
   const [name, setName] = useState("");
@@ -50,12 +79,7 @@ export default function ChatBubble() {
     const firstName = name.split(" ")[0];
     setMessages((prev) => [
       ...prev,
-      {
-        role: "concierge",
-        sender: "Jorge",
-        text: `So nice to meet you, ${firstName}! 🙏 Roberto, Maite, and I are all here. What can we help you with — a corporate gift, a product question, or something else?`,
-        time: now(),
-      },
+      { role: "concierge", sender: "Jorge", text: t.greetingReply(firstName), time: now() },
     ]);
   }
 
@@ -74,24 +98,18 @@ export default function ChatBubble() {
           lastName: name.split(" ").slice(1).join(" "),
           email,
           message: text,
-          lang: "EN",
+          lang: isEs ? "ES" : "EN",
           source: "chat_bubble",
         });
         await fetch(`${SCRIPT_URL}?${params}`, { method: "GET", mode: "no-cors" });
       }
 
       setTimeout(() => {
-        // Alternate between Jorge and Roberto for a personal feel
         const responders = ["Roberto", "Maite", "Jorge"];
         const responder = responders[messages.filter(m => m.role === "concierge").length % 3];
         setMessages((prev) => [
           ...prev,
-          {
-            role: "concierge",
-            sender: responder,
-            text: `Thanks for reaching out! We'll personally get back to you very soon. In the meantime, feel free to browse our curated gift boxes — designed specifically for executives and corporate gifting. 🎁`,
-            time: now(),
-          },
+          { role: "concierge", sender: responder, text: t.autoReply, time: now() },
         ]);
         setSending(false);
       }, 1200);
@@ -105,16 +123,16 @@ export default function ChatBubble() {
       {/* Bubble button */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-6 right-6 z-[500] shadow-2xl transition-transform hover:scale-105 active:scale-95"
+        className="fixed bottom-4 right-4 z-[500]"
         style={{ background: "none", border: "none", padding: 0 }}
         aria-label="Open concierge chat"
       >
         {open ? (
-          <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)" }}>
-            <X size={22} style={{ color: "#000" }} />
+          <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-2xl" style={{ background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)" }}>
+            <ChevronDown size={20} style={{ color: "#000" }} />
           </div>
         ) : (
-            <div className="flex flex-col items-end gap-1">
+          <div className="flex flex-col items-end gap-1">
             <div className="relative flex -space-x-2">
               {TEAM.map((t) => (
                 <div key={t.name} className="w-9 h-9 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: "#D4AF37" }}>
@@ -127,26 +145,32 @@ export default function ChatBubble() {
                 </span>
               )}
             </div>
-            <span className="text-[9px] font-bold tracking-wider px-2 py-0.5" style={{ background: "linear-gradient(135deg, #8B6914, #C9A227)", color: "#000", fontFamily: "var(--font-cinzel), serif" }}>
-              💬 Need Help?
+            <span className="text-[9px] font-bold tracking-wider px-2 py-0.5 whitespace-nowrap" style={{ background: "linear-gradient(135deg, #8B6914, #C9A227)", color: "#000", fontFamily: "var(--font-cinzel), serif" }}>
+              {t.needHelp}
             </span>
           </div>
         )}
       </button>
 
-      {/* Chat panel */}
+      {/* Chat panel — full width on mobile, 340px on desktop */}
       {open && (
         <div
-          className="fixed bottom-24 right-6 z-[499] w-[340px] shadow-2xl flex flex-col border"
-          style={{ background: "#0D0D0A", borderColor: "#2A2A1A", borderTop: "2px solid #D4AF37", maxHeight: "520px" }}
+          className="fixed z-[499] flex flex-col border shadow-2xl bottom-[4.5rem] left-3 right-3 sm:left-auto sm:right-4 sm:w-[340px]"
+          style={{
+            background: "#0D0D0A",
+            borderColor: "#2A2A1A",
+            borderTop: "2px solid #D4AF37",
+            maxHeight: "75vh",
+          }}
         >
+
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "#1E1E14" }}>
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
-                {TEAM.map((t) => (
-                  <div key={t.name} className="w-9 h-9 rounded-full overflow-hidden border-2" style={{ borderColor: "#D4AF37" }}>
-                    <Image src={t.photo} alt={t.name} width={36} height={36} className="w-full h-full object-cover" />
+                {TEAM.map((member) => (
+                  <div key={member.name} className="w-8 h-8 rounded-full overflow-hidden border-2" style={{ borderColor: "#D4AF37" }}>
+                    <Image src={member.photo} alt={member.name} width={32} height={32} className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>
@@ -154,7 +178,7 @@ export default function ChatBubble() {
                 <p className="text-[11px] font-bold" style={{ color: "#F5F0E8", fontFamily: "var(--font-cinzel), serif" }}>Jorge, Roberto & Maite</p>
                 <div className="flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#22c55e" }} />
-                  <p className="text-[9px]" style={{ color: "#22c55e" }}>All online · reply within minutes</p>
+                  <p className="text-[9px]" style={{ color: "#22c55e" }}>{t.online}</p>
                 </div>
               </div>
             </div>
@@ -171,7 +195,7 @@ export default function ChatBubble() {
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-5 h-5 rounded-full overflow-hidden" style={{ border: "1px solid #D4AF37" }}>
                       <Image
-                        src={TEAM.find(t => t.name === msg.sender)?.photo || "/jorge-soto.jpg"}
+                        src={TEAM.find(tm => tm.name === msg.sender)?.photo || "/jorge-soto.jpg"}
                         alt={msg.sender}
                         width={20} height={20}
                         className="w-full h-full object-cover"
@@ -181,7 +205,7 @@ export default function ChatBubble() {
                   </div>
                 )}
                 <div
-                  className="max-w-[85%] px-3 py-2 text-[12px] leading-relaxed"
+                  className="max-w-[85%] px-3 py-2 text-[13px] leading-relaxed"
                   style={{
                     background: msg.role === "user" ? "linear-gradient(135deg, #8B6914, #C9A227)" : "#1A1A12",
                     color: msg.role === "user" ? "#000" : "#ccc",
@@ -198,7 +222,7 @@ export default function ChatBubble() {
                   <Image src="/maite-aranaz.jpg" alt="Maite" width={20} height={20} className="w-full h-full object-cover" />
                 </div>
                 <div className="px-3 py-2 text-[12px]" style={{ background: "#1A1A12", color: "#555" }}>
-                  <span className="animate-pulse">Maite is typing…</span>
+                  <span className="animate-pulse">{t.typing}</span>
                 </div>
               </div>
             )}
@@ -208,13 +232,13 @@ export default function ChatBubble() {
           {/* Intro form or chat input */}
           {step === "intro" ? (
             <form onSubmit={startChat} className="border-t p-4 flex flex-col gap-3" style={{ borderColor: "#1E1E14" }}>
-              <p className="text-[11px] leading-relaxed" style={{ color: "#666" }}>Tell us your name so we can greet you personally:</p>
+              <p className="text-[11px] leading-relaxed" style={{ color: "#666" }}>{t.intro}</p>
               <input
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Your name"
-                className="px-3 py-2.5 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
+                placeholder={t.namePlaceholder}
+                className="px-3 py-2.5 text-[14px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
                 style={{ borderColor: "#2A2A1A", color: "#ccc" }}
               />
               <input
@@ -222,16 +246,16 @@ export default function ChatBubble() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
-                className="px-3 py-2.5 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
+                placeholder={t.emailPlaceholder}
+                className="px-3 py-2.5 text-[14px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
                 style={{ borderColor: "#2A2A1A", color: "#ccc" }}
               />
               <button
                 type="submit"
-                className="py-2.5 text-[10px] tracking-wider font-bold flex items-center justify-center gap-2"
+                className="py-3 text-[11px] tracking-wider font-bold flex items-center justify-center gap-2"
                 style={{ background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)", color: "#000", fontFamily: "var(--font-cinzel), serif" }}
               >
-                Chat with Us
+                {t.startBtn}
               </button>
             </form>
           ) : (
@@ -239,17 +263,17 @@ export default function ChatBubble() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Message us…"
-                className="flex-1 px-3 py-2 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
+                placeholder={t.inputPlaceholder}
+                className="flex-1 px-3 py-2.5 text-[14px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
                 style={{ borderColor: "#2A2A1A", color: "#ccc" }}
               />
               <button
                 type="submit"
                 disabled={!input.trim() || sending}
-                className="px-3 py-2 flex items-center justify-center disabled:opacity-40"
+                className="px-4 py-2 flex items-center justify-center disabled:opacity-40"
                 style={{ background: "linear-gradient(135deg, #8B6914, #C9A227)", color: "#000" }}
               >
-                <Send size={14} />
+                <Send size={16} />
               </button>
             </form>
           )}

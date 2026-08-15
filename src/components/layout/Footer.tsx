@@ -11,10 +11,10 @@ const footerData = {
       links: [
         { label: "Corporate Gifting", href: "/corporate-gifting" },
         { label: "Personal Gifting", href: "/personal-gifting" },
-        { label: "Self Service Gifting", href: "/products" },
-        { label: "Luxury Hospitality Gifting", href: "/distributors" },
-        { label: "Gifts for CEOs", href: "/corporate-gifting" },
-        { label: "Gifts for Executives", href: "/corporate-gifting" },
+        { label: "Self Service Gifting", href: "/self-service-gifting" },
+        { label: "Luxury Hospitality Gifting", href: "/luxury-hospitality-gifting" },
+        { label: "Gifts for CEOs", href: "/gifts-for-ceos" },
+        { label: "Gifts for Executives", href: "/gifts-for-executives" },
       ],
     },
     products: {
@@ -52,13 +52,13 @@ const footerData = {
     industries: {
       heading: "Industries",
       links: [
-        { label: "Startups", href: "/corporate-gifting" },
-        { label: "Fortune 500 Companies", href: "/corporate-gifting" },
-        { label: "Hospitality", href: "/corporate-gifting" },
-        { label: "Manufacturing", href: "/corporate-gifting" },
-        { label: "Software", href: "/corporate-gifting" },
-        { label: "Financial Services", href: "/corporate-gifting" },
-        { label: "Venture Capital", href: "/corporate-gifting" },
+        { label: "Startups", href: "/industries/startups" },
+        { label: "Fortune 500 Companies", href: "/industries/fortune-500" },
+        { label: "Hospitality", href: "/industries/hospitality" },
+        { label: "Manufacturing", href: "/industries/manufacturing" },
+        { label: "Software", href: "/industries/software" },
+        { label: "Financial Services", href: "/industries/financial-services" },
+        { label: "Venture Capital", href: "/industries/venture-capital" },
       ],
     },
     company: {
@@ -82,10 +82,10 @@ const footerData = {
       links: [
         { label: "Regalos Corporativos", href: "/es/corporate-gifting" },
         { label: "Regalos Personales", href: "/es/personal-gifting" },
-        { label: "Regalos Autoservicio", href: "/es/products" },
-        { label: "Regalos de Lujo para Hostelería", href: "/distributors" },
-        { label: "Regalos para CEOs", href: "/es/corporate-gifting" },
-        { label: "Regalos para Ejecutivos", href: "/es/corporate-gifting" },
+        { label: "Regalos Autoservicio", href: "/self-service-gifting" },
+        { label: "Regalos de Lujo para Hostelería", href: "/luxury-hospitality-gifting" },
+        { label: "Regalos para CEOs", href: "/gifts-for-ceos" },
+        { label: "Regalos para Ejecutivos", href: "/gifts-for-executives" },
       ],
     },
     products: {
@@ -123,13 +123,13 @@ const footerData = {
     industries: {
       heading: "Industrias",
       links: [
-        { label: "Startups", href: "/es/corporate-gifting" },
-        { label: "Empresas Fortune 500", href: "/es/corporate-gifting" },
-        { label: "Hostelería", href: "/es/corporate-gifting" },
-        { label: "Manufactura", href: "/es/corporate-gifting" },
-        { label: "Software", href: "/es/corporate-gifting" },
-        { label: "Servicios Financieros", href: "/es/corporate-gifting" },
-        { label: "Capital Riesgo", href: "/es/corporate-gifting" },
+        { label: "Startups", href: "/industries/startups" },
+        { label: "Empresas Fortune 500", href: "/industries/fortune-500" },
+        { label: "Hostelería", href: "/industries/hospitality" },
+        { label: "Manufactura", href: "/industries/manufacturing" },
+        { label: "Software", href: "/industries/software" },
+        { label: "Servicios Financieros", href: "/industries/financial-services" },
+        { label: "Capital Riesgo", href: "/industries/venture-capital" },
       ],
     },
     company: {

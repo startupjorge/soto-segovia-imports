@@ -62,7 +62,7 @@ const featuredProducts = {
   EN: [
     {
       name: "Gourmet Olive Oils From Spain",
-      price: "$99.00 – $279.00 per box",
+      
       description: "These artisanal oils are produced in the Altea region of Spain and come in various flavors including truffle, garlic, lemon, rosemary, and spicy peppers.",
       image: "/products/olive-oil-garlic.jpg",
       href: "/products?category=olive-oils",
@@ -70,7 +70,7 @@ const featuredProducts = {
     },
     {
       name: "Gourmet Salts From Spain",
-      price: "$59.00 – $179.00 per box",
+      
       description: "These artisanal salts are produced in the Altea region of Spain and come in various flavors including garlic, vanilla, rosemary, and natural sea flakes.",
       image: "/products/salt-garlic.jpg",
       href: "/products?category=salts",
@@ -78,7 +78,7 @@ const featuredProducts = {
     },
     {
       name: "Gourmet Vinegars From Spain",
-      price: "$99.00 – $279.00 per box",
+      
       description: "These artisanal vinegars are produced in the Altea region of Spain and aged 11+ years in oak barrels, available in orange, apple, and traditional varieties.",
       image: "/products/vinegar-orange.jpg",
       href: "/products?category=vinegars",
@@ -88,7 +88,7 @@ const featuredProducts = {
   ES: [
     {
       name: "Aceites de Oliva Gourmet de España",
-      price: "$99.00 – $279.00 por caja",
+      
       description: "Estos aceites artesanales se producen en la región de Altea, España, y vienen en distintos sabores: trufa, ajo, limón, romero y pimientos picantes.",
       image: "/products/olive-oil-garlic.jpg",
       href: "/products?category=olive-oils",
@@ -96,7 +96,7 @@ const featuredProducts = {
     },
     {
       name: "Sales Gourmet de España",
-      price: "$59.00 – $179.00 por caja",
+      
       description: "Estas sales artesanales se producen en la región de Altea, España, en sabores como ajo, vainilla, romero y escamas de sal marina natural.",
       image: "/products/salt-garlic.jpg",
       href: "/products?category=salts",
@@ -104,7 +104,7 @@ const featuredProducts = {
     },
     {
       name: "Vinagres Gourmet de España",
-      price: "$99.00 – $279.00 por caja",
+      
       description: "Estos vinagres artesanales se producen en Altea, España, y se envejecen más de 11 años en barricas de roble. Disponibles en naranja, manzana y variedad tradicional.",
       image: "/products/vinegar-orange.jpg",
       href: "/products?category=vinegars",
@@ -142,7 +142,6 @@ function BrowseProducts() {
                 <h3 className="font-bold text-[15px] mb-2" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
                   {product.name}
                 </h3>
-                <p className="text-[13px] mb-3" style={{ color: "#555" }}>{product.price}</p>
                 <p className="text-[12px] leading-relaxed mb-4 flex-1" style={{ color: "#777" }}>
                   {product.description}
                 </p>

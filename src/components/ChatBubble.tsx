@@ -114,17 +114,22 @@ export default function ChatBubble() {
             <X size={22} style={{ color: "#000" }} />
           </div>
         ) : (
-          <div className="relative flex -space-x-3">
-            {TEAM.map((t) => (
-              <div key={t.name} className="w-11 h-11 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: "#D4AF37" }}>
-                <Image src={t.photo} alt={t.name} width={44} height={44} className="w-full h-full object-cover" />
-              </div>
-            ))}
-            {unread > 0 && (
-              <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white z-10" style={{ background: "#ef4444" }}>
-                {unread}
-              </span>
-            )}
+            <div className="flex flex-col items-end gap-1">
+            <div className="relative flex -space-x-2">
+              {TEAM.map((t) => (
+                <div key={t.name} className="w-9 h-9 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: "#D4AF37" }}>
+                  <Image src={t.photo} alt={t.name} width={36} height={36} className="w-full h-full object-cover" />
+                </div>
+              ))}
+              {unread > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white z-10" style={{ background: "#ef4444" }}>
+                  {unread}
+                </span>
+              )}
+            </div>
+            <span className="text-[9px] font-bold tracking-wider px-2 py-0.5" style={{ background: "linear-gradient(135deg, #8B6914, #C9A227)", color: "#000", fontFamily: "var(--font-cinzel), serif" }}>
+              💬 Chat with us
+            </span>
           </div>
         )}
       </button>

@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { MessageCircle, X, Send, ChevronDown } from "lucide-react";
 
-type Message = { role: "user" | "concierge"; text: string; time: string };
+type Message = { role: "user" | "concierge"; text: string; time: string; sender?: string };
 
 function now() {
   return new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
@@ -12,12 +12,18 @@ function now() {
 
 const SCRIPT_URL = process.env.NEXT_PUBLIC_WAITLIST_SCRIPT_URL || "";
 
+const TEAM = [
+  { name: "Jorge", photo: "/jorge-soto.jpg", title: "Co-Founder" },
+  { name: "Roberto", photo: "/roberto-segovia.jpg", title: "Co-Founder" },
+];
+
 export default function ChatBubble() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "concierge",
-      text: "Hi! I'm Jorge from Soto & Segovia. How can I help you today? Whether you're looking for the perfect gift or have a question about an order, I'm here.",
+      sender: "Jorge",
+      text: "Hola! 👋 I'm Jorge, co-founder of Soto & Segovia. We hand-source every product from small artisan producers in Altea, Spain. Whether you need the perfect corporate gift or have a question about an order — I'm personally here to help.",
       time: now(),
     },
   ]);
@@ -40,9 +46,15 @@ export default function ChatBubble() {
   async function startChat(e: React.FormEvent) {
     e.preventDefault();
     setStep("chat");
+    const firstName = name.split(" ")[0];
     setMessages((prev) => [
       ...prev,
-      { role: "concierge", text: `Great to meet you, ${name.split(" ")[0]}! What can I help you with today? Feel free to ask about our products, gift boxes, or anything else.`, time: now() },
+      {
+        role: "concierge",
+        sender: "Jorge",
+        text: `So nice to meet you, ${firstName}! 🙏 Roberto and I are both here. What can we help you with — a corporate gift, a product question, or something else?`,
+        time: now(),
+      },
     ]);
   }
 
@@ -55,7 +67,6 @@ export default function ChatBubble() {
     setSending(true);
 
     try {
-      // Send to Google Apps Script (same as waitlist)
       if (SCRIPT_URL) {
         const params = new URLSearchParams({
           firstName: name.split(" ")[0],
@@ -68,13 +79,15 @@ export default function ChatBubble() {
         await fetch(`${SCRIPT_URL}?${params}`, { method: "GET", mode: "no-cors" });
       }
 
-      // Simulate concierge response after short delay
       setTimeout(() => {
+        // Alternate between Jorge and Roberto for a personal feel
+        const responder = messages.filter(m => m.role === "concierge").length % 2 === 0 ? "Roberto" : "Jorge";
         setMessages((prev) => [
           ...prev,
           {
             role: "concierge",
-            text: "Thank you for your message! I'll get back to you shortly. In the meantime, feel free to browse our gift boxes — they make incredible impressions on executives and VIP clients.",
+            sender: responder,
+            text: `Thanks for reaching out! We'll personally get back to you very soon. In the meantime, feel free to browse our curated gift boxes — designed specifically for executives and corporate gifting. 🎁`,
             time: now(),
           },
         ]);
@@ -90,15 +103,28 @@ export default function ChatBubble() {
       {/* Bubble button */}
       <button
         onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-6 right-6 z-[500] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-105 active:scale-95"
-        style={{ background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)" }}
+        className="fixed bottom-6 right-6 z-[500] shadow-2xl transition-transform hover:scale-105 active:scale-95"
+        style={{ background: "none", border: "none", padding: 0 }}
         aria-label="Open concierge chat"
       >
-        {open ? <X size={22} style={{ color: "#000" }} /> : <MessageCircle size={22} style={{ color: "#000" }} />}
-        {!open && unread > 0 && (
-          <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: "#ef4444" }}>
-            {unread}
-          </span>
+        {open ? (
+          <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)" }}>
+            <X size={22} style={{ color: "#000" }} />
+          </div>
+        ) : (
+          <div className="relative flex -space-x-3">
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: "#D4AF37" }}>
+              <Image src="/jorge-soto.jpg" alt="Jorge" width={48} height={48} className="w-full h-full object-cover" />
+            </div>
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: "#D4AF37" }}>
+              <Image src="/roberto-segovia.jpg" alt="Roberto" width={48} height={48} className="w-full h-full object-cover" />
+            </div>
+            {unread > 0 && (
+              <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white z-10" style={{ background: "#ef4444" }}>
+                {unread}
+              </span>
+            )}
+          </div>
         )}
       </button>
 
@@ -112,18 +138,17 @@ export default function ChatBubble() {
           <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "#1E1E14" }}>
             <div className="flex items-center gap-3">
               <div className="flex -space-x-2">
-                <div className="w-9 h-9 rounded-full overflow-hidden border-2" style={{ borderColor: "#D4AF37" }}>
-                  <Image src="/jorge-soto.jpg" alt="Jorge" width={36} height={36} className="w-full h-full object-cover" />
-                </div>
-                <div className="w-9 h-9 rounded-full overflow-hidden border-2" style={{ borderColor: "#D4AF37" }}>
-                  <Image src="/roberto-segovia.jpg" alt="Roberto" width={36} height={36} className="w-full h-full object-cover" />
-                </div>
+                {TEAM.map((t) => (
+                  <div key={t.name} className="w-9 h-9 rounded-full overflow-hidden border-2" style={{ borderColor: "#D4AF37" }}>
+                    <Image src={t.photo} alt={t.name} width={36} height={36} className="w-full h-full object-cover" />
+                  </div>
+                ))}
               </div>
               <div>
-                <p className="text-[11px] font-bold" style={{ color: "#F5F0E8", fontFamily: "var(--font-cinzel), serif" }}>Jorge & Roberto · Soto & Segovia</p>
+                <p className="text-[11px] font-bold" style={{ color: "#F5F0E8", fontFamily: "var(--font-cinzel), serif" }}>Jorge & Roberto</p>
                 <div className="flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#22c55e" }} />
-                  <p className="text-[9px]" style={{ color: "#22c55e" }}>Online · Usually replies quickly</p>
+                  <p className="text-[9px]" style={{ color: "#22c55e" }}>Both online · reply within minutes</p>
                 </div>
               </div>
             </div>
@@ -133,9 +158,22 @@ export default function ChatBubble() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-3">
+          <div className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-4">
             {messages.map((msg, i) => (
               <div key={i} className={`flex flex-col ${msg.role === "user" ? "items-end" : "items-start"}`}>
+                {msg.role === "concierge" && msg.sender && (
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-5 h-5 rounded-full overflow-hidden" style={{ border: "1px solid #D4AF37" }}>
+                      <Image
+                        src={TEAM.find(t => t.name === msg.sender)?.photo || "/jorge-soto.jpg"}
+                        alt={msg.sender}
+                        width={20} height={20}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <p className="text-[9px] font-bold tracking-wide" style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}>{msg.sender}</p>
+                  </div>
+                )}
                 <div
                   className="max-w-[85%] px-3 py-2 text-[12px] leading-relaxed"
                   style={{
@@ -149,9 +187,12 @@ export default function ChatBubble() {
               </div>
             ))}
             {sending && (
-              <div className="flex items-start gap-2">
+              <div className="flex items-center gap-2">
+                <div className="w-5 h-5 rounded-full overflow-hidden" style={{ border: "1px solid #D4AF37" }}>
+                  <Image src="/roberto-segovia.jpg" alt="Roberto" width={20} height={20} className="w-full h-full object-cover" />
+                </div>
                 <div className="px-3 py-2 text-[12px]" style={{ background: "#1A1A12", color: "#555" }}>
-                  <span className="animate-pulse">Typing…</span>
+                  <span className="animate-pulse">Roberto is typing…</span>
                 </div>
               </div>
             )}
@@ -161,13 +202,13 @@ export default function ChatBubble() {
           {/* Intro form or chat input */}
           {step === "intro" ? (
             <form onSubmit={startChat} className="border-t p-4 flex flex-col gap-3" style={{ borderColor: "#1E1E14" }}>
-              <p className="text-[10px]" style={{ color: "#666" }}>Introduce yourself to start chatting:</p>
+              <p className="text-[11px] leading-relaxed" style={{ color: "#666" }}>Tell us your name so we can greet you personally:</p>
               <input
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
-                className="px-3 py-2 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
+                className="px-3 py-2.5 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
                 style={{ borderColor: "#2A2A1A", color: "#ccc" }}
               />
               <input
@@ -176,7 +217,7 @@ export default function ChatBubble() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
-                className="px-3 py-2 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
+                className="px-3 py-2.5 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
                 style={{ borderColor: "#2A2A1A", color: "#ccc" }}
               />
               <button
@@ -184,7 +225,7 @@ export default function ChatBubble() {
                 className="py-2.5 text-[10px] tracking-wider font-bold flex items-center justify-center gap-2"
                 style={{ background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)", color: "#000", fontFamily: "var(--font-cinzel), serif" }}
               >
-                Start Chat
+                Chat with Jorge & Roberto
               </button>
             </form>
           ) : (
@@ -192,7 +233,7 @@ export default function ChatBubble() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type a message…"
+                placeholder="Message Jorge & Roberto…"
                 className="flex-1 px-3 py-2 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
                 style={{ borderColor: "#2A2A1A", color: "#ccc" }}
               />

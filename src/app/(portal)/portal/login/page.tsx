@@ -138,13 +138,16 @@ function LoginForm() {
           )}
         </div>
 
-        <div className="mt-6 text-center flex items-center justify-center gap-6">
+        <div className="mt-6 flex flex-col items-center gap-4">
+          <Link
+            href="/"
+            className="flex items-center gap-2 px-5 py-2.5 border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37]"
+            style={{ borderColor: "#2A2A1A", color: "#888", fontFamily: "var(--font-cinzel), serif", fontSize: "10px", letterSpacing: "0.15em" }}
+          >
+            ← Back to Soto & Segovia
+          </Link>
           <Link href="/contact?type=wholesale" className="text-[9px] tracking-[0.15em] uppercase transition-colors hover:text-[#D4AF37]" style={{ color: "#444", fontFamily: "var(--font-cinzel), serif" }}>
             Become a Partner
-          </Link>
-          <span style={{ color: "#2A2A1A" }}>|</span>
-          <Link href="/" className="text-[9px] tracking-[0.15em] uppercase transition-colors hover:text-[#D4AF37]" style={{ color: "#444", fontFamily: "var(--font-cinzel), serif" }}>
-            Public Website
           </Link>
         </div>
       </div>

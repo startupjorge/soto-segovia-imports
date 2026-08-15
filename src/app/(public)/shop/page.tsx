@@ -581,7 +581,7 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
 
       {/* Payment notice */}
       <div className="p-4 mb-6 text-[12px] leading-relaxed border border-[#C9A227]/30" style={{ background: "#fffdf5", color: "#666" }}>
-        <strong style={{ color: "#1A1A1A" }}>Secure checkout via Stripe.</strong> You&rsquo;ll be redirected to Stripe to complete payment. Orders ship within 3–5 business days. <strong style={{ color: "#1A1A1A" }}>100% refundable</strong> before shipment — no questions asked.
+        Secure checkout via Stripe. You&rsquo;ll be redirected to Stripe to complete payment. You will be notified when Pre-Orders ship. <strong style={{ color: "#1A1A1A" }}>100% refundable</strong> before shipment — no questions asked.
       </div>
 
       <div className="flex gap-4">

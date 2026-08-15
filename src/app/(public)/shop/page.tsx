@@ -471,6 +471,24 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
   const { items, recipient, giftNote, noteType, total, clearCart } = useCart();
   const [submitting, setSubmitting] = useState(false);
 
+  async function submitPreOrder() {
+    const SCRIPT_URL = process.env.NEXT_PUBLIC_WAITLIST_SCRIPT_URL || "";
+    if (SCRIPT_URL) {
+      const orderSummary = items.map((i) => `${i.product.name} x${i.quantity} ($${(i.product.price * i.quantity).toFixed(2)})`).join(", ");
+      const params = new URLSearchParams({
+        firstName: recipient.name.split(" ")[0],
+        lastName: recipient.name.split(" ").slice(1).join(" "),
+        email: recipient.email,
+        message: `PRE-ORDER REQUEST\n\nRecipient: ${recipient.name} <${recipient.email}>\nAddress: ${recipient.address}, ${recipient.city}, ${recipient.state} ${recipient.zip} ${recipient.country}\n\nItems: ${orderSummary}\nTotal: $${total.toFixed(2)}\n\nGift Note (${noteType}): ${giftNote || "None"}`,
+        lang: "EN",
+        source: "pre_order",
+      });
+      await fetch(`${SCRIPT_URL}?${params}`, { method: "GET", mode: "no-cors" });
+    }
+    clearCart();
+    onSuccess();
+  }
+
   async function handleSubmit() {
     setSubmitting(true);
     try {
@@ -488,12 +506,11 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
       if (data.url) {
         window.location.href = data.url;
       } else {
-        alert("Checkout error: " + (data.error || "Unknown error"));
-        setSubmitting(false);
+        // Stripe not configured yet — fall back to pre-order submission
+        await submitPreOrder();
       }
     } catch {
-      alert("Network error. Please try again.");
-      setSubmitting(false);
+      await submitPreOrder();
     }
   }
 
@@ -613,10 +630,10 @@ function StepSuccess() {
         Pre-Order Confirmed
       </p>
       <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
-        We Have Logged Your Pre-Order
+        Thanks for Your Order
       </h2>
       <p className="text-[15px] leading-relaxed mb-6" style={{ color: "#666" }}>
-        Thank you! Our team will review your pre-order and send a secure payment link to your email within a few hours. No payment was collected today.
+        Our team will respond as soon as possible to process your pre-order.
       </p>
       <div className="p-5 border border-[#C9A227]/30 mb-8 text-left" style={{ background: "#fffdf5" }}>
         <p className="text-[11px] font-bold tracking-wider uppercase mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#C9A227" }}>What happens next</p>

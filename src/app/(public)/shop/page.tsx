@@ -640,7 +640,7 @@ function StepSuccess() {
         <ol className="flex flex-col gap-2">
           {[
             "We confirm product availability and prepare your order.",
-            "You receive a secure payment link by email within a few hours.",
+            "You receive secure payment options soon from our team.",
             "Once payment is made, we will add you to the pre-order VIP list and notify you when shipments are ready.",
             "Your gift arrives with a personal note from you.",
           ].map((step, i) => (

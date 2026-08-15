@@ -4,14 +4,14 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingBag, User, FileText, CreditCard, Check, Plus, Minus, Trash2, ChevronRight, X } from "lucide-react";
-import { allProducts, categories, Product } from "@/lib/products";
+import { allProducts, giftBoxes, categories, Product } from "@/lib/products";
 import { useCart, Recipient, NoteType } from "@/components/CartContext";
 
 const STEPS = [
   { number: 1, label: "Select Products", icon: ShoppingBag },
   { number: 2, label: "Recipient Info", icon: User },
   { number: 3, label: "Gift Note", icon: FileText },
-  { number: 4, label: "Review & Pre-Order", icon: CreditCard },
+  { number: 4, label: "Review & Pay", icon: CreditCard },
 ];
 
 // ── Step 1: Product Selection ─────────────────────────────────────────────────
@@ -21,6 +21,8 @@ function StepProducts({ onNext }: { onNext: () => void }) {
 
   const filtered = activeCategory === "all"
     ? allProducts
+    : activeCategory === "gift-boxes"
+    ? giftBoxes
     : allProducts.filter((p) => p.category === activeCategory);
 
   const getQty = (slug: string) => items.find((i) => i.product.slug === slug)?.quantity ?? 0;
@@ -29,6 +31,26 @@ function StepProducts({ onNext }: { onNext: () => void }) {
     <div className="flex flex-col lg:flex-row gap-8">
       {/* Product grid */}
       <div className="flex-1 min-w-0">
+        {/* Gift Box spotlight */}
+        <div className="mb-8 p-5 border border-[#C9A227]/40 cursor-pointer hover:border-[#C9A227] transition-all" style={{ background: "linear-gradient(135deg, #fffdf5, #fff8e1)" }} onClick={() => setActiveCategory("gift-boxes")}>
+          <div className="flex items-center justify-between flex-wrap gap-3">
+            <div>
+              <p className="text-[9px] tracking-[0.3em] uppercase font-bold mb-1" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Featured · Most Popular</p>
+              <h3 className="text-lg font-bold mb-1" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Spanish Gourmet Gift Boxes</h3>
+              <p className="text-[12px]" style={{ color: "#666" }}>Curated collections from $79 — perfect for VIP clients, executives & corporate gifting.</p>
+            </div>
+            <div className="flex gap-3 flex-wrap">
+              {giftBoxes.map((box) => (
+                <div key={box.slug} onClick={(e) => { e.stopPropagation(); addItem(box); }} className="flex flex-col items-center gap-1 px-4 py-3 border border-[#C9A227]/30 hover:border-[#C9A227] transition-all cursor-pointer" style={{ background: "#fff", minWidth: "80px" }}>
+                  <p className="text-[10px] font-bold text-center leading-tight" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{box.name.replace(" Gift Box", "")}</p>
+                  <p className="text-[13px] font-bold" style={{ color: "#C9A227" }}>${box.price}</p>
+                  {getQty(box.slug) > 0 && <span className="text-[9px] font-bold px-2 py-0.5 text-white" style={{ background: "#C9A227" }}>×{getQty(box.slug)}</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Category filter */}
         <div className="flex flex-wrap gap-2 mb-8">
           {categories.map((cat) => (
@@ -451,10 +473,28 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
 
   async function handleSubmit() {
     setSubmitting(true);
-    // Simulate order submission — replace with real payment integration
-    await new Promise((r) => setTimeout(r, 1800));
-    clearCart();
-    onSuccess();
+    try {
+      const res = await fetch("/api/stripe/checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: items.map((i) => ({ name: i.product.name, price: i.product.price, quantity: i.quantity })),
+          recipientName: recipient.name,
+          recipientEmail: recipient.email,
+          giftNote,
+        }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert("Checkout error: " + (data.error || "Unknown error"));
+        setSubmitting(false);
+      }
+    } catch {
+      alert("Network error. Please try again.");
+      setSubmitting(false);
+    }
   }
 
   const shipping = total >= 150 ? 0 : 12.99;
@@ -539,9 +579,9 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
         </div>
       </div>
 
-      {/* Pre-order notice */}
+      {/* Payment notice */}
       <div className="p-4 mb-6 text-[12px] leading-relaxed border border-[#C9A227]/30" style={{ background: "#fffdf5", color: "#666" }}>
-        <strong style={{ color: "#1A1A1A" }}>This is a pre-order.</strong> No payment is collected today. Once we confirm your order, we will send a secure payment link to your email. Orders ship within 3–5 business days of payment. <strong style={{ color: "#1A1A1A" }}>100% refundable</strong> before shipment — no questions asked.
+        <strong style={{ color: "#1A1A1A" }}>Secure checkout via Stripe.</strong> You&rsquo;ll be redirected to Stripe to complete payment. Orders ship within 3–5 business days. <strong style={{ color: "#1A1A1A" }}>100% refundable</strong> before shipment — no questions asked.
       </div>
 
       <div className="flex gap-4">
@@ -554,7 +594,7 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
           className="flex-1 py-3 font-bold text-[13px] tracking-wider text-white flex items-center justify-center gap-2 transition-opacity"
           style={{ background: "#C9A227", fontFamily: "var(--font-cinzel), serif", opacity: submitting ? 0.7 : 1 }}
         >
-          {submitting ? "Submitting…" : "Place Pre-Order"}
+          {submitting ? "Redirecting to Checkout…" : "Pay Now · Secure Checkout"}
           {!submitting && <ChevronRight size={14} />}
         </button>
       </div>

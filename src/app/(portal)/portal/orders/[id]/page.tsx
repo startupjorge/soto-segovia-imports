@@ -265,19 +265,21 @@ export default function OrderDetailPage() {
               </div>
             )}
           </div>
-          {/* Send Payment Link */}
-          <button
-            onClick={sendPaymentLink}
-            disabled={sendingLink}
-            className="flex items-center gap-2 px-4 py-2 text-[9px] tracking-wider font-bold disabled:opacity-50 transition-opacity hover:opacity-90"
-            style={{
-              background: linkSent ? "#22c55e" : "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)",
-              color: "#000",
-              fontFamily: "var(--font-cinzel), serif",
-            }}
-          >
-            {linkSent ? <><CheckCircle size={11} /> Sent!</> : sendingLink ? "Sending…" : <><Send size={11} /> Send Payment Link</>}
-          </button>
+          {/* Send Payment Link — only for unpaid statuses */}
+          {["pre-order", "confirmed", "payment-sent"].includes(order.status) && (
+            <button
+              onClick={sendPaymentLink}
+              disabled={sendingLink}
+              className="flex items-center gap-2 px-4 py-2 text-[9px] tracking-wider font-bold disabled:opacity-50 transition-opacity hover:opacity-90"
+              style={{
+                background: linkSent ? "#22c55e" : "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)",
+                color: "#000",
+                fontFamily: "var(--font-cinzel), serif",
+              }}
+            >
+              {linkSent ? <><CheckCircle size={11} /> Sent!</> : sendingLink ? "Sending…" : <><Send size={11} /> Send Payment Link</>}
+            </button>
+          )}
         </div>
       </div>
 

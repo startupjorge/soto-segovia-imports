@@ -391,18 +391,20 @@ export default function OrdersPage() {
                       >
                         <Eye size={12} />
                       </Link>
-                      <button
-                        onClick={() => handleSendPaymentLink(order)}
-                        disabled={sendingLink === order.id}
-                        className="p-1.5 border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37] disabled:opacity-40"
-                        style={{
-                          borderColor: sent === order.id ? "#22c55e" : order.stripePaymentLink ? "#D4AF3730" : "#2A2A1A",
-                          color: sent === order.id ? "#22c55e" : order.stripePaymentLink ? "#D4AF37" : "#555",
-                        }}
-                        title={order.stripePaymentLink ? "Resend Payment Link" : "Send Payment Link"}
-                      >
-                        {sent === order.id ? <CheckCircle size={12} /> : sendingLink === order.id ? <span className="text-[8px]">…</span> : <Send size={12} />}
-                      </button>
+                      {["pre-order", "confirmed", "payment-sent"].includes(order.status) && (
+                        <button
+                          onClick={() => handleSendPaymentLink(order)}
+                          disabled={sendingLink === order.id}
+                          className="p-1.5 border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37] disabled:opacity-40"
+                          style={{
+                            borderColor: sent === order.id ? "#22c55e" : order.stripePaymentLink ? "#D4AF3730" : "#2A2A1A",
+                            color: sent === order.id ? "#22c55e" : order.stripePaymentLink ? "#D4AF37" : "#555",
+                          }}
+                          title={order.stripePaymentLink ? "Resend Payment Link" : "Send Payment Link"}
+                        >
+                          {sent === order.id ? <CheckCircle size={12} /> : sendingLink === order.id ? <span className="text-[8px]">…</span> : <Send size={12} />}
+                        </button>
+                      )}
                       <button
                         onClick={() => setDeleteTarget(order)}
                         className="p-1.5 border transition-all hover:border-red-500 hover:text-red-500"

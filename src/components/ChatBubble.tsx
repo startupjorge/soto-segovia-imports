@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { MessageCircle, X, Send, ChevronDown } from "lucide-react";
 
 type Message = { role: "user" | "concierge"; text: string; time: string };
@@ -110,11 +111,16 @@ export default function ChatBubble() {
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b" style={{ borderColor: "#1E1E14" }}>
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm" style={{ background: "#1E1C10", border: "1px solid #D4AF37" }}>
-                👤
+              <div className="flex -space-x-2">
+                <div className="w-9 h-9 rounded-full overflow-hidden border-2" style={{ borderColor: "#D4AF37" }}>
+                  <Image src="/jorge-soto.jpg" alt="Jorge" width={36} height={36} className="w-full h-full object-cover" />
+                </div>
+                <div className="w-9 h-9 rounded-full overflow-hidden border-2" style={{ borderColor: "#D4AF37" }}>
+                  <Image src="/roberto-segovia.jpg" alt="Roberto" width={36} height={36} className="w-full h-full object-cover" />
+                </div>
               </div>
               <div>
-                <p className="text-[11px] font-bold" style={{ color: "#F5F0E8", fontFamily: "var(--font-cinzel), serif" }}>Jorge · Soto & Segovia</p>
+                <p className="text-[11px] font-bold" style={{ color: "#F5F0E8", fontFamily: "var(--font-cinzel), serif" }}>Jorge & Roberto · Soto & Segovia</p>
                 <div className="flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#22c55e" }} />
                   <p className="text-[9px]" style={{ color: "#22c55e" }}>Online · Usually replies quickly</p>

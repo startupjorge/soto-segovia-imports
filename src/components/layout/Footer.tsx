@@ -12,6 +12,7 @@ const footerData = {
         { label: "Corporate Gifting", href: "/corporate-gifting" },
         { label: "Personal Gifting", href: "/personal-gifting" },
         { label: "Self Service Gifting", href: "/self-service-gifting" },
+        { label: "Shop Now →", href: "/shop" },
         { label: "Luxury Hospitality Gifting", href: "/luxury-hospitality-gifting" },
         { label: "Gifts for CEOs", href: "/gifts-for-ceos" },
         { label: "Gifts for Executives", href: "/gifts-for-executives" },

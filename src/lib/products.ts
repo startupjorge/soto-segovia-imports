@@ -10,6 +10,7 @@ export type Product = {
   producer: string;
   origin: string;
   pairings: string[];
+  price: number; // USD
 };
 
 export const allProducts: Product[] = [
@@ -25,6 +26,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Grilled meats", "Crusty bread", "Pasta", "Roasted vegetables", "Bruschetta"],
+    price: 28,
   },
   {
     slug: "chili-olive-oil",
@@ -37,6 +39,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Pizza", "Grilled fish", "Eggs", "Soups", "Cheese boards"],
+    price: 28,
   },
   {
     slug: "lemon-olive-oil",
@@ -49,6 +52,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Salads", "Grilled fish", "Seafood", "Yogurt", "Asparagus"],
+    price: 28,
   },
   {
     slug: "rosemary-olive-oil",
@@ -61,6 +65,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Roasted lamb", "Focaccia", "Roasted potatoes", "Grilled poultry", "Mushrooms"],
+    price: 28,
   },
   {
     slug: "truffle-olive-oil",
@@ -73,6 +78,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Scrambled eggs", "Risotto", "Pasta", "Pizza", "Beef tartare"],
+    price: 38,
   },
 
   // ── Salts ────────────────────────────────────────────────────
@@ -88,6 +94,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Grilled meats", "Roasted vegetables", "Pasta", "Buttered bread", "Soups"],
+    price: 22,
   },
   {
     slug: "bbq-salt",
@@ -101,6 +108,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Steak", "Ribs", "Corn", "Grilled vegetables", "Burgers"],
+    price: 22,
   },
   {
     slug: "white-salt",
@@ -114,6 +122,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Everything", "Salads", "Fish", "Butter", "Chocolate"],
+    price: 22,
   },
   {
     slug: "onion-salt",
@@ -127,6 +136,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Grilled chicken", "Soups", "Potato dishes", "Onion rings", "Savory pastries"],
+    price: 22,
   },
   {
     slug: "curry-salt",
@@ -140,6 +150,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Grilled fish", "Cauliflower", "Rice dishes", "Yogurt dips", "Roasted chickpeas"],
+    price: 22,
   },
   {
     slug: "lemon-salt",
@@ -153,6 +164,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Grilled shrimp", "Oysters", "Salads", "Avocado", "Grilled fish"],
+    price: 22,
   },
   {
     slug: "mint-salt",
@@ -166,6 +178,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Lamb chops", "Fresh mango", "Strawberries", "Cocktails", "Dark chocolate"],
+    price: 22,
   },
   {
     slug: "orange-salt",
@@ -179,6 +192,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Duck breast", "Salmon", "Dark chocolate", "Fresh fruit", "Scallops"],
+    price: 22,
   },
   {
     slug: "black-salt",
@@ -192,6 +206,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["White fish", "Eggs", "Sushi", "Caprese salad", "Dark chocolate"],
+    price: 22,
   },
   {
     slug: "oregano-salt",
@@ -205,6 +220,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Grilled meats", "Tomato dishes", "Pizza", "Marinades", "Feta cheese"],
+    price: 22,
   },
   {
     slug: "paprika-salt",
@@ -218,6 +234,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Patatas Bravas", "Grilled meats", "Eggs", "Hummus", "Roasted peppers"],
+    price: 22,
   },
   {
     slug: "rose-salt",
@@ -231,6 +248,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Dark chocolate", "Fresh berries", "White fish", "Champagne dishes", "Butter"],
+    price: 22,
   },
   {
     slug: "rosemary-salt",
@@ -244,6 +262,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Roasted lamb", "Focaccia", "Roasted potatoes", "Slow-cooked meats", "Olive oil dips"],
+    price: 22,
   },
   {
     slug: "wild-salt",
@@ -257,6 +276,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Rare steak", "Fresh salads", "Artisan bread", "Butter", "Grilled fish"],
+    price: 22,
   },
   {
     slug: "liquid-wild-salt",
@@ -270,6 +290,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Marinades", "Vinaigrettes", "Cocktails", "Desserts", "Ceviche"],
+    price: 22,
   },
   {
     slug: "tomato-salt",
@@ -283,6 +304,7 @@ export const allProducts: Product[] = [
     producer: "Princesa Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Fresh mozzarella", "Eggs", "Pan con tomate", "Grilled fish", "Avocado toast"],
+    price: 22,
   },
 
   // ── Vinegars ─────────────────────────────────────────────────
@@ -298,6 +320,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Duck", "Lamb", "Cheese boards", "Salad dressings", "Cocktails"],
+    price: 26,
   },
   {
     slug: "fig-vinegar",
@@ -311,6 +334,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Cheese boards", "Iberian charcuterie", "Salads", "Foie gras", "Walnuts"],
+    price: 26,
   },
   {
     slug: "lemon-vinegar",
@@ -324,6 +348,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Grilled seafood", "Green salads", "Ceviche", "Fish marinades", "Asparagus"],
+    price: 24,
   },
   {
     slug: "orange-vinegar",
@@ -337,6 +362,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain · Reserva 11 años · 200ml",
     pairings: ["Duck", "Venison", "Cheese", "Reduction sauces", "Strawberries"],
+    price: 34,
   },
   {
     slug: "vanilla-vinegar",
@@ -350,6 +376,7 @@ export const allProducts: Product[] = [
     producer: "Príncipe Azahar · Bodegas Sendra González",
     origin: "Altea, Spain",
     pairings: ["Fresh strawberries", "Ice cream", "Panna cotta", "Aged cheese", "Dark chocolate"],
+    price: 28,
   },
 
   // ── Orange Wine ───────────────────────────────────────────────
@@ -364,6 +391,7 @@ export const allProducts: Product[] = [
     producer: "BSG · Bodegas Sendra González",
     origin: "Altea, Spain · 500ml · 12.5% vol.",
     pairings: ["Seafood", "Charcuterie", "Aged cheeses", "Tapas", "Aperitif"],
+    price: 32,
   },
   {
     slug: "orange-wine-mini",
@@ -377,6 +405,7 @@ export const allProducts: Product[] = [
     producer: "BSG · Bodegas Sendra González",
     origin: "Altea, Spain · 100ml",
     pairings: ["Gift collections", "Tasting experiences", "Seafood", "Tapas", "Aperitif"],
+    price: 14,
   },
 
   // ── Spirits ───────────────────────────────────────────────────
@@ -391,6 +420,7 @@ export const allProducts: Product[] = [
     producer: "Bodegas Sendra González",
     origin: "Altea, Spain · 500ml · 18% vol.",
     pairings: ["After dinner", "On the rocks", "Dessert pairing", "Coffee", "Fine chocolate"],
+    price: 42,
   },
 ];
 

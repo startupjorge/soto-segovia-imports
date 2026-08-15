@@ -15,6 +15,7 @@ const footerData = {
         { label: "Luxury Hospitality Gifting", href: "/luxury-hospitality-gifting" },
         { label: "Gifts for CEOs", href: "/gifts-for-ceos" },
         { label: "Gifts for Executives", href: "/gifts-for-executives" },
+        { label: "Gifts for ABM Campaigns", href: "/abm-gifting" },
       ],
     },
     products: {
@@ -86,6 +87,7 @@ const footerData = {
         { label: "Regalos de Lujo para Hostelería", href: "/luxury-hospitality-gifting" },
         { label: "Regalos para CEOs", href: "/gifts-for-ceos" },
         { label: "Regalos para Ejecutivos", href: "/gifts-for-executives" },
+        { label: "Regalos para Campañas ABM", href: "/abm-gifting" },
       ],
     },
     products: {

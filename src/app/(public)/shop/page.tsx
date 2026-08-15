@@ -641,7 +641,7 @@ function StepSuccess() {
           {[
             "We confirm product availability and prepare your order.",
             "You receive a secure payment link by email within a few hours.",
-            "Once payment is made, we ship within 3–5 business days.",
+            "Once payment is made, we will add you to the pre-order VIP list and notify you when shipments are ready.",
             "Your gift arrives with a personal note from you.",
           ].map((step, i) => (
             <li key={i} className="flex items-start gap-3 text-[12px]" style={{ color: "#555" }}>

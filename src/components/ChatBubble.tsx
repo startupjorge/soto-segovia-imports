@@ -15,6 +15,7 @@ const SCRIPT_URL = process.env.NEXT_PUBLIC_WAITLIST_SCRIPT_URL || "";
 const TEAM = [
   { name: "Jorge", photo: "/jorge-soto.jpg", title: "Co-Founder" },
   { name: "Roberto", photo: "/roberto-segovia.jpg", title: "Co-Founder" },
+  { name: "Maite", photo: "/maite-aranaz.jpg", title: "Concierge" },
 ];
 
 export default function ChatBubble() {
@@ -23,7 +24,7 @@ export default function ChatBubble() {
     {
       role: "concierge",
       sender: "Jorge",
-      text: "Hola! 👋 I'm Jorge, co-founder of Soto & Segovia. We hand-source every product from small artisan producers in Altea, Spain. Whether you need the perfect corporate gift or have a question about an order — I'm personally here to help.",
+      text: "Hola! 👋 I'm Jorge, co-founder of Soto & Segovia. Along with Roberto and our concierge Maite, we hand-source every product from small artisan producers in Altea, Spain. Whether you need the perfect corporate gift or have a question about an order — we're personally here to help.",
       time: now(),
     },
   ]);
@@ -52,7 +53,7 @@ export default function ChatBubble() {
       {
         role: "concierge",
         sender: "Jorge",
-        text: `So nice to meet you, ${firstName}! 🙏 Roberto and I are both here. What can we help you with — a corporate gift, a product question, or something else?`,
+        text: `So nice to meet you, ${firstName}! 🙏 Roberto, Maite, and I are all here. What can we help you with — a corporate gift, a product question, or something else?`,
         time: now(),
       },
     ]);
@@ -81,7 +82,8 @@ export default function ChatBubble() {
 
       setTimeout(() => {
         // Alternate between Jorge and Roberto for a personal feel
-        const responder = messages.filter(m => m.role === "concierge").length % 2 === 0 ? "Roberto" : "Jorge";
+        const responders = ["Roberto", "Maite", "Jorge"];
+        const responder = responders[messages.filter(m => m.role === "concierge").length % 3];
         setMessages((prev) => [
           ...prev,
           {
@@ -113,12 +115,11 @@ export default function ChatBubble() {
           </div>
         ) : (
           <div className="relative flex -space-x-3">
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: "#D4AF37" }}>
-              <Image src="/jorge-soto.jpg" alt="Jorge" width={48} height={48} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: "#D4AF37" }}>
-              <Image src="/roberto-segovia.jpg" alt="Roberto" width={48} height={48} className="w-full h-full object-cover" />
-            </div>
+            {TEAM.map((t) => (
+              <div key={t.name} className="w-11 h-11 rounded-full overflow-hidden border-2 shadow-lg" style={{ borderColor: "#D4AF37" }}>
+                <Image src={t.photo} alt={t.name} width={44} height={44} className="w-full h-full object-cover" />
+              </div>
+            ))}
             {unread > 0 && (
               <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-white z-10" style={{ background: "#ef4444" }}>
                 {unread}
@@ -145,10 +146,10 @@ export default function ChatBubble() {
                 ))}
               </div>
               <div>
-                <p className="text-[11px] font-bold" style={{ color: "#F5F0E8", fontFamily: "var(--font-cinzel), serif" }}>Jorge & Roberto</p>
+                <p className="text-[11px] font-bold" style={{ color: "#F5F0E8", fontFamily: "var(--font-cinzel), serif" }}>Jorge, Roberto & Maite</p>
                 <div className="flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#22c55e" }} />
-                  <p className="text-[9px]" style={{ color: "#22c55e" }}>Both online · reply within minutes</p>
+                  <p className="text-[9px]" style={{ color: "#22c55e" }}>All online · reply within minutes</p>
                 </div>
               </div>
             </div>
@@ -189,10 +190,10 @@ export default function ChatBubble() {
             {sending && (
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full overflow-hidden" style={{ border: "1px solid #D4AF37" }}>
-                  <Image src="/roberto-segovia.jpg" alt="Roberto" width={20} height={20} className="w-full h-full object-cover" />
+                  <Image src="/maite-aranaz.jpg" alt="Maite" width={20} height={20} className="w-full h-full object-cover" />
                 </div>
                 <div className="px-3 py-2 text-[12px]" style={{ background: "#1A1A12", color: "#555" }}>
-                  <span className="animate-pulse">Roberto is typing…</span>
+                  <span className="animate-pulse">Maite is typing…</span>
                 </div>
               </div>
             )}
@@ -225,7 +226,7 @@ export default function ChatBubble() {
                 className="py-2.5 text-[10px] tracking-wider font-bold flex items-center justify-center gap-2"
                 style={{ background: "linear-gradient(135deg, #8B6914, #C9A227, #D4AF37)", color: "#000", fontFamily: "var(--font-cinzel), serif" }}
               >
-                Chat with Jorge & Roberto
+                Chat with Us
               </button>
             </form>
           ) : (
@@ -233,7 +234,7 @@ export default function ChatBubble() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Message Jorge & Roberto…"
+                placeholder="Message us…"
                 className="flex-1 px-3 py-2 text-[12px] border outline-none focus:border-[#D4AF37] bg-transparent transition-colors"
                 style={{ borderColor: "#2A2A1A", color: "#ccc" }}
               />

@@ -128,7 +128,7 @@ export default function ChatBubble() {
               )}
             </div>
             <span className="text-[9px] font-bold tracking-wider px-2 py-0.5" style={{ background: "linear-gradient(135deg, #8B6914, #C9A227)", color: "#000", fontFamily: "var(--font-cinzel), serif" }}>
-              💬 Chat with us
+              💬 Need Help?
             </span>
           </div>
         )}

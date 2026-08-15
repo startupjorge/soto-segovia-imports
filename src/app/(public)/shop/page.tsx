@@ -334,9 +334,12 @@ function StepGiftNote({ onNext, onBack }: { onNext: () => void; onBack: () => vo
   }
 
   const suggestions = [
-    `Wishing you a wonderful celebration, ${firstName}! These Spanish artisan foods from Altea are crafted with the same care and attention to detail that you bring to everything you do.`,
-    `A small taste of Spain's Mediterranean coast for you. Príncipe Azahar's artisan products are made in Altea by the same family for generations — I hope they bring as much joy to your table as they've brought to mine.`,
-    `Thank you for everything. These gourmet foods from Altea, Spain carry a story in every bottle — I hope you enjoy discovering them.`,
+    `${firstName}, thank you for being an incredible partner. Your trust means everything to us — looking forward to many more years of building something great together.`,
+    `${firstName}, it's been a pleasure working with you this year. Enjoy a taste of Spain's finest — a small token of our appreciation for everything you do.`,
+    `${firstName}, thank you for being such an amazing client. Wishing you continued success and growth — we're grateful to be part of your journey.`,
+    `${firstName}, thank you for your partnership and loyalty. These artisan gifts from Altea, Spain are a reflection of the quality and care we bring to every relationship.`,
+    `Congratulations, ${firstName}! Wishing you every success in this exciting next chapter. It's been an honor working alongside you.`,
+    `${firstName}, thank you for choosing us. We look forward to delivering exceptional results for you — enjoy this small taste of Spain as our way of saying thank you.`,
   ];
 
   return (

@@ -18,15 +18,19 @@ export type Recipient = {
   country: string;
 };
 
+export type NoteType = "typed" | "handwritten";
+
 export type CartState = {
   items: CartItem[];
   recipient: Recipient;
   giftNote: string;
+  noteType: NoteType;
   addItem: (product: Product) => void;
   removeItem: (slug: string) => void;
   updateQty: (slug: string, qty: number) => void;
   setRecipient: (r: Recipient) => void;
   setGiftNote: (note: string) => void;
+  setNoteType: (t: NoteType) => void;
   clearCart: () => void;
   total: number;
   itemCount: number;
@@ -42,6 +46,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [recipient, setRecipientState] = useState<Recipient>(emptyRecipient);
   const [giftNote, setGiftNoteState] = useState("");
+  const [noteType, setNoteTypeState] = useState<NoteType>("typed");
 
   const addItem = useCallback((product: Product) => {
     setItems((prev) => {
@@ -73,6 +78,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems([]);
     setRecipientState(emptyRecipient);
     setGiftNoteState("");
+    setNoteTypeState("typed");
   }, []);
 
   const total = items.reduce((sum, i) => sum + i.product.price * i.quantity, 0);
@@ -80,10 +86,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   return (
     <CartContext.Provider value={{
-      items, recipient, giftNote,
+      items, recipient, giftNote, noteType,
       addItem, removeItem, updateQty,
       setRecipient: setRecipientState,
       setGiftNote: setGiftNoteState,
+      setNoteType: setNoteTypeState,
       clearCart, total, itemCount,
     }}>
       {children}

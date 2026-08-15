@@ -5,13 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShoppingBag, User, FileText, CreditCard, Check, Plus, Minus, Trash2, ChevronRight, X } from "lucide-react";
 import { allProducts, categories, Product } from "@/lib/products";
-import { useCart, Recipient } from "@/components/CartContext";
+import { useCart, Recipient, NoteType } from "@/components/CartContext";
 
 const STEPS = [
   { number: 1, label: "Select Products", icon: ShoppingBag },
   { number: 2, label: "Recipient Info", icon: User },
   { number: 3, label: "Gift Note", icon: FileText },
-  { number: 4, label: "Review & Order", icon: CreditCard },
+  { number: 4, label: "Review & Pre-Order", icon: CreditCard },
 ];
 
 // ── Step 1: Product Selection ─────────────────────────────────────────────────
@@ -321,17 +321,20 @@ function StepRecipient({ onNext, onBack }: { onNext: () => void; onBack: () => v
 
 // ── Step 3: Gift Note ─────────────────────────────────────────────────────────
 function StepGiftNote({ onNext, onBack }: { onNext: () => void; onBack: () => void }) {
-  const { giftNote, setGiftNote, recipient } = useCart();
+  const { giftNote, setGiftNote, noteType, setNoteType, recipient } = useCart();
   const [note, setNote] = useState(giftNote);
+  const [localNoteType, setLocalNoteType] = useState<NoteType>(noteType);
   const maxChars = 300;
+  const firstName = recipient.name.split(" ")[0] || "friend";
 
   function handleNext() {
     setGiftNote(note);
+    setNoteType(localNoteType);
     onNext();
   }
 
   const suggestions = [
-    `Wishing you a wonderful celebration, ${recipient.name.split(" ")[0] || "friend"}! These Spanish artisan foods from Altea are crafted with the same care and attention to detail that you bring to everything you do.`,
+    `Wishing you a wonderful celebration, ${firstName}! These Spanish artisan foods from Altea are crafted with the same care and attention to detail that you bring to everything you do.`,
     `A small taste of Spain's Mediterranean coast for you. Príncipe Azahar's artisan products are made in Altea by the same family for generations — I hope they bring as much joy to your table as they've brought to mine.`,
     `Thank you for everything. These gourmet foods from Altea, Spain carry a story in every bottle — I hope you enjoy discovering them.`,
   ];
@@ -339,8 +342,48 @@ function StepGiftNote({ onNext, onBack }: { onNext: () => void; onBack: () => vo
   return (
     <div className="max-w-[600px] mx-auto">
       <p className="text-[14px] mb-8" style={{ color: "#666" }}>
-        Add a personal message to accompany your gift. It will be printed on a premium card and enclosed with the package.
+        Add a personal message to accompany your gift. Choose how you'd like it delivered.
       </p>
+
+      {/* Note type toggle */}
+      <div className="mb-7">
+        <p className="text-[11px] font-semibold tracking-wider uppercase mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
+          How would you like your note delivered?
+        </p>
+        <div className="grid grid-cols-2 gap-3">
+          {([
+            {
+              type: "typed" as NoteType,
+              label: "Typed Note",
+              desc: "Your message printed in elegant typography on a premium matte gift card.",
+              icon: "🖨️",
+            },
+            {
+              type: "handwritten" as NoteType,
+              label: "Handwritten Note",
+              desc: "Our team handwrites your message in calligraphy on a premium card. A personal touch that stands out.",
+              icon: "✍️",
+            },
+          ] as const).map((opt) => (
+            <button
+              key={opt.type}
+              onClick={() => setLocalNoteType(opt.type)}
+              className="text-left p-4 border-2 transition-all"
+              style={{
+                borderColor: localNoteType === opt.type ? "#C9A227" : "#e8e8e8",
+                background: localNoteType === opt.type ? "#fffdf5" : "#fff",
+              }}
+            >
+              <div className="text-2xl mb-2">{opt.icon}</div>
+              <p className="font-bold text-[12px] mb-1" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{opt.label}</p>
+              <p className="text-[11px] leading-relaxed" style={{ color: "#888" }}>{opt.desc}</p>
+              {localNoteType === opt.type && (
+                <p className="text-[10px] font-bold tracking-wider mt-2" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>✓ Selected</p>
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div className="mb-6">
         <label className="block text-[11px] font-semibold tracking-wider uppercase mb-2" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
@@ -352,10 +395,17 @@ function StepGiftNote({ onNext, onBack }: { onNext: () => void; onBack: () => vo
           rows={6}
           placeholder="Write a personal message for your recipient..."
           className="w-full px-4 py-3 text-[14px] border outline-none focus:border-[#C9A227] transition-colors resize-none bg-white leading-relaxed"
-          style={{ borderColor: "#ddd", fontFamily: "var(--font-cormorant), serif" }}
+          style={{
+            borderColor: "#ddd",
+            fontFamily: localNoteType === "handwritten" ? "cursive" : "var(--font-cormorant), serif",
+          }}
         />
         <div className="flex justify-between items-center mt-1.5">
-          <p className="text-[11px]" style={{ color: "#aaa" }}>Printed on a premium gift card and enclosed in the package.</p>
+          <p className="text-[11px]" style={{ color: "#aaa" }}>
+            {localNoteType === "handwritten"
+              ? "Handwritten in calligraphy on a premium card."
+              : "Printed on a premium gift card and enclosed in the package."}
+          </p>
           <p className="text-[11px]" style={{ color: note.length > maxChars * 0.9 ? "#C9A227" : "#aaa" }}>{note.length}/{maxChars}</p>
         </div>
       </div>
@@ -391,9 +441,9 @@ function StepGiftNote({ onNext, onBack }: { onNext: () => void; onBack: () => vo
   );
 }
 
-// ── Step 4: Review & Order ────────────────────────────────────────────────────
+// ── Step 4: Review & Pre-Order ───────────────────────────────────────────────
 function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () => void }) {
-  const { items, recipient, giftNote, total, clearCart } = useCart();
+  const { items, recipient, giftNote, noteType, total, clearCart } = useCart();
   const [submitting, setSubmitting] = useState(false);
 
   async function handleSubmit() {
@@ -464,24 +514,31 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
             </div>
           </div>
 
-          {giftNote && (
-            <div>
-              <h3 className="font-bold text-[13px] mb-3 pb-3 border-b border-gray-100" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
-                Gift Message
-              </h3>
+          <div>
+            <h3 className="font-bold text-[13px] mb-3 pb-3 border-b border-gray-100" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
+              Gift Note
+            </h3>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-1 border" style={{ borderColor: "#C9A227", color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+                {noteType === "handwritten" ? "✍️ Handwritten" : "🖨️ Typed"}
+              </span>
+            </div>
+            {giftNote ? (
               <div className="p-4 bg-[#F8F8F4] border-l-2" style={{ borderColor: "#C9A227" }}>
-                <p className="text-[13px] leading-relaxed italic" style={{ color: "#555", fontFamily: "var(--font-cormorant), serif" }}>
+                <p className="text-[13px] leading-relaxed italic" style={{ color: "#555", fontFamily: noteType === "handwritten" ? "cursive" : "var(--font-cormorant), serif" }}>
                   &ldquo;{giftNote}&rdquo;
                 </p>
               </div>
-            </div>
-          )}
+            ) : (
+              <p className="text-[12px]" style={{ color: "#aaa" }}>No message — gift will be sent without a note.</p>
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Notice */}
+      {/* Pre-order notice */}
       <div className="p-4 mb-6 text-[12px] leading-relaxed border border-[#C9A227]/30" style={{ background: "#fffdf5", color: "#666" }}>
-        <strong style={{ color: "#1A1A1A" }}>Note:</strong> By placing this order you&rsquo;re submitting a gift request to our team. We will confirm availability, send a payment link to your email, and ship within 3–5 business days. No payment is collected at this step.
+        <strong style={{ color: "#1A1A1A" }}>This is a pre-order.</strong> No payment is collected today. Once we confirm your order, we will send a secure payment link to your email. Orders ship within 3–5 business days of payment. <strong style={{ color: "#1A1A1A" }}>100% refundable</strong> before shipment — no questions asked.
       </div>
 
       <div className="flex gap-4">
@@ -494,7 +551,7 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
           className="flex-1 py-3 font-bold text-[13px] tracking-wider text-white flex items-center justify-center gap-2 transition-opacity"
           style={{ background: "#C9A227", fontFamily: "var(--font-cinzel), serif", opacity: submitting ? 0.7 : 1 }}
         >
-          {submitting ? "Submitting…" : "Place Gift Order"}
+          {submitting ? "Submitting…" : "Place Pre-Order"}
           {!submitting && <ChevronRight size={14} />}
         </button>
       </div>
@@ -510,14 +567,30 @@ function StepSuccess() {
         <Check size={28} className="text-white" />
       </div>
       <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-        Order Received
+        Pre-Order Confirmed
       </p>
       <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
-        Your Gift Is On Its Way
+        We Have Logged Your Pre-Order
       </h2>
-      <p className="text-[15px] leading-relaxed mb-8" style={{ color: "#666" }}>
-        We&rsquo;ve received your gift order and will send a confirmation to your email within the hour. Our team will reach out with a payment link and shipping confirmation. Estimated delivery: 3–5 business days.
+      <p className="text-[15px] leading-relaxed mb-6" style={{ color: "#666" }}>
+        Thank you! Our team will review your pre-order and send a secure payment link to your email within a few hours. No payment was collected today.
       </p>
+      <div className="p-5 border border-[#C9A227]/30 mb-8 text-left" style={{ background: "#fffdf5" }}>
+        <p className="text-[11px] font-bold tracking-wider uppercase mb-3" style={{ fontFamily: "var(--font-cinzel), serif", color: "#C9A227" }}>What happens next</p>
+        <ol className="flex flex-col gap-2">
+          {[
+            "We confirm product availability and prepare your order.",
+            "You receive a secure payment link by email within a few hours.",
+            "Once payment is made, we ship within 3–5 business days.",
+            "Your gift arrives with a personal note from you.",
+          ].map((step, i) => (
+            <li key={i} className="flex items-start gap-3 text-[12px]" style={{ color: "#555" }}>
+              <span className="flex-shrink-0 w-5 h-5 rounded-full text-[10px] font-bold flex items-center justify-center mt-0.5 text-white" style={{ background: "#C9A227" }}>{i + 1}</span>
+              {step}
+            </li>
+          ))}
+        </ol>
+      </div>
       <div className="flex gap-4 justify-center flex-wrap">
         <Link
           href="/"
@@ -556,7 +629,7 @@ export default function ShopPage() {
             Príncipe Azahar · Altea, Spain
           </p>
           <h1 className="text-2xl font-bold text-white" style={{ fontFamily: "var(--font-cinzel), serif" }}>
-            {done ? "Order Confirmed" : "Gift Ordering"}
+            {done ? "Pre-Order Confirmed" : "Gift Pre-Order"}
           </h1>
         </div>
       </div>

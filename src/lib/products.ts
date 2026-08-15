@@ -427,8 +427,8 @@ export const allProducts: Product[] = [
 export const giftBoxes: Product[] = [
   {
     slug: "olive-oils-gift-box",
-    name: "Olive Oils Gift Box",
-    nameEs: "Caja de Aceites de Oliva",
+    name: "Exclusive Olive Oils Gift Box",
+    nameEs: "Caja Exclusiva de Aceites de Oliva",
     category: "gift-boxes",
     image: "/products/aceite-ajo.jpg",
     description: "A curated selection of our finest artisan extra virgin olive oils from Altea, Spain. Perfect for the discerning palate.",
@@ -440,8 +440,8 @@ export const giftBoxes: Product[] = [
   },
   {
     slug: "salts-gift-box",
-    name: "Salts Gift Box",
-    nameEs: "Caja de Sales Gourmet",
+    name: "Exclusive Salts Gift Box",
+    nameEs: "Caja Exclusiva de Sales Gourmet",
     category: "gift-boxes",
     image: "/products/sal-rosa.jpg",
     description: "A stunning collection of artisan gourmet salts from Spain's finest salt flats. An extraordinary gift for any occasion.",
@@ -453,8 +453,8 @@ export const giftBoxes: Product[] = [
   },
   {
     slug: "vinegars-gift-box",
-    name: "Vinegars Gift Box",
-    nameEs: "Caja de Vinagres Gourmet",
+    name: "Exclusive Vinegars Gift Box",
+    nameEs: "Caja Exclusiva de Vinagres Gourmet",
     category: "gift-boxes",
     image: "/products/vinagre-vainilla.jpg",
     description: "A refined collection of aged artisan vinegars from Altea — vanilla, orange, pomegranate, and more. Rare and remarkable.",
@@ -466,8 +466,8 @@ export const giftBoxes: Product[] = [
   },
   {
     slug: "wines-gift-box",
-    name: "Wines Gift Box",
-    nameEs: "Caja de Vinos Premium",
+    name: "Exclusive Wines Gift Box",
+    nameEs: "Caja Exclusiva de Vinos Premium",
     category: "gift-boxes",
     image: "/products/vino-naranja.jpg",
     description: "Our signature orange wine collection from Altea — Spain's best-kept secret. An extraordinary conversation-starting gift.",

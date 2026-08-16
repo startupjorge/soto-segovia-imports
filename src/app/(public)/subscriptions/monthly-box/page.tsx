@@ -73,7 +73,7 @@ export default function MonthlyBoxPage() {
           <div className="flex flex-col md:flex-row gap-6 text-left mt-6">
             {[
               { n: "01", t: "Choose Your Box", d: "Select the product category you love most." },
-              { n: "02", t: "We Curate", d: "Jorge, Roberto & Maite select the finest products each month." },
+              { n: "02", t: "We Curate", d: "Jorge and Roberto select the finest products each month." },
               { n: "03", t: "Delivered to You", d: "Your box arrives at your door, every month." },
             ].map((s) => (
               <div key={s.n} className="flex-1">

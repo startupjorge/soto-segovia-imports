@@ -12,6 +12,14 @@ type Section = {
 
 const sections: Section[] = [
   {
+    title: "Eligibility",
+    paragraphs: [
+      "You must be at least 18 years of age to use this Website or purchase products from us. By using this Website, you represent and warrant that you are at least 18 years old and have the legal capacity to enter into a binding agreement.",
+      "If you are purchasing any wine or other alcoholic beverage through this Website, you must be at least 21 years of age and of legal drinking age in your jurisdiction. By placing an order that includes alcoholic beverages, you represent and warrant that you are at least 21 years old. We reserve the right to cancel any order for alcoholic beverages if we cannot verify the purchaser's age, and to require age verification upon delivery. It is illegal to purchase alcohol for or on behalf of a person under the age of 21.",
+      "If you are using this Website on behalf of a company or other legal entity, you represent that you have the authority to bind that entity to these Terms.",
+    ],
+  },
+  {
     title: "Registration and Services",
     paragraphs: [
       "To use some of the services or features made available to you on this Site, you will need to register. We may change registration requirements from time to time. When you register, you are required to provide information about yourself that is true, accurate, current and complete in all respects. Should any of your registration information change, please notify us immediately at support@sotosegoviaimports.com.",

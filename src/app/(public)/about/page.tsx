@@ -199,10 +199,10 @@ export default function AboutPage() {
               Where Every Product<br />Is Born
             </h2>
             <p className="text-[15px] leading-relaxed mb-4" style={{ color: "#aaa" }}>
-              On the Mediterranean coast of Spain, in the historic village of Altea, our partner Príncipe Azahar has spent generations perfecting artisan food production. Every olive oil, salt, vinegar, and wine we import is crafted by hand in this facility.
+              At Partida la Olla in Altea, Alicante, Bodegas Sendra González produces every olive oil, infused oil, vinegar, salt, and fruit wine under the Príncipe Azahar label. Each flavored oil macerates in its own dedicated vat, one ingredient at a time. No artificial drops, no concentrates, no shortcuts.
             </p>
             <p className="text-[15px] leading-relaxed mb-8" style={{ color: "#aaa" }}>
-              Bodegas Sendra González operates with zero artificial additives, single-ingredient maceration vats, and a quality standard rooted in tradition. They are the only producer in the world making fruit wines commercially, a distinction recognized by Televisión Española over a decade ago.
+              They are the only producer in the world making fruit wines commercially, a distinction recognized by Televisión Española, which produced a documentary feature on the winery and its owner. High-quality olive oil never turns cloudy, and Príncipe Azahar holds that standard on every single batch.
             </p>
             <Link
               href="/facility"

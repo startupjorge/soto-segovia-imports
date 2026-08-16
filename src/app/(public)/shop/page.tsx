@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShoppingBag, User, FileText, CreditCard, Check, Plus, Minus, Trash2, ChevronRight, X } from "lucide-react";
 import { allProducts, giftBoxes, categories, Product } from "@/lib/products";
-import { useCart, Recipient, NoteType } from "@/components/CartContext";
+import { useCart, Recipient, NoteType, OrderType, SUBSCRIBE_DISCOUNT } from "@/components/CartContext";
 
 const STEPS = [
   { number: 1, label: "Select Products", icon: ShoppingBag },
@@ -16,7 +16,7 @@ const STEPS = [
 
 // ── Step 1: Product Selection ─────────────────────────────────────────────────
 function StepProducts({ onNext }: { onNext: () => void }) {
-  const { items, addItem, removeItem, updateQty, total, itemCount } = useCart();
+  const { items, addItem, removeItem, updateQty, total, discountedTotal, itemCount, orderType, setOrderType } = useCart();
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filtered = activeCategory === "all"
@@ -31,6 +31,32 @@ function StepProducts({ onNext }: { onNext: () => void }) {
     <div className="flex flex-col lg:flex-row gap-8">
       {/* Product grid */}
       <div className="flex-1 min-w-0">
+        {/* Buy Once / Subscribe toggle */}
+        <div className="flex mb-6 border border-gray-200 overflow-hidden">
+          {(["once", "subscribe"] as OrderType[]).map((type) => (
+            <button
+              key={type}
+              onClick={() => setOrderType(type)}
+              className="flex-1 py-3 text-[11px] font-bold tracking-wider transition-all"
+              style={{
+                fontFamily: "var(--font-cinzel), serif",
+                background: orderType === type ? "#C9A227" : "#fff",
+                color: orderType === type ? "#fff" : "#888",
+              }}
+            >
+              {type === "once" ? "Buy Once" : `Subscribe & Save ${Math.round(SUBSCRIBE_DISCOUNT * 100)}%`}
+            </button>
+          ))}
+        </div>
+        {orderType === "subscribe" && (
+          <div className="flex items-start gap-3 p-4 mb-6 border border-[#C9A227]/30 text-[12px] leading-relaxed" style={{ background: "#fffdf5", color: "#666" }}>
+            <span className="text-lg">🔄</span>
+            <div>
+              <strong style={{ color: "#1A1A1A" }}>Monthly delivery, cancel anytime.</strong> Your curated box ships every month. Save {Math.round(SUBSCRIBE_DISCOUNT * 100)}% on every order. We&rsquo;ll send a reminder before each shipment.
+            </div>
+          </div>
+        )}
+
         {/* Gift Box spotlight */}
         <div className="mb-8 p-5 border border-[#C9A227]/40 cursor-pointer hover:border-[#C9A227] transition-all" style={{ background: "linear-gradient(135deg, #fffdf5, #fff8e1)" }} onClick={() => setActiveCategory("gift-boxes")}>
           <div className="flex items-center justify-between flex-wrap gap-3">

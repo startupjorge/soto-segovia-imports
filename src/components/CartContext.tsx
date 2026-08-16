@@ -19,20 +19,26 @@ export type Recipient = {
 };
 
 export type NoteType = "typed" | "handwritten";
+export type OrderType = "once" | "subscribe";
+
+export const SUBSCRIBE_DISCOUNT = 0.10;
 
 export type CartState = {
   items: CartItem[];
   recipient: Recipient;
   giftNote: string;
   noteType: NoteType;
+  orderType: OrderType;
   addItem: (product: Product) => void;
   removeItem: (slug: string) => void;
   updateQty: (slug: string, qty: number) => void;
   setRecipient: (r: Recipient) => void;
   setGiftNote: (note: string) => void;
   setNoteType: (t: NoteType) => void;
+  setOrderType: (t: OrderType) => void;
   clearCart: () => void;
   total: number;
+  discountedTotal: number;
   itemCount: number;
 };
 
@@ -47,6 +53,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [recipient, setRecipientState] = useState<Recipient>(emptyRecipient);
   const [giftNote, setGiftNoteState] = useState("");
   const [noteType, setNoteTypeState] = useState<NoteType>("typed");
+  const [orderType, setOrderTypeState] = useState<OrderType>("once");
 
   const addItem = useCallback((product: Product) => {
     setItems((prev) => {
@@ -79,19 +86,22 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setRecipientState(emptyRecipient);
     setGiftNoteState("");
     setNoteTypeState("typed");
+    setOrderTypeState("once");
   }, []);
 
   const total = items.reduce((sum, i) => sum + i.product.price * i.quantity, 0);
+  const discountedTotal = orderType === "subscribe" ? total * (1 - SUBSCRIBE_DISCOUNT) : total;
   const itemCount = items.reduce((sum, i) => sum + i.quantity, 0);
 
   return (
     <CartContext.Provider value={{
-      items, recipient, giftNote, noteType,
+      items, recipient, giftNote, noteType, orderType,
       addItem, removeItem, updateQty,
       setRecipient: setRecipientState,
       setGiftNote: setGiftNoteState,
       setNoteType: setNoteTypeState,
-      clearCart, total, itemCount,
+      setOrderType: setOrderTypeState,
+      clearCart, total, discountedTotal, itemCount,
     }}>
       {children}
     </CartContext.Provider>

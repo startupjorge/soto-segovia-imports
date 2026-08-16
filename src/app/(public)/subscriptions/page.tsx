@@ -90,11 +90,11 @@ export default function SubscriptionsPage() {
                     ))}
                   </ul>
                   <Link
-                    href="/contact?type=subscribe"
+                    href="/subscriptions/monthly-box"
                     className="block text-center py-3 text-[11px] font-bold tracking-wider transition-all hover:opacity-90"
                     style={{ background: "#C9A227", color: "#fff", fontFamily: "var(--font-cinzel), serif" }}
                   >
-                    Subscribe Now
+                    Learn More
                   </Link>
                 </div>
               </div>
@@ -157,11 +157,11 @@ export default function SubscriptionsPage() {
                 Each VIP membership is personally reviewed by Jorge & Roberto. We only accept clients we can truly serve at the highest level.
               </p>
               <Link
-                href="/contact?type=vip"
+                href="/subscriptions/vip-membership"
                 className="inline-block px-12 py-4 font-bold text-[12px] tracking-wider transition-all hover:opacity-90"
                 style={{ background: "linear-gradient(135deg, #8B6914, #C9A227, #FFE566, #C9A227, #8B6914)", color: "#000", fontFamily: "var(--font-cinzel), serif" }}
               >
-                Apply for VIP Membership
+                Request an Invitation
               </Link>
               <p className="text-[10px] mt-4" style={{ color: "#444" }}>
                 Response within 24 hours · Strictly confidential

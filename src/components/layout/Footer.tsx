@@ -12,7 +12,6 @@ const footerData = {
         { label: "Corporate Gifting", href: "/corporate-gifting" },
         { label: "Personal Gifting", href: "/personal-gifting" },
         { label: "Self Service Gifting", href: "/self-service-gifting" },
-        { label: "Shop Now →", href: "/shop" },
         { label: "Luxury Hospitality Gifting", href: "/luxury-hospitality-gifting" },
         { label: "Gifts for CEOs", href: "/gifts-for-ceos" },
         { label: "Gifts for Executives", href: "/gifts-for-executives" },
@@ -66,10 +65,10 @@ const footerData = {
     subscriptions: {
       heading: "Subscription Plans",
       links: [
-        { label: "Monthly Box", href: "/subscriptions" },
-        { label: "Subscribe & Save 10%", href: "/subscriptions" },
-        { label: "VIP Membership", href: "/subscriptions#vip" },
-        { label: "Gift Subscriptions", href: "/subscriptions" },
+        { label: "Monthly Box", href: "/subscriptions/monthly-box" },
+        { label: "Subscribe & Save 10%", href: "/subscriptions/subscribe-save" },
+        { label: "VIP Membership", href: "/subscriptions/vip-membership" },
+        { label: "Gift Subscriptions", href: "/subscriptions/gift-subscriptions" },
       ],
     },
     company: {
@@ -147,10 +146,10 @@ const footerData = {
     subscriptions: {
       heading: "Suscripciones",
       links: [
-        { label: "Caja Mensual", href: "/subscriptions" },
-        { label: "Suscríbete y Ahorra 10%", href: "/subscriptions" },
-        { label: "Membresía VIP", href: "/subscriptions#vip" },
-        { label: "Suscripciones de Regalo", href: "/subscriptions" },
+        { label: "Caja Mensual", href: "/subscriptions/monthly-box" },
+        { label: "Suscríbete y Ahorra 10%", href: "/subscriptions/subscribe-save" },
+        { label: "Membresía VIP", href: "/subscriptions/vip-membership" },
+        { label: "Suscripciones de Regalo", href: "/subscriptions/gift-subscriptions" },
       ],
     },
     company: {

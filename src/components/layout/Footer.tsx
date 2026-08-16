@@ -79,7 +79,7 @@ const footerData = {
         { label: "Our Altea Facility", href: "/facility" },
         { label: "Contact Us", href: "/contact" },
         { label: "Privacy Policy", href: "/privacy-policy" },
-        { label: "Terms of Service", href: "#" },
+        { label: "Terms of Service", href: "/terms-of-service" },
         { label: "Refund Policy", href: "/refund-policy" },
       ],
     },

@@ -80,8 +80,8 @@ export default function FacilityPage() {
       <section className="relative w-full overflow-hidden" style={{ minHeight: "70vh" }}>
         <div className="relative w-full h-[70vh]">
           <Image
-            src="/facility/_qas0017-QUF3SAc05Z6G4bot.avif"
-            alt="Príncipe Azahar facility in Altea, Spain"
+            src="/facility/_qas0196-1jPx1RvFDr15go2e.avif"
+            alt="Príncipe Azahar facility exterior in Altea, Spain"
             fill
             className="object-cover"
             priority

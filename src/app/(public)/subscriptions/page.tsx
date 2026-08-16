@@ -4,7 +4,7 @@ import { Check, Crown, Package } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Subscription Plans | Soto & Segovia Imports",
-  description: "Monthly curated Spanish gourmet gift boxes and exclusive VIP membership. Subscribe & Save 10% or join our ultra-premium VIP program starting at $20,000/year.",
+  description: "Monthly curated Spanish gourmet gift boxes and exclusive VIP membership. Subscribe & Save 10% or apply for our ultra-exclusive, by-invitation VIP program.",
 };
 
 const monthlyBoxes = [
@@ -122,7 +122,7 @@ export default function SubscriptionsPage() {
           </p>
         </div>
 
-        <div className="border-2 max-w-[800px] mx-auto" style={{ borderColor: "#C9A227", background: "#0D0D0A" }}>
+        <div id="vip" className="border-2 max-w-[800px] mx-auto" style={{ borderColor: "#C9A227", background: "#0D0D0A" }}>
           {/* VIP header */}
           <div className="px-8 py-8 border-b text-center" style={{ borderColor: "#2A2A1A" }}>
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -131,12 +131,11 @@ export default function SubscriptionsPage() {
                 VIP Annual Membership
               </p>
             </div>
-            <p className="text-[48px] font-bold text-white" style={{ fontFamily: "var(--font-cinzel), serif" }}>
-              $20,000
-              <span className="text-[18px] font-normal" style={{ color: "#888" }}> minimum / year</span>
+            <p className="text-[22px] font-bold tracking-widest uppercase" style={{ fontFamily: "var(--font-cinzel), serif", color: "#C9A227", letterSpacing: "0.2em" }}>
+              By Private Invitation
             </p>
-            <p className="text-[12px] mt-2" style={{ color: "#555" }}>
-              Limited memberships available. Application required.
+            <p className="text-[13px] mt-3" style={{ color: "#666" }}>
+              Pricing is bespoke and presented upon acceptance. No stated minimums — this is not for everyone.
             </p>
           </div>
 

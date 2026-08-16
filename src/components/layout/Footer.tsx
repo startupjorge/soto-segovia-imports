@@ -12,7 +12,6 @@ const footerData = {
         { label: "Corporate Gifting", href: "/corporate-gifting" },
         { label: "Personal Gifting", href: "/personal-gifting" },
         { label: "Self Service Gifting", href: "/self-service-gifting" },
-        { label: "Subscription Plans", href: "/subscriptions" },
         { label: "Shop Now →", href: "/shop" },
         { label: "Luxury Hospitality Gifting", href: "/luxury-hospitality-gifting" },
         { label: "Gifts for CEOs", href: "/gifts-for-ceos" },
@@ -64,6 +63,15 @@ const footerData = {
         { label: "Venture Capital", href: "/industries/venture-capital" },
       ],
     },
+    subscriptions: {
+      heading: "Subscription Plans",
+      links: [
+        { label: "Monthly Box", href: "/subscriptions" },
+        { label: "Subscribe & Save 10%", href: "/subscriptions" },
+        { label: "VIP Membership", href: "/subscriptions#vip" },
+        { label: "Gift Subscriptions", href: "/subscriptions" },
+      ],
+    },
     company: {
       heading: "Company",
       links: [
@@ -86,7 +94,6 @@ const footerData = {
         { label: "Regalos Corporativos", href: "/es/corporate-gifting" },
         { label: "Regalos Personales", href: "/es/personal-gifting" },
         { label: "Regalos Autoservicio", href: "/self-service-gifting" },
-        { label: "Planes de Suscripción", href: "/subscriptions" },
         { label: "Regalos de Lujo para Hostelería", href: "/luxury-hospitality-gifting" },
         { label: "Regalos para CEOs", href: "/gifts-for-ceos" },
         { label: "Regalos para Ejecutivos", href: "/gifts-for-executives" },
@@ -137,6 +144,15 @@ const footerData = {
         { label: "Capital Riesgo", href: "/industries/venture-capital" },
       ],
     },
+    subscriptions: {
+      heading: "Suscripciones",
+      links: [
+        { label: "Caja Mensual", href: "/subscriptions" },
+        { label: "Suscríbete y Ahorra 10%", href: "/subscriptions" },
+        { label: "Membresía VIP", href: "/subscriptions#vip" },
+        { label: "Suscripciones de Regalo", href: "/subscriptions" },
+      ],
+    },
     company: {
       heading: "Empresa",
       links: [
@@ -158,11 +174,11 @@ export default function Footer() {
   const { lang } = useLang();
   const d = footerData[lang];
 
-  const columns = [d.services, d.products, d.blog, d.recipes, d.industries, d.company];
+  const columns = [d.services, d.products, d.blog, d.recipes, d.industries, d.subscriptions, d.company];
 
   return (
     <footer style={{ background: "#141414", color: "#ccc" }}>
-      <div className="max-w-[1400px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-7 gap-8">
+      <div className="max-w-[1400px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-8 gap-8">
         {/* Logo column */}
         <div className="md:col-span-1" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}

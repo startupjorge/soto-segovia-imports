@@ -125,9 +125,19 @@ export default function FacilityPage() {
             <p>Bodegas Sendra González operates here under the Príncipe Azahar label, producing a range of extraordinary products: cold-pressed olive oils, single-ingredient infused oils, artisan vinegars, gourmet salts, and fruit wines. Their philosophy is simple: start with the best raw material available, and never compromise the process.</p>
             <p>Soto & Segovia Imports brings these products directly to North American markets: no intermediaries, no rebottling, no compromises. What leaves Altea is exactly what arrives at your door.</p>
           </div>
-          <p className="mt-6 text-[13px]" style={{ color: "#999" }}>
+          <a
+            href="https://www.google.com/maps/search/Bodegas+Sendra+Gonz%C3%A1lez+S.L+AULA+TALLER/@38.6224301,-0.0325412,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 text-[13px] hover:underline"
+            style={{ color: "#999" }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
             Partida la Olla, 75 · 03590 Altea, Alicante, Spain
-          </p>
+          </a>
         </div>
         <div className="relative overflow-hidden" style={{ aspectRatio: "4/5" }}>
           <Image

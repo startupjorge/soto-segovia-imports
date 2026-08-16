@@ -3,65 +3,73 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Our Altea Facility | Soto & Segovia Imports",
-  description: "Visit the Príncipe Azahar production facility in Altea, Spain, where every olive oil, artisan salt, vinegar, and orange wine is crafted by hand on the Mediterranean coast.",
+  description: "Visit the Príncipe Azahar production facility in Altea, Spain, where every olive oil, artisan salt, vinegar, and fruit wine is crafted by hand on the Mediterranean coast.",
 };
 
 const stats = [
-  { value: "[YEAR]", label: "Founded" },
-  { value: "[#]", label: "Artisan SKUs" },
-  { value: "[#]", label: "Hectares of Groves" },
-  { value: "[CERT]", label: "Certifications" },
+  { value: "Altea", label: "Alicante, Spain" },
+  { value: "100%", label: "Natural Ingredients" },
+  { value: "0", label: "Artificial Additives" },
+  { value: "TVE", label: "Featured By" },
 ];
 
 const processSteps = [
   {
     number: "01",
-    title: "Harvest",
-    body: "[Placeholder, describe when and how olives, herbs, or raw materials are harvested. Include seasonality, hand-picking vs machine, specific groves or regions within Altea.]",
+    title: "Premium Olive Oil Base",
+    body: "Every product begins with high-quality extra virgin olive oil cold-pressed at the facility. Quality olive oil never turns cloudy — it is one of the clearest indicators of purity, and every batch from Príncipe Azahar meets that standard.",
   },
   {
     number: "02",
-    title: "Cold Press & Production",
-    body: "[Placeholder, describe the pressing or production process. Hours from harvest to press, temperature controls, equipment used, what makes their method distinct.]",
+    title: "Single-Ingredient Maceration",
+    body: "Each flavored oil is macerating in its own dedicated vat — truffle, rosemary, chili pepper, lemon, garlic. There is no cross-contamination, no blending of ingredients in production. Each vat is devoted exclusively to one ingredient.",
   },
   {
     number: "03",
-    title: "Artisan Finishing",
-    body: "[Placeholder, describe how salts are blended, vinegars aged, wines finished. The handcrafted nature of the process, small batches, quality checkpoints.]",
+    title: "No Artificial Anything",
+    body: "No drops, no concentrates, no artificial flavorings, no chemicals. What goes into the vat is the real ingredient — whole truffles, fresh rosemary, dried chilis. The oil does the rest.",
   },
   {
     number: "04",
-    title: "Quality Control",
-    body: "[Placeholder, certifications, lab testing, organoleptic evaluation, who approves each batch, any awards or recognitions.]",
+    title: "Artisan Vinegar Production",
+    body: "The same philosophy that guides the oils applies to the vinegars. Natural fermentation, single-ingredient infusions, no shortcuts. The facility is currently developing a mango vinegar, continuing its tradition of pioneering fruit-forward production.",
   },
   {
     number: "05",
-    title: "Packaging & Export",
-    body: "[Placeholder, how products are bottled, labeled, and prepared for international export. Any cold-chain or shipping requirements.]",
+    title: "Fruit Wines — A World First",
+    body: "Príncipe Azahar is the only winery in the world producing fruit wines. Their orange wine attracted the attention of Televisión Española — one of Spain's most recognized broadcast networks — which produced a documentary feature on the winery and its owner. The recognition speaks to a level of innovation rarely seen in artisan food production.",
   },
 ];
 
 const trustPoints = [
   {
-    icon: "🏛",
-    title: "[Certification Name]",
-    body: "[Placeholder, e.g., D.O. Certification, Organic Certification, Export License. Describe what it means and why it matters to buyers.]",
+    icon: "🫒",
+    title: "Oil Clarity as Quality Standard",
+    body: "High-quality extra virgin olive oil is transparent and clear. Príncipe Azahar uses this as a baseline quality indicator — if it clouds, it doesn't ship. Quality certificate provided by the producer upon request.",
   },
   {
-    icon: "🌿",
-    title: "Sustainable Practices",
-    body: "[Placeholder, describe any sustainability practices: water usage, packaging, no pesticides, solar energy, etc.]",
+    icon: "🧪",
+    title: "Zero Artificial Additives",
+    body: "No artificial drops, flavorings, concentrates, or chemical enhancers of any kind are used in production. Every infusion is achieved through time and the real ingredient — nothing else.",
   },
   {
-    icon: "👨‍🍳",
-    title: "Master Artisans",
-    body: "[Placeholder, introduce the key people behind production. Years of experience, family traditions, philosophy.]",
+    icon: "🍊",
+    title: "World's Only Fruit Winery",
+    body: "Bodegas Sendra González, producing under the Príncipe Azahar label, is a pioneer in fruit wines and the only producer in the world making fruit wines commercially. Their orange wine is what put Altea on the map.",
   },
   {
-    icon: "🔬",
-    title: "Lab Tested",
-    body: "[Placeholder, third-party testing, acidity levels for olive oils, purity standards, any international lab certifications.]",
+    icon: "📺",
+    title: "Featured by Televisión Española",
+    body: "Televisión Española — one of Spain's most prominent national broadcast networks — produced a documentary segment on the winery owner and the orange wine. A rare honor that reflects both the product's uniqueness and its cultural significance.",
   },
+];
+
+const galleryImages = [
+  { src: "/facility/_qas0017-QUF3SAc05Z6G4bot.avif", alt: "Príncipe Azahar facility exterior" },
+  { src: "/facility/whatsapp-image-2025-12-24-at-12.37.06-vkrgh1tvSxKOJaOV.avif", alt: "Facility production area" },
+  { src: "/facility/_qas0113-x7sQ8RmzO8X2Vuse.avif", alt: "Artisan production process" },
+  { src: "/facility/_qas0042-xbOjmNwxeiCYpvfe.avif", alt: "Olive oil production" },
+  { src: "/facility/_qas0196-1jPx1RvFDr15go2e.avif", alt: "Facility grounds in Altea" },
 ];
 
 export default function FacilityPage() {
@@ -70,23 +78,24 @@ export default function FacilityPage() {
 
       {/* Hero */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: "70vh" }}>
-        <div className="relative w-full h-[70vh] bg-gray-200 flex items-center justify-center">
-          {/* Replace this placeholder with actual facility photo */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ background: "#1A1A1A" }}>
-            <p className="text-[11px] tracking-widest uppercase mb-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-              [PLACEHOLDER, Replace with aerial or wide-angle photo of the Altea facility]
-            </p>
-          </div>
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%)" }} />
+        <div className="relative w-full h-[70vh]">
+          <Image
+            src="/facility/_qas0017-QUF3SAc05Z6G4bot.avif"
+            alt="Príncipe Azahar facility in Altea, Spain"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 60%)" }} />
           <div className="relative z-10 text-center px-6 max-w-[700px] mx-auto" style={{ position: "absolute", bottom: "60px", left: 0, right: 0 }}>
             <p className="text-[11px] tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-              Príncipe Azahar · Altea, España
+              Príncipe Azahar · Altea, Spain
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-cinzel), serif" }}>
               Where Every Drop<br />Begins
             </h1>
-            <p className="text-[16px] leading-relaxed" style={{ color: "rgba(255,255,255,0.8)" }}>
-              On the Mediterranean coast of Spain, in the historic village of Altea, our partner Príncipe Azahar has spent generations perfecting the art of artisan food production.
+            <p className="text-[16px] leading-relaxed" style={{ color: "rgba(255,255,255,0.85)" }}>
+              On the Mediterranean coast of Alicante, in the historic village of Altea, our partner Bodegas Sendra González has spent decades crafting Spain's most distinctive artisan oils, vinegars, salts, and fruit wines.
             </p>
           </div>
         </div>
@@ -109,30 +118,56 @@ export default function FacilityPage() {
         <div>
           <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>The Facility</p>
           <h2 className="text-3xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
-            Altea, Spain —<br />The Heart of Our Production
+            Partida la Olla, Altea<br />Alicante, Spain
           </h2>
           <div className="flex flex-col gap-4 text-[15px] leading-relaxed" style={{ color: "#555" }}>
-            <p>[Placeholder, 2–3 sentences describing the location of the facility: the town of Altea, its geography, proximity to groves/sea. What makes this location exceptional for production.]</p>
-            <p>[Placeholder, Describe the facility itself: size, age, what's produced there, any notable features like stone presses, aging cellars, salt flats, etc.]</p>
-            <p>[Placeholder, Describe the relationship between Soto & Segovia and Príncipe Azahar / Bodegas Sendra González, how this partnership came to be, why we trust them exclusively.]</p>
+            <p>Nestled in the hills above the Mediterranean at Partida la Olla, 75 in Altea, the Príncipe Azahar facility benefits from one of the most favorable microclimates in Spain for artisan food production. The region's dry Mediterranean air, mineral-rich soil, and proximity to the sea create conditions that intensify the flavor of every ingredient that passes through.</p>
+            <p>Bodegas Sendra González operates here under the Príncipe Azahar label, producing a range of extraordinary products — cold-pressed olive oils, single-ingredient infused oils, artisan vinegars, gourmet salts, and fruit wines. Their philosophy is simple: start with the best raw material available, and never compromise the process.</p>
+            <p>Soto & Segovia Imports brings these products directly to North American markets — no intermediaries, no rebottling, no compromises. What leaves Altea is exactly what arrives at your door.</p>
           </div>
+          <p className="mt-6 text-[13px]" style={{ color: "#999" }}>
+            Partida la Olla, 75 · 03590 Altea, Alicante, Spain
+          </p>
         </div>
-        <div className="relative aspect-square overflow-hidden" style={{ background: "#F0EDE6" }}>
-          {/* Replace with interior or aerial facility photo */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-[11px] tracking-widest uppercase text-center px-8" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-              [PLACEHOLDER, Facility interior or aerial photo]
+        <div className="relative overflow-hidden" style={{ aspectRatio: "4/5" }}>
+          <Image
+            src="/facility/_qas0113-x7sQ8RmzO8X2Vuse.avif"
+            alt="Príncipe Azahar production facility interior"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </section>
+
+      {/* TVE Video Feature */}
+      <section style={{ background: "#F8F8F4" }}>
+        <div className="max-w-[900px] mx-auto px-6 py-20">
+          <div className="text-center mb-10">
+            <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>As Seen on National Television</p>
+            <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Featured by Televisión Española</h2>
+            <p className="text-[15px] leading-relaxed max-w-[620px] mx-auto" style={{ color: "#666" }}>
+              Over a decade ago, Televisión Española — one of Spain's most respected national broadcast networks — produced a documentary segment on the Príncipe Azahar winery and its owner. The subject: their pioneering orange wine, and their position as the only winery in the world making fruit wines commercially. The feature remains a testament to how far ahead of the curve this Altea producer has always been.
             </p>
+          </div>
+          <div className="relative w-full" style={{ paddingBottom: "56.25%", height: 0 }}>
+            <iframe
+              src="https://www.youtube.com/embed/XIc7_7Q-2jE"
+              title="Televisión Española feature on Príncipe Azahar winery and orange wine"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+              style={{ border: "none" }}
+            />
           </div>
         </div>
       </section>
 
       {/* Production process */}
-      <section style={{ background: "#F8F8F4" }}>
+      <section className="bg-white">
         <div className="max-w-[900px] mx-auto px-6 py-20">
           <div className="text-center mb-14">
-            <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>From Grove to Bottle</p>
-            <h2 className="text-3xl font-bold" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Our Production Process</h2>
+            <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Grove to Bottle</p>
+            <h2 className="text-3xl font-bold" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>How It's Made</h2>
           </div>
           <div className="flex flex-col gap-10">
             {processSteps.map((step) => (
@@ -150,20 +185,25 @@ export default function FacilityPage() {
         </div>
       </section>
 
-      {/* Photo gallery placeholder */}
-      <section className="max-w-[1200px] mx-auto px-6 py-20">
-        <div className="text-center mb-10">
-          <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Inside the Facility</p>
-          <h2 className="text-3xl font-bold" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>See It for Yourself</h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {[1,2,3,4,5,6].map((i) => (
-            <div key={i} className="aspect-square flex items-center justify-center" style={{ background: "#F0EDE6" }}>
-              <p className="text-[10px] tracking-widest uppercase text-center px-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-                [Photo {i}, Facility / Process / People]
-              </p>
-            </div>
-          ))}
+      {/* Photo gallery */}
+      <section style={{ background: "#F8F8F4" }}>
+        <div className="max-w-[1200px] mx-auto px-6 py-20">
+          <div className="text-center mb-10">
+            <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Inside the Facility</p>
+            <h2 className="text-3xl font-bold" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>See It for Yourself</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {galleryImages.map((img, i) => (
+              <div key={i} className={`relative overflow-hidden ${i === 0 ? "md:col-span-2 aspect-video" : "aspect-square"}`}>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -190,7 +230,7 @@ export default function FacilityPage() {
       <section className="py-20 px-6 text-center">
         <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Ready to Partner</p>
         <h2 className="text-3xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
-          Gift Gourmet Spanish Foods to Your Clients
+          Bring Altea to Your Clients
         </h2>
         <p className="text-[15px] mb-8 max-w-[500px] mx-auto" style={{ color: "#666" }}>
           Every product we ship carries the story of this facility, these people, and this place. Let us tell that story to your clients.

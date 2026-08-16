@@ -79,7 +79,7 @@ export default function SubscriptionsPage() {
                   <ul className="flex flex-col gap-2 mb-6 flex-1">
                     {[
                       "Curated monthly selection",
-                      "Free shipping over $150",
+                      "Flexible monthly delivery",
                       "Cancel anytime",
                       "Email reminder before shipment",
                     ].map((f) => (

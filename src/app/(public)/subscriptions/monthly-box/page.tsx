@@ -53,7 +53,7 @@ export default function MonthlyBoxPage() {
                   <p className="text-[10px] font-bold mt-1" style={{ color: "#22c55e" }}>You save ${box.oneTime - box.monthly}/mo</p>
                 </div>
                 <ul className="flex flex-col gap-2 mb-6 flex-1">
-                  {["Curated monthly selection", "Free shipping over $150", "Cancel anytime", "Email reminder before shipment"].map((f) => (
+                  {["Curated monthly selection", "Cancel anytime", "Email reminder before shipment"].map((f) => (
                     <li key={f} className="flex items-start gap-2 text-[12px]" style={{ color: "#555" }}>
                       <Check size={12} className="flex-shrink-0 mt-0.5" style={{ color: "#C9A227" }} />
                       {f}

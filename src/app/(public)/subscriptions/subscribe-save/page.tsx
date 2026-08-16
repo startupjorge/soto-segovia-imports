@@ -58,7 +58,7 @@ export default function SubscribeSavePage() {
           {[
             "10% off every monthly delivery",
             "No commitment — cancel anytime",
-            "Free shipping on orders over $150",
+            "Flexible monthly delivery",
             "Email notification before each shipment",
             "Pause or modify anytime",
             "Priority customer support",

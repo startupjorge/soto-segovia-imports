@@ -11,7 +11,7 @@ const benefits = [
   "Products handpicked personally by Jorge, Roberto & Maite",
   "Exclusive items never available to the public",
   "Dedicated white-glove concierge — 2-hour response",
-  "Free express shipping on every order, always",
+  "Dedicated logistics coordination on every order",
   "Quarterly private tasting with the founders",
   "Custom branded gifting with your name or logo",
   "Early access to every new product launch",

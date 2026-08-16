@@ -66,7 +66,7 @@ export default function GiftSubscriptionsPage() {
             "Beautifully packaged gift box each month",
             "Handwritten or personalized gift note",
             "Recipient notified with your message",
-            "Free shipping on all gift subscriptions",
+            "Shipping coordinated by our team",
             "You control the start date",
             "Renewal reminder sent to you, not the recipient",
           ].map((f) => (

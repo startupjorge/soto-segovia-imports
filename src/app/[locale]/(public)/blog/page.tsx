@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { allPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog | Soto & Segovia Imports — Estrategia Corporativa y Regalos de Empresa",
-  description: "Estrategia de ventas, guías de regalos corporativos, marketing B2B y B2C, y consejos para líderes comerciales — del equipo de Soto & Segovia Imports.",
+  title: "Blog | Soto & Segovia Imports, Estrategia Corporativa y Regalos de Empresa",
+  description: "Estrategia de ventas, guías de regalos corporativos, marketing B2B y B2C, y consejos para líderes comerciales, del equipo de Soto & Segovia Imports.",
 };
 
 const authorAvatars: Record<string, string> = {

@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 
 const SECTIONS = [
   {
-    title: "Pre-Orders — 100% Refundable, No Questions Asked",
-    body: `All products on sotosegoviaimports.com are currently available on a pre-order basis. Because we collect payment only after confirming your order and before shipment, you may cancel and receive a full 100% refund at any time prior to your order being shipped — no questions asked, no restocking fees, no hassle.
+    title: "Pre-Orders, 100% Refundable, No Questions Asked",
+    body: `All products on sotosegoviaimports.com are currently available on a pre-order basis. Because we collect payment only after confirming your order and before shipment, you may cancel and receive a full 100% refund at any time prior to your order being shipped, no questions asked, no restocking fees, no hassle.
 
 To cancel a pre-order, simply reply to your order confirmation email or contact us at sales@sotosegoviaimports.com with your name and order details. We will process your cancellation and issue a full refund within 3–5 business days.`,
   },
   {
-    title: "After Shipment — Refunds Minus Shipping & Handling",
+    title: "After Shipment, Refunds Minus Shipping & Handling",
     body: `Once your order has shipped, we will refund 100% of the product cost minus the actual shipping and handling charges incurred. Shipping and handling fees are non-refundable after the order has left our fulfillment partner's facility.
 
 If your order arrives damaged, incorrect, or incomplete, we will cover the full cost including shipping. Please contact us within 7 days of delivery with photos of the issue and we will make it right immediately.`,
@@ -30,7 +30,7 @@ We will respond within 1 business day and process approved refunds within 3–5 
   },
   {
     title: "Damaged or Incorrect Orders",
-    body: `If your order arrives damaged in transit or contains the wrong items, we will send a replacement or issue a full refund including shipping — your choice. We ask only that you send us a photo of the damage or incorrect item so we can report it to our carrier and prevent it from happening again. We do not require you to return damaged goods.`,
+    body: `If your order arrives damaged in transit or contains the wrong items, we will send a replacement or issue a full refund including shipping, your choice. We ask only that you send us a photo of the damage or incorrect item so we can report it to our carrier and prevent it from happening again. We do not require you to return damaged goods.`,
   },
   {
     title: "Gift Orders",

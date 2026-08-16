@@ -6,16 +6,16 @@ export const metadata = {
 };
 
 const steps = [
-  { number: "01", title: "Browse the Collection", body: "Explore the full Príncipe Azahar product range — extra virgin olive oils, artisan salts, aged vinegars, and reserve orange wine. Each product page includes tasting notes, origin story, and suggested pairings." },
-  { number: "02", title: "Choose Your Products", body: "Select individual products or a pre-curated collection. All products are shipped directly from our Miami headquarters in premium packaging — ready to gift immediately." },
-  { number: "03", title: "Add a Personal Message", body: "Every order can include a custom handwritten-style message card. Your note, your words — we handle the rest." },
+  { number: "01", title: "Browse the Collection", body: "Explore the full Príncipe Azahar product range, extra virgin olive oils, artisan salts, aged vinegars, and reserve orange wine. Each product page includes tasting notes, origin story, and suggested pairings." },
+  { number: "02", title: "Choose Your Products", body: "Select individual products or a pre-curated collection. All products are shipped directly from our Miami headquarters in premium packaging, ready to gift immediately." },
+  { number: "03", title: "Add a Personal Message", body: "Every order can include a custom handwritten-style message card. Your note, your words, we handle the rest." },
   { number: "04", title: "We Handle Fulfillment", body: "Your order ships within 2 business days. We pack every item carefully to protect the glass and preserve presentation. You get a tracking link immediately." },
 ];
 
 const bestFor = [
-  { title: "Individual Business Gifts", body: "Close a deal, thank a referral partner, or welcome a new client with a premium artisan gift ordered in minutes — no account required, no minimum order." },
+  { title: "Individual Business Gifts", body: "Close a deal, thank a referral partner, or welcome a new client with a premium artisan gift ordered in minutes, no account required, no minimum order." },
   { title: "Small Team Gifts", body: "Order 2–10 gifts for a team, client list, or event cohort. Mix and match products to personalize each gift without the complexity of a managed program." },
-  { title: "Personal Occasions", body: "A birthday, anniversary, housewarming, or host gift — premium Spanish gourmet foods are the kind of present that gets talked about. Order for any personal occasion, any time." },
+  { title: "Personal Occasions", body: "A birthday, anniversary, housewarming, or host gift, premium Spanish gourmet foods are the kind of present that gets talked about. Order for any personal occasion, any time." },
   { title: "Last-Minute Corporate Gifts", body: "Need a gift by Thursday? Our 2-business-day shipping and pre-packaged gift sets mean you can send a premium, thoughtful gift even when you're down to the wire." },
 ];
 
@@ -55,7 +55,7 @@ export default function SelfServiceGifting() {
       {/* Intro */}
       <section className="max-w-[780px] mx-auto px-6 py-20 text-center">
         <p className="text-[17px] leading-relaxed" style={{ color: "#444" }}>
-          Not every gifting moment requires a full program. Sometimes you need one exceptional gift, delivered fast, that makes a real impression. Our self-service shop lets you order premium Príncipe Azahar artisan Spanish gourmet foods directly — with the same quality, same packaging, and same story as our corporate programs. No minimums, no onboarding. Just the best food gifts from Spain, shipped to your door.
+          Not every gifting moment requires a full program. Sometimes you need one exceptional gift, delivered fast, that makes a real impression. Our self-service shop lets you order premium Príncipe Azahar artisan Spanish gourmet foods directly, with the same quality, same packaging, and same story as our corporate programs. No minimums, no onboarding. Just the best food gifts from Spain, shipped to your door.
         </p>
       </section>
 
@@ -130,7 +130,7 @@ export default function SelfServiceGifting() {
           Sending More Than 10 Gifts? Let Us Build You a Program.
         </h2>
         <p className="text-[15px] mb-10 max-w-[480px] mx-auto" style={{ color: "rgba(255,255,255,0.6)" }}>
-          Our corporate gifting team handles everything — curation, custom packaging, bulk fulfillment, and a personal account manager. Starting at 10 gifts.
+          Our corporate gifting team handles everything, curation, custom packaging, bulk fulfillment, and a personal account manager. Starting at 10 gifts.
         </p>
         <Link
           href="/corporate-gifting"

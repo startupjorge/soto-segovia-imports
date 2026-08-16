@@ -63,7 +63,7 @@ function StepProducts({ onNext }: { onNext: () => void }) {
             <div>
               <p className="text-[9px] tracking-[0.3em] uppercase font-bold mb-1" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Featured · Most Popular</p>
               <h3 className="text-lg font-bold mb-1" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Spanish Gourmet Gift Boxes</h3>
-              <p className="text-[12px]" style={{ color: "#666" }}>Curated collections from $79 — perfect for VIP clients, executives & corporate gifting.</p>
+              <p className="text-[12px]" style={{ color: "#666" }}>Curated collections from $79, perfect for VIP clients, executives & corporate gifting.</p>
             </div>
             <div className="flex gap-3 flex-wrap">
               {giftBoxes.map((box) => (
@@ -382,12 +382,12 @@ function StepGiftNote({ onNext, onBack }: { onNext: () => void; onBack: () => vo
   }
 
   const suggestions = [
-    `${firstName}, thank you for being an incredible partner. Your trust means everything to us — looking forward to many more years of building something great together.`,
-    `${firstName}, it's been a pleasure working with you this year. Enjoy a taste of Spain's finest — a small token of our appreciation for everything you do.`,
-    `${firstName}, thank you for being such an amazing client. Wishing you continued success and growth — we're grateful to be part of your journey.`,
+    `${firstName}, thank you for being an incredible partner. Your trust means everything to us, looking forward to many more years of building something great together.`,
+    `${firstName}, it's been a pleasure working with you this year. Enjoy a taste of Spain's finest, a small token of our appreciation for everything you do.`,
+    `${firstName}, thank you for being such an amazing client. Wishing you continued success and growth, we're grateful to be part of your journey.`,
     `${firstName}, thank you for your partnership and loyalty. These artisan gifts from Altea, Spain are a reflection of the quality and care we bring to every relationship.`,
     `Congratulations, ${firstName}! Wishing you every success in this exciting next chapter. It's been an honor working alongside you.`,
-    `${firstName}, thank you for choosing us. We look forward to delivering exceptional results for you — enjoy this small taste of Spain as our way of saying thank you.`,
+    `${firstName}, thank you for choosing us. We look forward to delivering exceptional results for you, enjoy this small taste of Spain as our way of saying thank you.`,
   ];
 
   return (
@@ -532,7 +532,7 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
       if (data.url) {
         window.location.href = data.url;
       } else {
-        // Stripe not configured yet — fall back to pre-order submission
+        // Stripe not configured yet, fall back to pre-order submission
         await submitPreOrder();
       }
     } catch {
@@ -616,7 +616,7 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
                 </p>
               </div>
             ) : (
-              <p className="text-[12px]" style={{ color: "#aaa" }}>No message — gift will be sent without a note.</p>
+              <p className="text-[12px]" style={{ color: "#aaa" }}>No message, gift will be sent without a note.</p>
             )}
           </div>
         </div>
@@ -624,7 +624,7 @@ function StepReview({ onBack, onSuccess }: { onBack: () => void; onSuccess: () =
 
       {/* Payment notice */}
       <div className="p-4 mb-6 text-[12px] leading-relaxed border border-[#C9A227]/30" style={{ background: "#fffdf5", color: "#666" }}>
-        Secure checkout via Stripe. You&rsquo;ll be redirected to Stripe to complete payment. You will be notified when Pre-Orders ship. <strong style={{ color: "#1A1A1A" }}>100% refundable</strong> before shipment — no questions asked.
+        Secure checkout via Stripe. You&rsquo;ll be redirected to Stripe to complete payment. You will be notified when Pre-Orders ship. <strong style={{ color: "#1A1A1A" }}>100% refundable</strong> before shipment, no questions asked.
       </div>
 
       <div className="flex gap-4">

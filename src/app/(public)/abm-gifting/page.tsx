@@ -16,7 +16,7 @@ const howItWorks = [
   {
     number: "01",
     title: "Identify Your Tier-1 Accounts",
-    body: "ABM gifting works because it is selective. Choose the 20, 50, or 100 accounts where a single closed deal justifies real investment. These are the companies where a premium physical gift is not an expense — it is leverage.",
+    body: "ABM gifting works because it is selective. Choose the 20, 50, or 100 accounts where a single closed deal justifies real investment. These are the companies where a premium physical gift is not an expense, it is leverage.",
   },
   {
     number: "02",
@@ -38,7 +38,7 @@ const howItWorks = [
 const whyGourmet = [
   {
     title: "Pattern Interruption",
-    body: "Your target's inbox is predictable. A beautifully packaged box of Spanish artisan foods is not. It lands differently — tactilely, aromatically, memorably — in a way that resets the relationship before you've sent a single word.",
+    body: "Your target's inbox is predictable. A beautifully packaged box of Spanish artisan foods is not. It lands differently, tactilely, aromatically, memorably, in a way that resets the relationship before you've sent a single word.",
   },
   {
     title: "Reciprocity at Work",
@@ -50,7 +50,7 @@ const whyGourmet = [
   },
   {
     title: "It Gets Talked About",
-    body: "Premium Spanish gourmet foods are the kind of gift people mention at dinner. Your prospect becomes the person who introduces their team to something extraordinary — and you are the reason that happened.",
+    body: "Premium Spanish gourmet foods are the kind of gift people mention at dinner. Your prospect becomes the person who introduces their team to something extraordinary, and you are the reason that happened.",
   },
 ];
 
@@ -59,7 +59,7 @@ const giftSets = [
     title: "First-Touch ABM Set",
     description: "For a high-priority prospect you have never spoken with. Designed to open doors that digital outreach has kept closed.",
     products: ["Truffle Olive Oil", "Garlic Olive Oil", "Paprika Salt", "Orange Wine Mini (100ml)"],
-    note: "The Truffle Olive Oil is our most conversation-generating product. The miniature Orange Wine is something most Americans have never tasted — it demands a follow-up.",
+    note: "The Truffle Olive Oil is our most conversation-generating product. The miniature Orange Wine is something most Americans have never tasted, it demands a follow-up.",
     range: "$85 – $120 per recipient",
   },
   {
@@ -73,7 +73,7 @@ const giftSets = [
     title: "Top Client Retention Set",
     description: "For existing accounts you cannot afford to lose. Sent twice a year to the 2–3 individuals who matter most at each account.",
     products: ["Vanilla Vinegar", "Pomegranate Vinegar", "Lemon Olive Oil", "Mint Salt"],
-    note: "Rotate products from your previous gift. The Vanilla Vinegar is our most surprising product — the one that generates the most calls from existing clients.",
+    note: "Rotate products from your previous gift. The Vanilla Vinegar is our most surprising product, the one that generates the most calls from existing clients.",
     range: "$75 – $110 per recipient",
   },
 ];
@@ -137,7 +137,7 @@ export default function ABMGiftingPage() {
         <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>The Problem</p>
         <h2 className="text-3xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Your Target Accounts Have Seen Every Digital Tactic You Are Running</h2>
         <p className="text-[17px] leading-relaxed" style={{ color: "#444" }}>
-          Personalized email sequences. LinkedIn engagement cadences. Targeted display ads. Retargeting. Intent data. Your ABM prospects are sophisticated executives who have learned to tune out all of it. The companies breaking through in 2025 are the ones adding a physical dimension to their account-based strategy — a premium, tangible, genuinely memorable touchpoint that digital marketing cannot replicate. That is where we come in.
+          Personalized email sequences. LinkedIn engagement cadences. Targeted display ads. Retargeting. Intent data. Your ABM prospects are sophisticated executives who have learned to tune out all of it. The companies breaking through in 2025 are the ones adding a physical dimension to their account-based strategy, a premium, tangible, genuinely memorable touchpoint that digital marketing cannot replicate. That is where we come in.
         </p>
       </section>
 
@@ -250,7 +250,7 @@ export default function ABMGiftingPage() {
             &ldquo;I tested premium gifting against cold outreach on the same list of target accounts. The accounts that received a gift had a first-conversation rate more than seven times higher. The gift is not a trick. It is the most human version of your marketing that exists.&rdquo;
           </blockquote>
           <p className="text-[12px] tracking-wider" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-            — Jorge Soto, Co-Founder · Soto & Segovia Imports
+           , Jorge Soto, Co-Founder · Soto & Segovia Imports
           </p>
           <div className="mt-8">
             <Link
@@ -269,10 +269,10 @@ export default function ABMGiftingPage() {
         <div className="max-w-[900px] mx-auto px-6 py-20 text-center">
           <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>The Products</p>
           <h2 className="text-3xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
-            Artisan Foods From Altea, Spain — the Story Your Gift Tells
+            Artisan Foods From Altea, Spain, the Story Your Gift Tells
           </h2>
           <p className="text-[15px] leading-relaxed mb-10 max-w-[620px] mx-auto" style={{ color: "#666" }}>
-            Every Príncipe Azahar product comes from Bodegas Sendra González in Altea, a village on Spain&rsquo;s Mediterranean coast. Cold-pressed olive oils, hand-harvested finishing salts, fruit-infused aged vinegars, and traditional orange wine — crafted in small batches by the same family for generations. When you send one of these products to a target account, you are not sending merchandise. You are sending a story. And stories are what people remember.
+            Every Príncipe Azahar product comes from Bodegas Sendra González in Altea, a village on Spain&rsquo;s Mediterranean coast. Cold-pressed olive oils, hand-harvested finishing salts, fruit-infused aged vinegars, and traditional orange wine, crafted in small batches by the same family for generations. When you send one of these products to a target account, you are not sending merchandise. You are sending a story. And stories are what people remember.
           </p>
           <div className="flex flex-wrap gap-3 justify-center mb-10">
             {["Truffle Olive Oil", "Garlic Olive Oil", "Lemon Olive Oil", "Vanilla Vinegar", "Pomegranate Vinegar", "Orange Wine", "Paprika Salt", "Rose Salt", "Black Salt"].map((p) => (

@@ -22,7 +22,7 @@ export default function OGImage() {
         </div>
         <div style={{ width: 60, height: 2, background: "#C9A227", marginBottom: 24, display: "flex" }} />
         <div style={{ fontSize: 19, color: "rgba(255,255,255,0.65)", textAlign: "center", maxWidth: 580, lineHeight: 1.5, marginBottom: 48, display: "flex" }}>
-          Premium artisan Spanish gourmet foods for executives who have everything — except this.
+          Premium artisan Spanish gourmet foods for executives who have everything, except this.
         </div>
         <div style={{ fontSize: 14, letterSpacing: "0.25em", textTransform: "uppercase", color: "#C9A227", display: "flex" }}>
           Soto & Segovia Imports · sotosegoviaimports.com

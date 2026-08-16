@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
   const normalized = email.trim().toLowerCase();
   if (!ALLOWED_EMAILS.includes(normalized)) {
-    // Return generic response — don't reveal whether email is valid
+    // Return generic response, don't reveal whether email is valid
     return NextResponse.json({ sent: true });
   }
 

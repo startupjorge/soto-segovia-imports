@@ -13,7 +13,7 @@ const programs = [
   },
   {
     title: "Restaurant & Bar Integration",
-    body: "Feature Príncipe Azahar products on your menu with full provenance storytelling. Our truffle olive oils, aged vinegars, and reserve orange wine become menu items that guests ask about by name — and seek out long after checkout.",
+    body: "Feature Príncipe Azahar products on your menu with full provenance storytelling. Our truffle olive oils, aged vinegars, and reserve orange wine become menu items that guests ask about by name, and seek out long after checkout.",
     icon: "🍷",
   },
   {
@@ -40,9 +40,9 @@ const programs = [
 
 const properties = [
   { type: "Luxury Hotels", body: "Boutique and full-service luxury hotels looking to differentiate their amenity programs and create genuinely memorable guest experiences." },
-  { type: "Resorts & Destination Properties", body: "Destination resorts, wellness retreats, and beach properties where the guest experience extends far beyond the room — and every touchpoint is an opportunity for discovery." },
+  { type: "Resorts & Destination Properties", body: "Destination resorts, wellness retreats, and beach properties where the guest experience extends far beyond the room, and every touchpoint is an opportunity for discovery." },
   { type: "Private Members Clubs", body: "Private clubs where the standard of food, service, and gifting directly reflects the membership experience and the caliber of the community." },
-  { type: "Michelin-Starred Restaurants", body: "Fine dining establishments seeking premium artisan ingredients with full provenance documentation — and the story to tell behind every bottle and box." },
+  { type: "Michelin-Starred Restaurants", body: "Fine dining establishments seeking premium artisan ingredients with full provenance documentation, and the story to tell behind every bottle and box." },
   { type: "Corporate Event Venues", body: "Event venues hosting C-suite conferences, product launches, investor summits, and incentive programs where every attendee touch-point matters." },
 ];
 
@@ -82,7 +82,7 @@ export default function LuxuryHospitalityGifting() {
       {/* Intro */}
       <section className="max-w-[780px] mx-auto px-6 py-20 text-center">
         <p className="text-[17px] leading-relaxed" style={{ color: "#444" }}>
-          In luxury hospitality, every detail of the guest experience is a statement about your brand. The welcome amenity, the restaurant menu, the departure gift — each of these moments is an opportunity to create genuine discovery and lasting memory. Soto & Segovia Imports partners with leading hospitality groups to integrate premium Príncipe Azahar artisan Spanish foods into every guest touchpoint — creating experiences that guests photograph, share, and return for.
+          In luxury hospitality, every detail of the guest experience is a statement about your brand. The welcome amenity, the restaurant menu, the departure gift, each of these moments is an opportunity to create genuine discovery and lasting memory. Soto & Segovia Imports partners with leading hospitality groups to integrate premium Príncipe Azahar artisan Spanish foods into every guest touchpoint, creating experiences that guests photograph, share, and return for.
         </p>
       </section>
 
@@ -114,7 +114,7 @@ export default function LuxuryHospitalityGifting() {
           Artisan Products From Altea, Spain
         </h2>
         <p className="text-[15px] leading-relaxed mb-10 max-w-[620px] mx-auto" style={{ color: "#666" }}>
-          Príncipe Azahar products come from the historic Mediterranean village of Altea — a place guests can discover and visit. That provenance story is one of the most powerful tools in your guest experience arsenal. When your concierge or F&B team can tell the story of where a product comes from, a gift becomes a journey.
+          Príncipe Azahar products come from the historic Mediterranean village of Altea, a place guests can discover and visit. That provenance story is one of the most powerful tools in your guest experience arsenal. When your concierge or F&B team can tell the story of where a product comes from, a gift becomes a journey.
         </p>
         <div className="flex flex-wrap gap-3 justify-center mb-10">
           {["Garlic Olive Oil", "Truffle Olive Oil", "Lemon Olive Oil", "White Salt", "Rose Salt", "Black Salt", "Orange Vinegar", "Pomegranate Vinegar", "Orange Wine"].map((p) => (
@@ -162,7 +162,7 @@ export default function LuxuryHospitalityGifting() {
             &ldquo;Our VIP guests consistently mention the Spanish gourmet amenity as a highlight of their stay. It tells a story that a standard amenity simply cannot. Guests ask where they can buy more before they even check out.&rdquo;
           </blockquote>
           <p className="text-[12px] tracking-wider" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-            — Director of Guest Experience · Luxury Resort Group
+           , Director of Guest Experience · Luxury Resort Group
           </p>
         </div>
       </section>

@@ -8,15 +8,15 @@ export const metadata = {
 const whyPoints = [
   {
     title: "A Gift That Matches Their Level",
-    body: "CEOs receive hundreds of gifts per year — most of which end up in a corner or regifted to an assistant. A carefully curated collection of premium Spanish gourmet foods from Altea, Spain is different. It communicates taste, discernment, and a level of consideration that tells the recipient: this was chosen for you specifically.",
+    body: "CEOs receive hundreds of gifts per year, most of which end up in a corner or regifted to an assistant. A carefully curated collection of premium Spanish gourmet foods from Altea, Spain is different. It communicates taste, discernment, and a level of consideration that tells the recipient: this was chosen for you specifically.",
   },
   {
     title: "No Logo Required",
-    body: "The most powerful gifts don't have your company's name on them. They have your taste. A selection of Príncipe Azahar's finest — truffle-infused olive oil, reserve orange wine, aged vanilla vinegar — sends a message that your brand values quality, authenticity, and the extraordinary.",
+    body: "The most powerful gifts don't have your company's name on them. They have your taste. A selection of Príncipe Azahar's finest, truffle-infused olive oil, reserve orange wine, aged vanilla vinegar, sends a message that your brand values quality, authenticity, and the extraordinary.",
   },
   {
     title: "Compliance-Friendly for Regulated Industries",
-    body: "Premium gourmet food gifts are ideal for gifting in industries where entertainment and cash-equivalent gifts are restricted. High perceived value, genuinely memorable, and easy to keep within gift policy thresholds — at any dollar amount.",
+    body: "Premium gourmet food gifts are ideal for gifting in industries where entertainment and cash-equivalent gifts are restricted. High perceived value, genuinely memorable, and easy to keep within gift policy thresholds, at any dollar amount.",
   },
 ];
 
@@ -28,7 +28,7 @@ const giftIdeas = [
   },
   {
     title: "The Artisan Selection",
-    body: "Five to seven products spanning our full range — oils, vinegars, salts, and wine. For the CEO who appreciates the depth of the Príncipe Azahar portfolio.",
+    body: "Five to seven products spanning our full range, oils, vinegars, salts, and wine. For the CEO who appreciates the depth of the Príncipe Azahar portfolio.",
     products: ["Garlic Olive Oil", "Vanilla Vinegar", "Black Salt", "Orange Wine", "Rose Salt"],
   },
   {
@@ -39,11 +39,11 @@ const giftIdeas = [
 ];
 
 const occasions = [
-  { title: "Closing a Major Deal", body: "When a significant contract is signed, a premium gift to the counterpart CEO acknowledges the relationship — and opens the door to what comes next." },
+  { title: "Closing a Major Deal", body: "When a significant contract is signed, a premium gift to the counterpart CEO acknowledges the relationship, and opens the door to what comes next." },
   { title: "Year-End Executive Appreciation", body: "Thank your most important CEOs and executive partners with something that arrives beautifully packaged and gets opened immediately. Not another wine bottle. Not another gift card." },
-  { title: "Welcoming a New Board Member or Investor", body: "A premium gift within the first week of a new relationship signals that the partnership is valued at a personal level — not just a transactional one." },
+  { title: "Welcoming a New Board Member or Investor", body: "A premium gift within the first week of a new relationship signals that the partnership is valued at a personal level, not just a transactional one." },
   { title: "Celebrating a Company Milestone", body: "When a partner company goes public, closes a major round, or hits a growth milestone, a thoughtful gift says: we noticed, and we're proud to be associated with you." },
-  { title: "Conference and Summit Networking", body: "Follow up a meaningful conversation with a curated gift that lands days later. It's a physical reminder of the connection — and a reason to respond." },
+  { title: "Conference and Summit Networking", body: "Follow up a meaningful conversation with a curated gift that lands days later. It's a physical reminder of the connection, and a reason to respond." },
 ];
 
 export default function GiftsForCEOs() {
@@ -59,7 +59,7 @@ export default function GiftsForCEOs() {
           Gifts for CEOs That<br />Actually Get Remembered
         </h1>
         <p className="text-[16px] max-w-[550px] mx-auto mb-10" style={{ color: "rgba(255,255,255,0.65)" }}>
-          Premium artisan Spanish gourmet foods for the executives who have everything — except this.
+          Premium artisan Spanish gourmet foods for the executives who have everything, except this.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">
           <Link
@@ -82,7 +82,7 @@ export default function GiftsForCEOs() {
       {/* Intro */}
       <section className="max-w-[780px] mx-auto px-6 py-20 text-center">
         <p className="text-[17px] leading-relaxed" style={{ color: "#444" }}>
-          Gifting to a CEO is one of the most high-stakes moments in business relationship building. The wrong gift — a branded polo, a generic fruit basket, a restaurant gift card — signals that you didn&rsquo;t think about it. The right gift signals everything about who you are and how you operate. Soto & Segovia Imports sources premium artisan gourmet foods from Altea, Spain — the kind of gifts that get opened immediately, talked about genuinely, and remembered for years.
+          Gifting to a CEO is one of the most high-stakes moments in business relationship building. The wrong gift, a branded polo, a generic fruit basket, a restaurant gift card, signals that you didn&rsquo;t think about it. The right gift signals everything about who you are and how you operate. Soto & Segovia Imports sources premium artisan gourmet foods from Altea, Spain, the kind of gifts that get opened immediately, talked about genuinely, and remembered for years.
         </p>
       </section>
 
@@ -163,7 +163,7 @@ export default function GiftsForCEOs() {
             &ldquo;The best gifts don&rsquo;t have your logo on them. They have your taste. A premium food gift to a CEO says more about your company than any branded merchandise ever could.&rdquo;
           </blockquote>
           <p className="text-[12px] tracking-wider" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-            — Jorge Soto, Co-Founder · Soto & Segovia Imports
+           , Jorge Soto, Co-Founder · Soto & Segovia Imports
           </p>
         </div>
       </section>

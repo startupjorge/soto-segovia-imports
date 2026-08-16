@@ -20,7 +20,7 @@ export default function ProductGallery({ images, name }: { images: string[]; nam
         />
       </div>
 
-      {/* Thumbnails — only show when more than 1 image */}
+      {/* Thumbnails, only show when more than 1 image */}
       {images.length > 1 && (
         <div className="flex gap-2">
           {images.map((src, i) => (

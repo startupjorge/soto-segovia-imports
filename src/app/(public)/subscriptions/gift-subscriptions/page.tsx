@@ -52,7 +52,7 @@ export default function GiftSubscriptionsPage() {
               <div className="flex flex-col gap-1.5">
                 {boxes.map((box) => (
                   <p key={box.name} className="text-[12px]" style={{ color: "#666" }}>
-                    {box.name} — <span style={{ color: "#1A1A1A", fontWeight: 600 }}>${(box.monthly * opt.multiplier).toLocaleString()}</span>
+                    {box.name}, <span style={{ color: "#1A1A1A", fontWeight: 600 }}>${(box.monthly * opt.multiplier).toLocaleString()}</span>
                   </p>
                 ))}
               </div>

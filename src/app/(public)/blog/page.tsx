@@ -25,8 +25,8 @@ function AuthorAvatar({ author, size = 28 }: { author: string; size?: number }) 
 }
 
 export const metadata: Metadata = {
-  title: "Blog | Soto & Segovia Imports — Corporate Gifting, B2B Sales & Marketing Strategy",
-  description: "Sales strategy, corporate gifting guides, B2B and B2C marketing insights, and tips for sales leaders — from the team at Soto & Segovia Imports.",
+  title: "Blog | Soto & Segovia Imports, Corporate Gifting, B2B Sales & Marketing Strategy",
+  description: "Sales strategy, corporate gifting guides, B2B and B2C marketing insights, and tips for sales leaders, from the team at Soto & Segovia Imports.",
   openGraph: {
     title: "Blog | Soto & Segovia Imports",
     description: "Corporate gifting strategy, B2B sales insights, and marketing tips for sales leaders and gifting professionals.",

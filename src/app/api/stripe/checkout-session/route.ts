@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       success_url: `${base}/order-confirmed?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${base}/shop?cancelled=1`,
       payment_intent_data: {
-        description: `Gift order for ${recipientName} — Soto & Segovia Imports`,
+        description: `Gift order for ${recipientName}, Soto & Segovia Imports`,
       },
     });
 

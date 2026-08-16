@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Soto & Segovia Imports | Premium Spanish Gourmet Food Gifts",
     description:
       "Spanish Gourmet Food Gifts for Executives & Corporate Clients. Artisan olive oils, salts, aged vinegars, and orange wine from Altea, Spain. Corporate gifting, ABM programs, and wholesale available.",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Soto & Segovia Imports — Premium Spanish Gourmet Food Gifts" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Soto & Segovia Imports, Premium Spanish Gourmet Food Gifts" }],
   },
   twitter: {
     card: "summary_large_image",

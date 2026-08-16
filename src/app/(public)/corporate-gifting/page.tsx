@@ -136,7 +136,7 @@ export default function CorporateGiftingPage() {
           <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Subscription Plans</p>
           <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Keep Your Clients Top of Mind, Every Month</h2>
           <p className="text-[14px] max-w-[600px] mx-auto mb-10" style={{ color: "#666" }}>
-            A one-time gift is memorable. A monthly box is unforgettable. Subscribe on behalf of your best clients and let Spain arrive at their door every month — automatically.
+            A one-time gift is memorable. A monthly box is unforgettable. Subscribe on behalf of your best clients and let Spain arrive at their door every month, automatically.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {[

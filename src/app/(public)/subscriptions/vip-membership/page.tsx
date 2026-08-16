@@ -10,7 +10,7 @@ const benefits = [
   "All 4 curated boxes delivered monthly",
   "Products handpicked personally by Jorge, Roberto & Maite",
   "Exclusive items never available to the public",
-  "Dedicated white-glove concierge — 2-hour response",
+  "Dedicated white-glove concierge, 2-hour response",
   "Dedicated logistics coordination on every order",
   "Quarterly private tasting with the founders",
   "Custom branded gifting with your name or logo",
@@ -87,7 +87,7 @@ export default function VIPMembershipPage() {
           </p>
           <p className="text-[13px] leading-relaxed" style={{ color: "#555" }}>
             Pricing is bespoke, structured around your needs, and presented upon acceptance.<br />
-            No stated minimums. No public tiers. This is not for everyone — and that is intentional.
+            No stated minimums. No public tiers. This is not for everyone, and that is intentional.
           </p>
         </div>
 

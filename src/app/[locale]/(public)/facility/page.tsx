@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Nuestra Planta en Altea | Soto & Segovia Imports",
-  description: "Conoce la planta de producción de Príncipe Azahar en Altea, España — donde cada aceite de oliva, sal artesana, vinagre y vino de naranja se elabora a mano en la costa mediterránea.",
+  description: "Conoce la planta de producción de Príncipe Azahar en Altea, España, donde cada aceite de oliva, sal artesana, vinagre y vino de naranja se elabora a mano en la costa mediterránea.",
 };
 
 const stats = [
@@ -17,27 +17,27 @@ const processSteps = [
   {
     number: "01",
     title: "Cosecha",
-    body: "[Placeholder — describe cuándo y cómo se cosechan las aceitunas, hierbas u otras materias primas. Incluye la estacionalidad, la recolección a mano frente a la mecánica, y los olivares o zonas específicas dentro de Altea.]",
+    body: "[Placeholder, describe cuándo y cómo se cosechan las aceitunas, hierbas u otras materias primas. Incluye la estacionalidad, la recolección a mano frente a la mecánica, y los olivares o zonas específicas dentro de Altea.]",
   },
   {
     number: "02",
     title: "Prensado en Frío y Producción",
-    body: "[Placeholder — describe el proceso de prensado o producción. Tiempo desde la cosecha hasta el prensado, controles de temperatura, equipos utilizados y lo que hace que su método sea único.]",
+    body: "[Placeholder, describe el proceso de prensado o producción. Tiempo desde la cosecha hasta el prensado, controles de temperatura, equipos utilizados y lo que hace que su método sea único.]",
   },
   {
     number: "03",
     title: "Acabado Artesanal",
-    body: "[Placeholder — describe cómo se mezclan las sales, se envejecen los vinagres y se terminan los vinos. La naturaleza artesanal del proceso, los pequeños lotes y los puntos de control de calidad.]",
+    body: "[Placeholder, describe cómo se mezclan las sales, se envejecen los vinagres y se terminan los vinos. La naturaleza artesanal del proceso, los pequeños lotes y los puntos de control de calidad.]",
   },
   {
     number: "04",
     title: "Control de Calidad",
-    body: "[Placeholder — certificaciones, análisis de laboratorio, evaluación organoléptica, quién aprueba cada lote y cualquier premio o reconocimiento obtenido.]",
+    body: "[Placeholder, certificaciones, análisis de laboratorio, evaluación organoléptica, quién aprueba cada lote y cualquier premio o reconocimiento obtenido.]",
   },
   {
     number: "05",
     title: "Envasado y Exportación",
-    body: "[Placeholder — cómo se embotellan, etiquetan y preparan los productos para la exportación internacional. Requisitos de cadena de frío o transporte especial.]",
+    body: "[Placeholder, cómo se embotellan, etiquetan y preparan los productos para la exportación internacional. Requisitos de cadena de frío o transporte especial.]",
   },
 ];
 
@@ -45,22 +45,22 @@ const trustPoints = [
   {
     icon: "🏛",
     title: "[Nombre de Certificación]",
-    body: "[Placeholder — p. ej., Denominación de Origen, Certificación Ecológica, Licencia de Exportación. Describe qué significa y por qué importa a los compradores.]",
+    body: "[Placeholder, p. ej., Denominación de Origen, Certificación Ecológica, Licencia de Exportación. Describe qué significa y por qué importa a los compradores.]",
   },
   {
     icon: "🌿",
     title: "Prácticas Sostenibles",
-    body: "[Placeholder — describe las prácticas de sostenibilidad: uso del agua, envases, sin pesticidas, energía solar, etc.]",
+    body: "[Placeholder, describe las prácticas de sostenibilidad: uso del agua, envases, sin pesticidas, energía solar, etc.]",
   },
   {
     icon: "👨‍🍳",
     title: "Maestros Artesanos",
-    body: "[Placeholder — presenta a las personas clave detrás de la producción. Años de experiencia, tradiciones familiares, filosofía de elaboración.]",
+    body: "[Placeholder, presenta a las personas clave detrás de la producción. Años de experiencia, tradiciones familiares, filosofía de elaboración.]",
   },
   {
     icon: "🔬",
     title: "Analizado en Laboratorio",
-    body: "[Placeholder — análisis de terceros, niveles de acidez para aceites de oliva, estándares de pureza y cualquier certificación de laboratorio internacional.]",
+    body: "[Placeholder, análisis de terceros, niveles de acidez para aceites de oliva, estándares de pureza y cualquier certificación de laboratorio internacional.]",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function FacilityPageES() {
         <div className="relative w-full h-[70vh] bg-gray-200 flex items-center justify-center">
           <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ background: "#1A1A1A" }}>
             <p className="text-[11px] tracking-widest uppercase mb-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-              [PLACEHOLDER — Reemplazar con foto aérea o panorámica de la planta de Altea]
+              [PLACEHOLDER, Reemplazar con foto aérea o panorámica de la planta de Altea]
             </p>
           </div>
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%)" }} />
@@ -111,15 +111,15 @@ export default function FacilityPageES() {
             Altea, España —<br />El Corazón de Nuestra Producción
           </h2>
           <div className="flex flex-col gap-4 text-[15px] leading-relaxed" style={{ color: "#555" }}>
-            <p>[Placeholder — 2–3 frases describiendo la ubicación de la planta: el pueblo de Altea, su geografía, proximidad a los olivares y al mar. Qué hace que esta ubicación sea excepcional para la producción.]</p>
-            <p>[Placeholder — Describe la planta en sí: tamaño, antigüedad, qué se produce allí, características destacadas como prensas de piedra, bodegas de envejecimiento, salinas, etc.]</p>
-            <p>[Placeholder — Describe la relación entre Soto & Segovia y Príncipe Azahar / Bodegas Sendra González — cómo surgió esta alianza y por qué confiamos exclusivamente en ellos.]</p>
+            <p>[Placeholder, 2–3 frases describiendo la ubicación de la planta: el pueblo de Altea, su geografía, proximidad a los olivares y al mar. Qué hace que esta ubicación sea excepcional para la producción.]</p>
+            <p>[Placeholder, Describe la planta en sí: tamaño, antigüedad, qué se produce allí, características destacadas como prensas de piedra, bodegas de envejecimiento, salinas, etc.]</p>
+            <p>[Placeholder, Describe la relación entre Soto & Segovia y Príncipe Azahar / Bodegas Sendra González, cómo surgió esta alianza y por qué confiamos exclusivamente en ellos.]</p>
           </div>
         </div>
         <div className="relative aspect-square overflow-hidden" style={{ background: "#F0EDE6" }}>
           <div className="absolute inset-0 flex items-center justify-center">
             <p className="text-[11px] tracking-widest uppercase text-center px-8" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-              [PLACEHOLDER — Foto interior o aérea de la planta]
+              [PLACEHOLDER, Foto interior o aérea de la planta]
             </p>
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function FacilityPageES() {
           {[1,2,3,4,5,6].map((i) => (
             <div key={i} className="aspect-square flex items-center justify-center" style={{ background: "#F0EDE6" }}>
               <p className="text-[10px] tracking-widest uppercase text-center px-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-                [Foto {i} — Planta / Proceso / Personas]
+                [Foto {i}, Planta / Proceso / Personas]
               </p>
             </div>
           ))}

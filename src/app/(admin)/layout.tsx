@@ -65,7 +65,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             className="text-[10px] tracking-[0.2em] uppercase"
             style={{ color: "#555", fontFamily: "var(--font-cinzel), serif" }}
           >
-            Soto &amp; Segovia Imports — Administration
+            Soto &amp; Segovia Imports, Administration
           </h2>
           <div className="flex items-center gap-3">
             <span className="text-xs" style={{ color: "#555" }}>Admin User</span>

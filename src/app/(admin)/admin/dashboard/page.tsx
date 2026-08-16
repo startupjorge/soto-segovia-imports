@@ -11,7 +11,7 @@ const recentActivity = [
   { time: "2h ago", event: "New order ORD-2024-0092 placed by Bella Vista Market ($2,100)" },
   { time: "4h ago", event: "Invoice INV-2024-0045 paid by The Grove Hotel Group ($5,400)" },
   { time: "6h ago", event: "New distributor application: Meridian Fine Foods, Chicago IL" },
-  { time: "1d ago", event: "Arbequina EVOO restocked — 240 units received from supplier" },
+  { time: "1d ago", event: "Arbequina EVOO restocked, 240 units received from supplier" },
   { time: "1d ago", event: "Order ORD-2024-0091 shipped to Coastal Luxury Grocers" },
   { time: "2d ago", event: "New account created: La Perla Restaurant Group, Miami FL" },
 ];

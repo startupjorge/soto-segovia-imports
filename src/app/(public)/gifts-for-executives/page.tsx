@@ -7,15 +7,15 @@ export const metadata = {
 
 const roles = [
   { title: "VPs and Senior Vice Presidents", body: "The decision-makers below the C-suite who often determine whether your relationship grows or stalls. A premium gift at the right moment builds the kind of personal loyalty that no product feature or pricing strategy can replicate." },
-  { title: "Directors and Department Heads", body: "The champions inside your client organizations who advocate for your products and services internally. They influence procurement decisions, renewals, and expansions. They deserve to feel valued as individuals — not just as job titles." },
+  { title: "Directors and Department Heads", body: "The champions inside your client organizations who advocate for your products and services internally. They influence procurement decisions, renewals, and expansions. They deserve to feel valued as individuals, not just as job titles." },
   { title: "Managing Directors and Partners", body: "At professional services firms, private equity funds, and consulting practices, Managing Directors and Partners are the relationships that matter most. A premium curated gift signals that you understand their world." },
   { title: "General Managers and Regional Leaders", body: "The operators who run P&Ls and make real purchasing decisions across distributed organizations. Building personal relationships with GMs is often the fastest path to expanding a corporate account." },
 ];
 
 const occasions = [
-  { title: "Onboarding a New Executive Champion", body: "When a new VP or Director joins an existing client account, a premium welcome gift introduces your company in the most favorable possible light — before your competitor does." },
+  { title: "Onboarding a New Executive Champion", body: "When a new VP or Director joins an existing client account, a premium welcome gift introduces your company in the most favorable possible light, before your competitor does." },
   { title: "Quarterly Business Reviews", body: "Don&rsquo;t just show up with a slide deck. A small, thoughtful gift ahead of a QBR or EBR tells your executive contacts that the relationship matters beyond the numbers." },
-  { title: "Year-End Executive Gifts", body: "The holiday season is the most competitive moment in corporate gifting. Stand out with premium Spanish gourmet foods that arrive beautifully packaged and feel genuinely special — not generic." },
+  { title: "Year-End Executive Gifts", body: "The holiday season is the most competitive moment in corporate gifting. Stand out with premium Spanish gourmet foods that arrive beautifully packaged and feel genuinely special, not generic." },
   { title: "Promotion Celebrations", body: "When a key contact gets promoted, a congratulatory gift is a powerful relationship touchpoint. It says: we pay attention, we celebrate with you, and we&rsquo;re here for what comes next." },
   { title: "Speaking Engagement Thank-Yous", body: "When an executive speaks at your event or contributes to a panel or podcast, a premium gift is the ideal thank-you. It&rsquo;s personal, it&rsquo;s memorable, and it creates a conversation hook." },
 ];
@@ -56,7 +56,7 @@ export default function GiftsForExecutives() {
       {/* Intro */}
       <section className="max-w-[780px] mx-auto px-6 py-20 text-center">
         <p className="text-[17px] leading-relaxed" style={{ color: "#444" }}>
-          Executive gifting is not about the gift. It&rsquo;s about the relationship signal the gift sends. A thoughtfully chosen collection of premium Spanish gourmet foods from Altea, Spain tells your VPs, directors, and senior leaders: you are valued as a person, not just as a title. Soto & Segovia Imports helps companies build executive gifting programs that compound relationship equity over time — one extraordinary gift at a time.
+          Executive gifting is not about the gift. It&rsquo;s about the relationship signal the gift sends. A thoughtfully chosen collection of premium Spanish gourmet foods from Altea, Spain tells your VPs, directors, and senior leaders: you are valued as a person, not just as a title. Soto & Segovia Imports helps companies build executive gifting programs that compound relationship equity over time, one extraordinary gift at a time.
         </p>
       </section>
 
@@ -84,10 +84,10 @@ export default function GiftsForExecutives() {
       <section className="max-w-[900px] mx-auto px-6 py-20 text-center">
         <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Our Products</p>
         <h2 className="text-3xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
-          From Altea, Spain — to Your Executive&rsquo;s Door
+          From Altea, Spain, to Your Executive&rsquo;s Door
         </h2>
         <p className="text-[15px] leading-relaxed mb-10 max-w-[600px] mx-auto" style={{ color: "#666" }}>
-          Every product in the Príncipe Azahar line is hand-crafted in small batches on the Mediterranean coast of Spain. Our olive oils, aged vinegars, artisan salts, and reserve orange wine are the kind of gifts that get discovered — and then sought out by name.
+          Every product in the Príncipe Azahar line is hand-crafted in small batches on the Mediterranean coast of Spain. Our olive oils, aged vinegars, artisan salts, and reserve orange wine are the kind of gifts that get discovered, and then sought out by name.
         </p>
         <div className="flex flex-wrap gap-3 justify-center mb-10">
           {["Truffle Olive Oil", "Garlic Olive Oil", "Lemon Olive Oil", "Vanilla Vinegar", "Pomegranate Vinegar", "Orange Wine", "Black Salt", "Rose Salt"].map((p) => (
@@ -137,7 +137,7 @@ export default function GiftsForExecutives() {
             &ldquo;Executive gifting isn&rsquo;t a cost. It&rsquo;s the highest-leverage relationship investment your revenue team can make. One premium gift to the right VP at the right moment is worth ten cold emails.&rdquo;
           </blockquote>
           <p className="text-[12px] tracking-wider" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-            — Jorge Soto, Co-Founder · Soto & Segovia Imports
+           , Jorge Soto, Co-Founder · Soto & Segovia Imports
           </p>
         </div>
       </section>

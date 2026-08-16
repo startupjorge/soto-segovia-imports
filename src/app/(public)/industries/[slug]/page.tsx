@@ -113,7 +113,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
             &ldquo;{industry.quote}&rdquo;
           </blockquote>
           <p className="text-[12px] tracking-wider" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-            — {industry.quoteAttribution}
+           , {industry.quoteAttribution}
           </p>
         </div>
       </section>

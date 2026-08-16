@@ -202,7 +202,7 @@ export default function AboutPage() {
               On the Mediterranean coast of Spain, in the historic village of Altea, our partner Príncipe Azahar has spent generations perfecting artisan food production. Every olive oil, salt, vinegar, and wine we import is crafted by hand in this facility.
             </p>
             <p className="text-[15px] leading-relaxed mb-8" style={{ color: "#aaa" }}>
-              [Placeholder — add 1–2 sentences about what makes this facility and its people exceptional. Certifications, heritage, tradition.]
+              [Placeholder, add 1–2 sentences about what makes this facility and its people exceptional. Certifications, heritage, tradition.]
             </p>
             <Link
               href="/facility"
@@ -215,7 +215,7 @@ export default function AboutPage() {
           {/* Placeholder for facility photo */}
           <div className="aspect-video flex items-center justify-center border border-gray-800" style={{ background: "#1e1e1e" }}>
             <p className="text-[10px] tracking-widest uppercase text-center px-8" style={{ color: "#555", fontFamily: "var(--font-cinzel), serif" }}>
-              [Placeholder — Altea facility photo]
+              [Placeholder, Altea facility photo]
             </p>
           </div>
         </div>

@@ -110,7 +110,7 @@ export default function PersonalGiftingPage() {
           <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Subscription Plans</p>
           <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>A Gift That Arrives Every Month</h2>
           <p className="text-[14px] max-w-[600px] mx-auto mb-10" style={{ color: "#666" }}>
-            Go beyond a single gift. Subscribe on someone's behalf and send Spain to their door every month — olive oils, salts, vinegars, or wines, curated by Jorge, Roberto & Maite.
+            Go beyond a single gift. Subscribe on someone's behalf and send Spain to their door every month, olive oils, salts, vinegars, or wines, curated by Jorge, Roberto & Maite.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {[

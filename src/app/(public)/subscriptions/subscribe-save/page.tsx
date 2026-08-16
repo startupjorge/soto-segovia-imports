@@ -57,7 +57,7 @@ export default function SubscribeSavePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {[
             "10% off every monthly delivery",
-            "No commitment — cancel anytime",
+            "No commitment, cancel anytime",
             "Flexible monthly delivery",
             "Email notification before each shipment",
             "Pause or modify anytime",

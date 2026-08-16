@@ -12,7 +12,7 @@ const plans = [
     icon: Package,
     label: "Monthly Box",
     tagline: "Spain delivered to your door, every month.",
-    desc: "Choose a curated box — Olive Oils, Salts, Vinegars, or Wines — and receive a new selection each month. Subscribe and save 10% vs. one-time orders.",
+    desc: "Choose a curated box, Olive Oils, Salts, Vinegars, or Wines, and receive a new selection each month. Subscribe and save 10% vs. one-time orders.",
     cta: "Explore Monthly Box",
     href: "/subscriptions/monthly-box",
     vip: false,
@@ -58,7 +58,7 @@ export default function SubscriptionsPage() {
           Receive Spain Every Month
         </h1>
         <p className="text-[15px] max-w-xl mx-auto" style={{ color: "#888" }}>
-          Four ways to bring the finest Spanish gourmet products into your life — or someone else's.
+          Four ways to bring the finest Spanish gourmet products into your life, or someone else's.
         </p>
       </div>
 

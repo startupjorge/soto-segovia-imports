@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Our Altea Facility | Soto & Segovia Imports",
-  description: "Visit the Príncipe Azahar production facility in Altea, Spain — where every olive oil, artisan salt, vinegar, and orange wine is crafted by hand on the Mediterranean coast.",
+  description: "Visit the Príncipe Azahar production facility in Altea, Spain, where every olive oil, artisan salt, vinegar, and orange wine is crafted by hand on the Mediterranean coast.",
 };
 
 const stats = [
@@ -17,27 +17,27 @@ const processSteps = [
   {
     number: "01",
     title: "Harvest",
-    body: "[Placeholder — describe when and how olives, herbs, or raw materials are harvested. Include seasonality, hand-picking vs machine, specific groves or regions within Altea.]",
+    body: "[Placeholder, describe when and how olives, herbs, or raw materials are harvested. Include seasonality, hand-picking vs machine, specific groves or regions within Altea.]",
   },
   {
     number: "02",
     title: "Cold Press & Production",
-    body: "[Placeholder — describe the pressing or production process. Hours from harvest to press, temperature controls, equipment used, what makes their method distinct.]",
+    body: "[Placeholder, describe the pressing or production process. Hours from harvest to press, temperature controls, equipment used, what makes their method distinct.]",
   },
   {
     number: "03",
     title: "Artisan Finishing",
-    body: "[Placeholder — describe how salts are blended, vinegars aged, wines finished. The handcrafted nature of the process, small batches, quality checkpoints.]",
+    body: "[Placeholder, describe how salts are blended, vinegars aged, wines finished. The handcrafted nature of the process, small batches, quality checkpoints.]",
   },
   {
     number: "04",
     title: "Quality Control",
-    body: "[Placeholder — certifications, lab testing, organoleptic evaluation, who approves each batch, any awards or recognitions.]",
+    body: "[Placeholder, certifications, lab testing, organoleptic evaluation, who approves each batch, any awards or recognitions.]",
   },
   {
     number: "05",
     title: "Packaging & Export",
-    body: "[Placeholder — how products are bottled, labeled, and prepared for international export. Any cold-chain or shipping requirements.]",
+    body: "[Placeholder, how products are bottled, labeled, and prepared for international export. Any cold-chain or shipping requirements.]",
   },
 ];
 
@@ -45,22 +45,22 @@ const trustPoints = [
   {
     icon: "🏛",
     title: "[Certification Name]",
-    body: "[Placeholder — e.g., D.O. Certification, Organic Certification, Export License. Describe what it means and why it matters to buyers.]",
+    body: "[Placeholder, e.g., D.O. Certification, Organic Certification, Export License. Describe what it means and why it matters to buyers.]",
   },
   {
     icon: "🌿",
     title: "Sustainable Practices",
-    body: "[Placeholder — describe any sustainability practices: water usage, packaging, no pesticides, solar energy, etc.]",
+    body: "[Placeholder, describe any sustainability practices: water usage, packaging, no pesticides, solar energy, etc.]",
   },
   {
     icon: "👨‍🍳",
     title: "Master Artisans",
-    body: "[Placeholder — introduce the key people behind production. Years of experience, family traditions, philosophy.]",
+    body: "[Placeholder, introduce the key people behind production. Years of experience, family traditions, philosophy.]",
   },
   {
     icon: "🔬",
     title: "Lab Tested",
-    body: "[Placeholder — third-party testing, acidity levels for olive oils, purity standards, any international lab certifications.]",
+    body: "[Placeholder, third-party testing, acidity levels for olive oils, purity standards, any international lab certifications.]",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function FacilityPage() {
           {/* Replace this placeholder with actual facility photo */}
           <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ background: "#1A1A1A" }}>
             <p className="text-[11px] tracking-widest uppercase mb-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-              [PLACEHOLDER — Replace with aerial or wide-angle photo of the Altea facility]
+              [PLACEHOLDER, Replace with aerial or wide-angle photo of the Altea facility]
             </p>
           </div>
           <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%)" }} />
@@ -112,16 +112,16 @@ export default function FacilityPage() {
             Altea, Spain —<br />The Heart of Our Production
           </h2>
           <div className="flex flex-col gap-4 text-[15px] leading-relaxed" style={{ color: "#555" }}>
-            <p>[Placeholder — 2–3 sentences describing the location of the facility: the town of Altea, its geography, proximity to groves/sea. What makes this location exceptional for production.]</p>
-            <p>[Placeholder — Describe the facility itself: size, age, what's produced there, any notable features like stone presses, aging cellars, salt flats, etc.]</p>
-            <p>[Placeholder — Describe the relationship between Soto & Segovia and Príncipe Azahar / Bodegas Sendra González — how this partnership came to be, why we trust them exclusively.]</p>
+            <p>[Placeholder, 2–3 sentences describing the location of the facility: the town of Altea, its geography, proximity to groves/sea. What makes this location exceptional for production.]</p>
+            <p>[Placeholder, Describe the facility itself: size, age, what's produced there, any notable features like stone presses, aging cellars, salt flats, etc.]</p>
+            <p>[Placeholder, Describe the relationship between Soto & Segovia and Príncipe Azahar / Bodegas Sendra González, how this partnership came to be, why we trust them exclusively.]</p>
           </div>
         </div>
         <div className="relative aspect-square overflow-hidden" style={{ background: "#F0EDE6" }}>
           {/* Replace with interior or aerial facility photo */}
           <div className="absolute inset-0 flex items-center justify-center">
             <p className="text-[11px] tracking-widest uppercase text-center px-8" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-              [PLACEHOLDER — Facility interior or aerial photo]
+              [PLACEHOLDER, Facility interior or aerial photo]
             </p>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function FacilityPage() {
           {[1,2,3,4,5,6].map((i) => (
             <div key={i} className="aspect-square flex items-center justify-center" style={{ background: "#F0EDE6" }}>
               <p className="text-[10px] tracking-widest uppercase text-center px-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-                [Photo {i} — Facility / Process / People]
+                [Photo {i}, Facility / Process / People]
               </p>
             </div>
           ))}

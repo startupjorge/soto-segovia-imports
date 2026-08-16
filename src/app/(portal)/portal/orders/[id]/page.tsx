@@ -265,7 +265,7 @@ export default function OrderDetailPage() {
               </div>
             )}
           </div>
-          {/* Send Payment Link — only for unpaid statuses */}
+          {/* Send Payment Link, only for unpaid statuses */}
           {["pre-order", "confirmed", "payment-sent"].includes(order.status) && (
             <button
               onClick={sendPaymentLink}
@@ -400,7 +400,7 @@ export default function OrderDetailPage() {
           </div>
         </div>
 
-        {/* Right column — Chat */}
+        {/* Right column, Chat */}
         <div className="border flex flex-col" style={{ background: "#0D0D0A", borderColor: "#2A2A1A" }}>
           <ChatPanel order={order} onUpdate={refresh} />
         </div>

@@ -34,7 +34,7 @@ export default function WaitlistButton({ productName }: { productName: string })
           className="w-full py-4 text-center text-[12px] font-bold tracking-wider uppercase transition-all hover:opacity-90 text-white"
           style={{ background: "#1A1A1A", fontFamily: "var(--font-cinzel), serif" }}
         >
-          {added ? "✓ Added — Continue to Pre-Order" : "Pre-Order Now"}
+          {added ? "✓ Added, Continue to Pre-Order" : "Pre-Order Now"}
         </Link>
         <button
           onClick={() => setOpen(true)}

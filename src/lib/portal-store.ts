@@ -84,9 +84,9 @@ const SEED_ORDERS: Order[] = [
     messages: [
       { id: "m1", role: "admin", text: "Hi Michael! Your pre-order has been confirmed. I've sent you a payment link. Let me know if you need anything.", timestamp: "2026-08-14T11:05:00Z" },
       { id: "m2", role: "customer", text: "Thank you! Just completed the payment. Excited to receive these.", timestamp: "2026-08-14T11:30:00Z" },
-      { id: "m3", role: "admin", text: "Payment received — thank you! We're preparing your order now. Expected ship date is Aug 18.", timestamp: "2026-08-14T12:00:00Z" },
+      { id: "m3", role: "admin", text: "Payment received, thank you! We're preparing your order now. Expected ship date is Aug 18.", timestamp: "2026-08-14T12:00:00Z" },
     ],
-    internalNote: "VIP client — Vertex Capital. Handle with priority.",
+    internalNote: "VIP client, Vertex Capital. Handle with priority.",
   },
   {
     id: "ORD-2026-0011",

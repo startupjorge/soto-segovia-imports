@@ -21,9 +21,9 @@ const TEAM = [
 
 const COPY = {
   en: {
-    greeting: "Hola! 👋 I'm Jorge, co-founder of Soto & Segovia. Along with Roberto and our concierge Maite, we hand-source every product from small artisan producers in Altea, Spain. Whether you need the perfect corporate gift or have a question about an order — we're personally here to help.",
-    greetingReply: (name: string) => `So nice to meet you, ${name}! 🙏 Roberto, Maite, and I are all here. What can we help you with — a corporate gift, a product question, or something else?`,
-    autoReply: "Thanks for reaching out! We'll personally get back to you very soon. In the meantime, feel free to browse our curated gift boxes — designed specifically for executives and corporate gifting. 🎁",
+    greeting: "Hola! 👋 I'm Jorge, co-founder of Soto & Segovia. Along with Roberto and our concierge Maite, we hand-source every product from small artisan producers in Altea, Spain. Whether you need the perfect corporate gift or have a question about an order, we're personally here to help.",
+    greetingReply: (name: string) => `So nice to meet you, ${name}! 🙏 Roberto, Maite, and I are all here. What can we help you with, a corporate gift, a product question, or something else?`,
+    autoReply: "Thanks for reaching out! We'll personally get back to you very soon. In the meantime, feel free to browse our curated gift boxes, designed specifically for executives and corporate gifting. 🎁",
     online: "All online · reply within minutes",
     namePlaceholder: "Your name",
     emailPlaceholder: "Your email",
@@ -34,9 +34,9 @@ const COPY = {
     typing: "Maite is typing…",
   },
   es: {
-    greeting: "¡Hola! 👋 Soy Jorge, cofundador de Soto & Segovia. Junto con Roberto y nuestra concierge Maite, seleccionamos cada producto de pequeños productores artesanales en Altea, España. Ya sea que necesites el regalo corporativo perfecto o tengas una pregunta sobre un pedido — estamos aquí para ayudarte personalmente.",
-    greetingReply: (name: string) => `¡Qué bueno conocerte, ${name}! 🙏 Roberto, Maite y yo estamos disponibles. ¿En qué podemos ayudarte — un regalo corporativo, una pregunta sobre un producto, o algo más?`,
-    autoReply: "¡Gracias por contactarnos! Te responderemos personalmente muy pronto. Mientras tanto, echa un vistazo a nuestras cajas de regalo exclusivas — diseñadas especialmente para ejecutivos y regalos corporativos. 🎁",
+    greeting: "¡Hola! 👋 Soy Jorge, cofundador de Soto & Segovia. Junto con Roberto y nuestra concierge Maite, seleccionamos cada producto de pequeños productores artesanales en Altea, España. Ya sea que necesites el regalo corporativo perfecto o tengas una pregunta sobre un pedido, estamos aquí para ayudarte personalmente.",
+    greetingReply: (name: string) => `¡Qué bueno conocerte, ${name}! 🙏 Roberto, Maite y yo estamos disponibles. ¿En qué podemos ayudarte, un regalo corporativo, una pregunta sobre un producto, o algo más?`,
+    autoReply: "¡Gracias por contactarnos! Te responderemos personalmente muy pronto. Mientras tanto, echa un vistazo a nuestras cajas de regalo exclusivas, diseñadas especialmente para ejecutivos y regalos corporativos. 🎁",
     online: "Todos disponibles · respuesta en minutos",
     namePlaceholder: "Tu nombre",
     emailPlaceholder: "Tu correo",
@@ -152,7 +152,7 @@ export default function ChatBubble() {
         )}
       </button>
 
-      {/* Chat panel — full width on mobile, 340px on desktop */}
+      {/* Chat panel, full width on mobile, 340px on desktop */}
       {open && (
         <div
           className="fixed z-[499] flex flex-col border shadow-2xl bottom-[4.5rem] left-3 right-3 sm:left-auto sm:right-4 sm:w-[340px]"

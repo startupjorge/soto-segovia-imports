@@ -114,7 +114,7 @@ function LoginForm() {
               {devLink && (
                 <div className="border border-[#D4AF3730] p-4 mb-5 text-left" style={{ background: "#111108" }}>
                   <p className="text-[9px] tracking-wider uppercase mb-2 font-bold" style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}>
-                    Dev Mode — Your Sign-In Link:
+                    Dev Mode, Your Sign-In Link:
                   </p>
                   <a
                     href={devLink}

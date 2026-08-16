@@ -68,7 +68,7 @@ function ContactForm() {
       {status === "success" ? (
         <div className="border-l-4 p-8" style={{ borderColor: "#C9A227", background: "#F8F8F4" }}>
           <p className="font-bold text-[16px] mb-2" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Message Sent</p>
-          <p className="text-sm" style={{ color: "#666" }}>Thank you — our team will respond within 24 business hours.</p>
+          <p className="text-sm" style={{ color: "#666" }}>Thank you, our team will respond within 24 business hours.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">

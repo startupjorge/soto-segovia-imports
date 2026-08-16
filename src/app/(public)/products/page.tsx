@@ -96,7 +96,7 @@ function ProductsInner() {
                   className="block w-full py-2.5 text-center text-[11px] font-bold tracking-wider text-white transition-all hover:opacity-90"
                   style={{ background: "#1A1A1A", fontFamily: "var(--font-cinzel), serif" }}
                 >
-                  {addedSlug === product.slug ? "✓ Added — Go to Shop" : "Pre-Order"}
+                  {addedSlug === product.slug ? "✓ Added, Go to Shop" : "Pre-Order"}
                 </Link>
                 <button
                   onClick={() => setWaitlistOpen(true)}

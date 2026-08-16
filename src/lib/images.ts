@@ -1,5 +1,5 @@
 // Curated Unsplash image URLs for Soto & Segovia Imports
-// All food/product photography — Spanish gourmet aesthetic
+// All food/product photography, Spanish gourmet aesthetic
 
 export const heroImage =
   "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1200&q=80"; // olive oil bottles arranged

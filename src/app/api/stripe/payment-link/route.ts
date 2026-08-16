@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
             currency: "usd",
             product_data: {
               name: `Gift Order ${orderId}`,
-              description: `Premium Spanish gourmet gift for ${recipientName ?? "your recipient"} — Soto & Segovia Imports`,
+              description: `Premium Spanish gourmet gift for ${recipientName ?? "your recipient"}, Soto & Segovia Imports`,
               images: ["https://www.sotosegoviaimports.com/opengraph-image"],
             },
             unit_amount: Math.round(amount * 100), // cents
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
     });
 
     // Send the link by email via Stripe (the buyer enters their email at checkout)
-    // For a direct email, you'd use Resend/SendGrid here — this returns the URL
+    // For a direct email, you'd use Resend/SendGrid here, this returns the URL
     return NextResponse.json({ url: paymentLink.url, id: paymentLink.id });
   } catch (err) {
     console.error("Stripe payment link error:", err);

@@ -32,7 +32,7 @@ export default function SubscriptionsPage() {
       {/* Hero */}
       <div style={{ background: "#1A1A1A" }} className="px-6 py-16 text-center">
         <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-          Príncipe Azahar · Altea, Spain
+          Monthly Delivery · Subscribe &amp; Save · VIP Membership
         </p>
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-cinzel), serif" }}>
           Subscription Plans

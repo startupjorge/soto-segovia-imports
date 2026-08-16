@@ -104,6 +104,32 @@ export default function PersonalGiftingPage() {
         </div>
       </section>
 
+      {/* Subscription Plans */}
+      <section className="py-16 px-6" style={{ background: "#FAFAFA" }}>
+        <div className="max-w-[900px] mx-auto text-center">
+          <p className="text-[11px] tracking-[0.3em] uppercase mb-2 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Subscription Plans</p>
+          <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>A Gift That Arrives Every Month</h2>
+          <p className="text-[14px] max-w-[600px] mx-auto mb-10" style={{ color: "#666" }}>
+            Go beyond a single gift. Subscribe on someone's behalf and send Spain to their door every month — olive oils, salts, vinegars, or wines, curated by Jorge & Roberto.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+            {[
+              { title: "Monthly Box", desc: "A curated monthly selection of Spain's finest gourmet products. Subscribe & Save 10% vs. one-time orders.", href: "/subscriptions/monthly-box" },
+              { title: "Gift Subscriptions", desc: "Give 3, 6, or 12 months of deliveries. A truly unforgettable gift for birthdays, anniversaries, or the holidays.", href: "/subscriptions/gift-subscriptions" },
+              { title: "VIP Membership", desc: "Reserved for those who want the extraordinary. A fully bespoke, white-glove experience by private invitation only.", href: "/subscriptions/vip-membership" },
+            ].map((plan) => (
+              <a key={plan.title} href={plan.href} className="border p-6 text-left block transition-all hover:border-[#C9A227] group" style={{ borderColor: "#e8e8e0", background: "#fff" }}>
+                <p className="text-[13px] font-bold mb-2 group-hover:text-[#C9A227] transition-colors" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{plan.title}</p>
+                <p className="text-[12px] leading-relaxed" style={{ color: "#666" }}>{plan.desc}</p>
+              </a>
+            ))}
+          </div>
+          <a href="/subscriptions" className="inline-block px-10 py-3 font-bold text-[12px] tracking-wider transition-all hover:opacity-90" style={{ background: "#C9A227", color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>
+            View All Subscription Plans
+          </a>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 px-6 text-center" style={{ background: "#1A1A1A" }}>
         <div className="max-w-[600px] mx-auto">

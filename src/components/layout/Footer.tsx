@@ -193,7 +193,7 @@ export default function Footer() {
           </p>
           <p className="mt-2 text-xs" style={{ color: "#666" }}>{d.tagline1}</p>
           <p className="text-xs" style={{ color: "#666" }}>{d.tagline2}</p>
-          <div className="mt-5 flex items-center gap-3">
+          <div className="mt-3 flex items-center gap-2">
             <a href="https://www.facebook.com/people/Soto-Segovia-Imports/61593123997294/" target="_blank" rel="noopener noreferrer"
               className="w-8 h-8 flex items-center justify-center border border-gray-700 text-gray-500 hover:border-[#C9A227] hover:text-[#C9A227] transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 512 512" fill="currentColor">
@@ -225,7 +225,7 @@ export default function Footer() {
         {columns.map((col) => (
           <div key={col.heading}>
             <h4 className="text-[11px] font-bold tracking-widest uppercase mb-4" style={{ color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>{col.heading}</h4>
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-1.5">
               {col.links.map((link) => (
                 <li key={link.label}>
                   <Link

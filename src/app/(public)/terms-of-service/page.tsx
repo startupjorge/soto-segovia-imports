@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Terms & Conditions | Soto & Segovia Imports",
-  description: "Terms and Conditions for Soto & Segovia Imports LLC — the terms governing your use of our website and services.",
+  description: "Terms and Conditions for Soto & Segovia Imports LLC, the terms governing your use of our website and services.",
 };
 
 type Section = {
@@ -27,7 +27,7 @@ const sections: Section[] = [
       "The Site offers multiple subscription-based services (collectively, the \"Membership\"), including:",
     ],
     body: [
-      "Monthly Box. A curated selection of Spanish gourmet products — Olive Oils, Salts, Vinegars, or Wines — delivered monthly. Subscribers receive a new selection each month and save 10% versus one-time orders.",
+      "Monthly Box. A curated selection of Spanish gourmet products, Olive Oils, Salts, Vinegars, or Wines, delivered monthly. Subscribers receive a new selection each month and save 10% versus one-time orders.",
       "Subscribe & Save. Recurring monthly delivery of a subscriber's selected individual products, at an automatic 10% discount versus one-time orders. Subscribers may cancel at any time as set forth below.",
       "Gift Subscriptions. A fixed-term Membership (3, 6, or 12 months) purchased by one person (the \"Gifter\") for delivery to a recipient (the \"Recipient\"). Gift Subscriptions do not automatically renew at the end of the selected term. At the end of the gifted term, the Recipient may elect to convert the Gift Subscription into an ongoing Monthly Box or Subscribe & Save Membership, which will thereafter be subject to the automatic renewal terms described below. The Gifter is responsible for payment for the Gift Subscription; the Recipient is responsible for any charges arising from a subsequent conversion to an ongoing Membership.",
       "VIP Membership. An invitation-only Membership tier curated personally by Soto & Segovia Imports' principals. VIP Membership is not available through public registration and may only be obtained by invitation from Soto & Segovia Imports or by referral from an existing VIP member. Soto & Segovia Imports reserves the sole and absolute discretion to extend, decline, revoke, or condition any invitation or referral, and to set bespoke pricing, terms, and service levels for VIP Membership that may differ from those described in this Agreement.",
@@ -154,7 +154,7 @@ export default function TermsOfServicePage() {
 
         <div className="flex flex-col gap-12">
 
-          {/* Registration and Services — custom layout */}
+          {/* Registration and Services, custom layout */}
           <div>
             <h2 className="text-[13px] tracking-widest uppercase font-bold mb-4 pb-3 border-b" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A", borderColor: "#E8E3D9" }}>
               Registration and Services
@@ -164,7 +164,7 @@ export default function TermsOfServicePage() {
             <p className="text-[14px] leading-relaxed mb-6" style={{ color: "#555" }}>The Site offers multiple subscription-based services (collectively, the &ldquo;Membership&rdquo;), including:</p>
             <div className="flex flex-col gap-4 pl-4 mb-6 border-l-2" style={{ borderColor: "#E8E3D9" }}>
               {[
-                { label: "Monthly Box", body: "A curated selection of Spanish gourmet products — Olive Oils, Salts, Vinegars, or Wines — delivered monthly. Subscribers receive a new selection each month and save 10% versus one-time orders." },
+                { label: "Monthly Box", body: "A curated selection of Spanish gourmet products, Olive Oils, Salts, Vinegars, or Wines, delivered monthly. Subscribers receive a new selection each month and save 10% versus one-time orders." },
                 { label: "Subscribe & Save", body: "Recurring monthly delivery of a subscriber's selected individual products, at an automatic 10% discount versus one-time orders. Subscribers may cancel at any time as set forth below." },
                 { label: "Gift Subscriptions", body: "A fixed-term Membership (3, 6, or 12 months) purchased by one person (the \"Gifter\") for delivery to a recipient (the \"Recipient\"). Gift Subscriptions do not automatically renew at the end of the selected term. The Gifter is responsible for payment for the Gift Subscription; the Recipient is responsible for any charges arising from a subsequent conversion to an ongoing Membership." },
                 { label: "VIP Membership", body: "An invitation-only Membership tier curated personally by Soto & Segovia Imports' principals. VIP Membership is not available through public registration and may only be obtained by invitation from Soto & Segovia Imports or by referral from an existing VIP member. Soto & Segovia Imports reserves the sole and absolute discretion to extend, decline, revoke, or condition any invitation or referral." },

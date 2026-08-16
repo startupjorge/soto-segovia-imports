@@ -5,7 +5,7 @@ const clients = [
   { id: "ACC-002", name: "The Grove Hotel Group", type: "Hotel", city: "New York, NY", ytd: "$54,800", orders: 36, status: "Active", tier: "Platinum" },
   { id: "ACC-003", name: "La Perla Restaurant Group", type: "Restaurant", city: "Miami, FL", ytd: "$19,200", orders: 18, status: "Active", tier: "Silver" },
   { id: "ACC-004", name: "Coastal Luxury Grocers", type: "Grocery", city: "Palm Beach, FL", ytd: "$32,000", orders: 28, status: "Active", tier: "Gold" },
-  { id: "ACC-005", name: "Meridian Fine Foods", type: "Grocery", city: "Chicago, IL", ytd: "$0", orders: 0, status: "Pending", tier: "—" },
+  { id: "ACC-005", name: "Meridian Fine Foods", type: "Grocery", city: "Chicago, IL", ytd: "$0", orders: 0, status: "Pending", tier: ", " },
   { id: "ACC-006", name: "Azure Hospitality Group", type: "Hotel", city: "Los Angeles, CA", ytd: "$78,100", orders: 52, status: "Active", tier: "Platinum" },
   { id: "ACC-007", name: "The Spanish Table", type: "Specialty", city: "Seattle, WA", ytd: "$12,400", orders: 11, status: "Active", tier: "Silver" },
 ];
@@ -14,7 +14,7 @@ const tierColors: Record<string, string> = {
   Platinum: "#C0C0C0",
   Gold: "#D4AF37",
   Silver: "#A8A9AD",
-  "—": "#444",
+  ", ": "#444",
 };
 
 export default function ClientsPage() {

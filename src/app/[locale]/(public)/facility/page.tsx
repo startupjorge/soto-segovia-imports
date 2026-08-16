@@ -108,7 +108,7 @@ export default function FacilityPageES() {
         <div>
           <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>La Planta</p>
           <h2 className="text-3xl font-bold mb-6" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>
-            Altea, España —<br />El Corazón de Nuestra Producción
+            Altea, España , <br />El Corazón de Nuestra Producción
           </h2>
           <div className="flex flex-col gap-4 text-[15px] leading-relaxed" style={{ color: "#555" }}>
             <p>[Placeholder, 2–3 frases describiendo la ubicación de la planta: el pueblo de Altea, su geografía, proximidad a los olivares y al mar. Qué hace que esta ubicación sea excepcional para la producción.]</p>

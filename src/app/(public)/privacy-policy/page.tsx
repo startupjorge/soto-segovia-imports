@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Privacy Policy | Soto & Segovia Imports",
-  description: "Privacy Policy for Soto & Segovia Imports LLC — how we collect, use, and protect your information.",
+  description: "Privacy Policy for Soto & Segovia Imports LLC, how we collect, use, and protect your information.",
 };
 
 const sections = [

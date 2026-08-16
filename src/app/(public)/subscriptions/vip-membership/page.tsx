@@ -20,7 +20,7 @@ const benefits = [
 ];
 
 export default function VIPMembershipPage() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", company: "", message: "" });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", company: "", referredBy: "", message: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -34,7 +34,7 @@ export default function VIPMembershipPage() {
         ...form,
         type: "VIP Membership Request",
         lang: "EN",
-        message: `[VIP MEMBERSHIP REQUEST]\n\n${form.message}`,
+        message: `[VIP MEMBERSHIP REQUEST]${form.referredBy ? `\nReferred by: ${form.referredBy}` : ""}\n\n${form.message}`,
       });
       await fetch(`${APPS_SCRIPT_URL}?${params.toString()}`, { method: "GET", mode: "no-cors" });
       setStatus("success");
@@ -53,14 +53,19 @@ export default function VIPMembershipPage() {
         <div className="flex items-center justify-center mb-6">
           <Crown size={36} style={{ color: "#C9A227" }} />
         </div>
-        <p className="text-[10px] tracking-[0.4em] uppercase font-semibold mb-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
-          Ultra-Exclusive · By Invitation Only
-        </p>
+        <div className="inline-block border px-5 py-2 mb-6" style={{ borderColor: "#C9A227" }}>
+          <p className="text-[10px] tracking-[0.4em] uppercase font-bold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+            Invite Only
+          </p>
+        </div>
         <h1 className="text-3xl md:text-6xl font-bold text-white mb-6" style={{ fontFamily: "var(--font-cinzel), serif", lineHeight: 1.15 }}>
           VIP Membership
         </h1>
-        <p className="text-[15px] max-w-2xl mx-auto leading-relaxed" style={{ color: "#666" }}>
+        <p className="text-[15px] max-w-2xl mx-auto leading-relaxed mb-4" style={{ color: "#666" }}>
           Reserved for a select few who demand an extraordinary, entirely private relationship with the world's finest Spanish gourmet products. This is not a subscription. It is a standing.
+        </p>
+        <p className="text-[13px] max-w-xl mx-auto" style={{ color: "#444" }}>
+          Access is by invitation only. Existing members may refer individuals they believe are a fit.
         </p>
       </div>
 
@@ -138,6 +143,10 @@ export default function VIPMembershipPage() {
               <div>
                 <label className="block text-[10px] tracking-widest uppercase mb-1.5 font-semibold" style={{ color: "#555", fontFamily: "var(--font-cinzel), serif" }}>Company / Organization</label>
                 <input value={form.company} onChange={set("company")} className="w-full px-4 py-3 text-[13px] outline-none focus:border-[#C9A227] transition-colors" style={{ background: "#111", border: "1px solid #222", color: "#fff" }} placeholder="Optional" />
+              </div>
+              <div>
+                <label className="block text-[10px] tracking-widest uppercase mb-1.5 font-semibold" style={{ color: "#555", fontFamily: "var(--font-cinzel), serif" }}>Referred By <span style={{ color: "#333" }}>(Current Member)</span></label>
+                <input value={form.referredBy} onChange={set("referredBy")} className="w-full px-4 py-3 text-[13px] outline-none focus:border-[#C9A227] transition-colors" style={{ background: "#111", border: "1px solid #222", color: "#fff" }} placeholder="Name of the member who referred you (optional)" />
               </div>
               <div>
                 <label className="block text-[10px] tracking-widest uppercase mb-1.5 font-semibold" style={{ color: "#555", fontFamily: "var(--font-cinzel), serif" }}>Tell Us About Yourself</label>

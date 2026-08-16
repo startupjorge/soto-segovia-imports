@@ -140,6 +140,10 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-[10px] tracking-widest uppercase font-bold mb-1" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Regional Office</p>
+              <p className="text-sm" style={{ color: "#444" }}>Tampa, FL, USA</p>
+            </div>
+            <div>
+              <p className="text-[10px] tracking-widest uppercase font-bold mb-1" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Regional Office</p>
               <p className="text-sm" style={{ color: "#444" }}>Madrid, Spain</p>
             </div>
           </div>

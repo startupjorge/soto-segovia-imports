@@ -68,7 +68,7 @@ const footerData = {
         { label: "Monthly Box", href: "/subscriptions/monthly-box" },
         { label: "Subscribe & Save 10%", href: "/subscriptions/subscribe-save" },
         { label: "Gift Subscriptions", href: "/subscriptions/gift-subscriptions" },
-        { label: "VIP Membership — Invite Only", href: "/subscriptions/vip-membership", vip: true },
+        { label: "VIP Membership · Invite Only", href: "/subscriptions/vip-membership", vip: true },
       ],
     },
     company: {

@@ -60,7 +60,7 @@ export default function MonthlyBoxPage() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact?type=subscribe" className="block text-center py-3 text-[11px] font-bold tracking-wider transition-all hover:opacity-90" style={{ background: "#C9A227", color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>
+                <Link href="/contact?type=monthly-box" className="block text-center py-3 text-[11px] font-bold tracking-wider transition-all hover:opacity-90" style={{ background: "#C9A227", color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>
                   Subscribe Now
                 </Link>
               </div>

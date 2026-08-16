@@ -73,7 +73,7 @@ export default function SubscribeSavePage() {
         </div>
 
         <div className="text-center">
-          <Link href="/contact?type=subscribe" className="inline-block px-12 py-4 font-bold text-[12px] tracking-wider transition-all hover:opacity-90" style={{ background: "#C9A227", color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>
+          <Link href="/contact?type=subscribe-save" className="inline-block px-12 py-4 font-bold text-[12px] tracking-wider transition-all hover:opacity-90" style={{ background: "#C9A227", color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>
             Start Saving Today
           </Link>
           <p className="text-[11px] mt-4" style={{ color: "#aaa" }}>No commitment · Cancel anytime · Free to join</p>

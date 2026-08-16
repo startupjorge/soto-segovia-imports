@@ -17,17 +17,17 @@ const processSteps = [
   {
     number: "01",
     title: "Premium Olive Oil Base",
-    body: "Every product begins with high-quality extra virgin olive oil cold-pressed at the facility. Quality olive oil never turns cloudy — it is one of the clearest indicators of purity, and every batch from Príncipe Azahar meets that standard.",
+    body: "Every product begins with high-quality extra virgin olive oil cold-pressed at the facility. Quality olive oil never turns cloudy: it is one of the clearest indicators of purity, and every batch from Príncipe Azahar meets that standard.",
   },
   {
     number: "02",
     title: "Single-Ingredient Maceration",
-    body: "Each flavored oil is macerating in its own dedicated vat — truffle, rosemary, chili pepper, lemon, garlic. There is no cross-contamination, no blending of ingredients in production. Each vat is devoted exclusively to one ingredient.",
+    body: "Each flavored oil is macerating in its own dedicated vat: truffle, rosemary, chili pepper, lemon, garlic. There is no cross-contamination, no blending of ingredients in production. Each vat is devoted exclusively to one ingredient.",
   },
   {
     number: "03",
     title: "No Artificial Anything",
-    body: "No drops, no concentrates, no artificial flavorings, no chemicals. What goes into the vat is the real ingredient — whole truffles, fresh rosemary, dried chilis. The oil does the rest.",
+    body: "No drops, no concentrates, no artificial flavorings, no chemicals. What goes into the vat is the real ingredient: whole truffles, fresh rosemary, dried chilis. The oil does the rest.",
   },
   {
     number: "04",
@@ -36,8 +36,8 @@ const processSteps = [
   },
   {
     number: "05",
-    title: "Fruit Wines — A World First",
-    body: "Príncipe Azahar is the only winery in the world producing fruit wines. Their orange wine attracted the attention of Televisión Española — one of Spain's most recognized broadcast networks — which produced a documentary feature on the winery and its owner. The recognition speaks to a level of innovation rarely seen in artisan food production.",
+    title: "Fruit Wines, A World First",
+    body: "Príncipe Azahar is the only winery in the world producing fruit wines. Their orange wine attracted the attention of Televisión Española, one of Spain's most recognized broadcast networks, which produced a documentary feature on the winery and its owner. The recognition speaks to a level of innovation rarely seen in artisan food production.",
   },
 ];
 
@@ -45,12 +45,12 @@ const trustPoints = [
   {
     icon: "🫒",
     title: "Oil Clarity as Quality Standard",
-    body: "High-quality extra virgin olive oil is transparent and clear. Príncipe Azahar uses this as a baseline quality indicator — if it clouds, it doesn't ship. Quality certificate provided by the producer upon request.",
+    body: "High-quality extra virgin olive oil is transparent and clear. Príncipe Azahar uses this as a baseline quality indicator: if it clouds, it doesn't ship. Quality certificate provided by the producer upon request.",
   },
   {
     icon: "🧪",
     title: "Zero Artificial Additives",
-    body: "No artificial drops, flavorings, concentrates, or chemical enhancers of any kind are used in production. Every infusion is achieved through time and the real ingredient — nothing else.",
+    body: "No artificial drops, flavorings, concentrates, or chemical enhancers of any kind are used in production. Every infusion is achieved through time and the real ingredient: nothing else.",
   },
   {
     icon: "🍊",
@@ -60,7 +60,7 @@ const trustPoints = [
   {
     icon: "📺",
     title: "Featured by Televisión Española",
-    body: "Televisión Española — one of Spain's most prominent national broadcast networks — produced a documentary segment on the winery owner and the orange wine. A rare honor that reflects both the product's uniqueness and its cultural significance.",
+    body: "Televisión Española, one of Spain's most prominent national broadcast networks, produced a documentary segment on the winery owner and the orange wine. A rare honor that reflects both the product's uniqueness and its cultural significance.",
   },
 ];
 
@@ -122,8 +122,8 @@ export default function FacilityPage() {
           </h2>
           <div className="flex flex-col gap-4 text-[15px] leading-relaxed" style={{ color: "#555" }}>
             <p>Nestled in the hills above the Mediterranean at Partida la Olla, 75 in Altea, the Príncipe Azahar facility benefits from one of the most favorable microclimates in Spain for artisan food production. The region's dry Mediterranean air, mineral-rich soil, and proximity to the sea create conditions that intensify the flavor of every ingredient that passes through.</p>
-            <p>Bodegas Sendra González operates here under the Príncipe Azahar label, producing a range of extraordinary products — cold-pressed olive oils, single-ingredient infused oils, artisan vinegars, gourmet salts, and fruit wines. Their philosophy is simple: start with the best raw material available, and never compromise the process.</p>
-            <p>Soto & Segovia Imports brings these products directly to North American markets — no intermediaries, no rebottling, no compromises. What leaves Altea is exactly what arrives at your door.</p>
+            <p>Bodegas Sendra González operates here under the Príncipe Azahar label, producing a range of extraordinary products: cold-pressed olive oils, single-ingredient infused oils, artisan vinegars, gourmet salts, and fruit wines. Their philosophy is simple: start with the best raw material available, and never compromise the process.</p>
+            <p>Soto & Segovia Imports brings these products directly to North American markets: no intermediaries, no rebottling, no compromises. What leaves Altea is exactly what arrives at your door.</p>
           </div>
           <p className="mt-6 text-[13px]" style={{ color: "#999" }}>
             Partida la Olla, 75 · 03590 Altea, Alicante, Spain
@@ -146,7 +146,7 @@ export default function FacilityPage() {
             <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>As Seen on National Television</p>
             <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>Featured by Televisión Española</h2>
             <p className="text-[15px] leading-relaxed max-w-[620px] mx-auto" style={{ color: "#666" }}>
-              Over a decade ago, Televisión Española — one of Spain's most respected national broadcast networks — produced a documentary segment on the Príncipe Azahar winery and its owner. The subject: their pioneering orange wine, and their position as the only winery in the world making fruit wines commercially. The feature remains a testament to how far ahead of the curve this Altea producer has always been.
+              Over a decade ago, Televisión Española, one of Spain's most respected national broadcast networks, produced a documentary segment on the Príncipe Azahar winery and its owner. Their pioneering orange wine and their position as the only winery in the world making fruit wines commercially. The feature remains a testament to how far ahead of the curve this Altea producer has always been.
             </p>
           </div>
           <div className="relative w-full" style={{ paddingBottom: "56.25%", height: 0 }}>

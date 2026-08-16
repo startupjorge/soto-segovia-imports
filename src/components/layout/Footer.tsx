@@ -67,8 +67,8 @@ const footerData = {
       links: [
         { label: "Monthly Box", href: "/subscriptions/monthly-box" },
         { label: "Subscribe & Save 10%", href: "/subscriptions/subscribe-save" },
-        { label: "VIP Membership", href: "/subscriptions/vip-membership" },
         { label: "Gift Subscriptions", href: "/subscriptions/gift-subscriptions" },
+        { label: "VIP Membership — Invite Only", href: "/subscriptions/vip-membership", vip: true },
       ],
     },
     company: {
@@ -148,8 +148,8 @@ const footerData = {
       links: [
         { label: "Caja Mensual", href: "/subscriptions/monthly-box" },
         { label: "Suscríbete y Ahorra 10%", href: "/subscriptions/subscribe-save" },
-        { label: "Membresía VIP", href: "/subscriptions/vip-membership" },
         { label: "Suscripciones de Regalo", href: "/subscriptions/gift-subscriptions" },
+        { label: "Membresía VIP — Solo por Invitación", href: "/subscriptions/vip-membership", vip: true },
       ],
     },
     company: {
@@ -226,7 +226,13 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               {col.links.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-[12px] transition-colors hover:text-[#C9A227]" style={{ color: "#888" }}>{link.label}</Link>
+                  <Link
+                    href={link.href}
+                    className="text-[12px] transition-colors hover:text-[#C9A227]"
+                    style={{ color: (link as { vip?: boolean }).vip ? "#C9A227" : "#888", fontWeight: (link as { vip?: boolean }).vip ? 700 : 400 }}
+                  >
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

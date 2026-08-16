@@ -86,9 +86,9 @@ export default function FacilityPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 60%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.55) 100%)" }} />
           <div className="relative z-10 text-center px-6 max-w-[700px] mx-auto" style={{ position: "absolute", bottom: "60px", left: 0, right: 0 }}>
-            <p className="text-[11px] tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+            <p className="text-[11px] tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif", textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}>
               Príncipe Azahar · Altea, Spain
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-cinzel), serif" }}>

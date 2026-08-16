@@ -65,6 +65,7 @@ const footerData = {
     subscriptions: {
       heading: "Subscription Plans",
       links: [
+        { label: "All Plans", href: "/subscriptions" },
         { label: "Monthly Box", href: "/subscriptions/monthly-box" },
         { label: "Subscribe & Save 10%", href: "/subscriptions/subscribe-save" },
         { label: "Gift Subscriptions", href: "/subscriptions/gift-subscriptions" },
@@ -146,10 +147,11 @@ const footerData = {
     subscriptions: {
       heading: "Suscripciones",
       links: [
+        { label: "Todos los Planes", href: "/subscriptions" },
         { label: "Caja Mensual", href: "/subscriptions/monthly-box" },
         { label: "Suscríbete y Ahorra 10%", href: "/subscriptions/subscribe-save" },
         { label: "Suscripciones de Regalo", href: "/subscriptions/gift-subscriptions" },
-        { label: "Membresía VIP — Solo por Invitación", href: "/subscriptions/vip-membership", vip: true },
+        { label: "Membresía VIP · Solo por Invitación", href: "/subscriptions/vip-membership", vip: true },
       ],
     },
     company: {

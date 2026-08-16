@@ -142,7 +142,7 @@ export default function CorporateGiftingPage() {
             {[
               { title: "Monthly Box", desc: "Send a curated box of Spanish gourmet products to any recipient, every month. Save 10% vs. one-time orders.", href: "/subscriptions/monthly-box" },
               { title: "Gift Subscriptions", desc: "Buy 3, 6, or 12 months of deliveries as a gift. Perfect for client milestones, renewals, and year-end gifting.", href: "/subscriptions/gift-subscriptions" },
-              { title: "VIP Membership", desc: "For your most important relationships. An ultra-exclusive, by-invitation program curated personally by Jorge & Roberto.", href: "/subscriptions/vip-membership" },
+              { title: "VIP Membership", desc: "For your most important relationships. An ultra-exclusive, by-invitation program curated personally by Jorge, Roberto & Maite.", href: "/subscriptions/vip-membership" },
             ].map((plan) => (
               <a key={plan.title} href={plan.href} className="border p-6 text-left block transition-all hover:border-[#C9A227] group" style={{ borderColor: "#e8e8e0", background: "#fff" }}>
                 <p className="text-[13px] font-bold mb-2 group-hover:text-[#C9A227] transition-colors" style={{ fontFamily: "var(--font-cinzel), serif", color: "#1A1A1A" }}>{plan.title}</p>

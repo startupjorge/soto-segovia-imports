@@ -16,7 +16,7 @@ const monthlyBoxes = [
 
 const vipIncludes = [
   "All 4 curated boxes delivered monthly",
-  "Products handpicked personally by Jorge & Roberto",
+  "Products handpicked personally by Jorge, Roberto & Maite",
   "Exclusive items never available to the public",
   "White-glove concierge — dedicated contact, 2-hour response",
   "Free express shipping on every order",
@@ -118,7 +118,7 @@ export default function SubscriptionsPage() {
             VIP Membership
           </h2>
           <p className="text-[15px] leading-relaxed" style={{ color: "#666" }}>
-            Reserved for discerning individuals and organizations who demand the finest. A fully bespoke, white-glove experience curated personally by Jorge & Roberto.
+            Reserved for discerning individuals and organizations who demand the finest. A fully bespoke, white-glove experience curated personally by Jorge, Roberto & Maite.
           </p>
         </div>
 
@@ -154,7 +154,7 @@ export default function SubscriptionsPage() {
 
             <div className="border-t pt-6 text-center" style={{ borderColor: "#2A2A1A" }}>
               <p className="text-[12px] mb-6" style={{ color: "#555" }}>
-                Each VIP membership is personally reviewed by Jorge & Roberto. We only accept clients we can truly serve at the highest level.
+                Each VIP membership is personally reviewed by Jorge, Roberto & Maite. We only accept clients we can truly serve at the highest level.
               </p>
               <Link
                 href="/subscriptions/vip-membership"

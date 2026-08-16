@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const benefits = [
   "All 4 curated boxes delivered monthly",
-  "Products handpicked personally by Jorge & Roberto",
+  "Products handpicked personally by Jorge, Roberto & Maite",
   "Exclusive items never available to the public",
   "Dedicated white-glove concierge — 2-hour response",
   "Free express shipping on every order, always",
@@ -82,7 +82,7 @@ export default function VIPMembershipPage() {
         {/* CTA */}
         <div className="text-center border-t pt-12" style={{ borderColor: "#1A1A10" }}>
           <p className="text-[13px] leading-relaxed mb-8 max-w-md mx-auto" style={{ color: "#555" }}>
-            Each membership is personally reviewed by Jorge &amp; Roberto. We only accept members we can truly serve at the highest level.
+            Each membership is personally reviewed by Jorge, Roberto &amp; Maite. We only accept members we can truly serve at the highest level.
           </p>
           <Link
             href="/contact?type=vip"

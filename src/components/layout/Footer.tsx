@@ -181,7 +181,7 @@ export default function Footer() {
     <footer style={{ background: "#141414", color: "#ccc" }}>
       <div className="max-w-[1400px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-8 gap-8">
         {/* Logo column */}
-        <div className="md:col-span-1" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+        <div className="md:col-span-1 md:pr-6" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo-footer.png"

@@ -177,7 +177,7 @@ export default function ClaudeMCPPage() {
 
         <div className="flex flex-col items-center gap-5 mb-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logos/claude.svg" alt="Claude" style={{ height: 44, width: "auto" }} />
+          <img src="/logos/claude-ai.webp" alt="Claude" style={{ height: 44, width: "auto" }} />
           <div className="flex items-center gap-3">
             <div className="h-px w-12" style={{ background: "rgba(0,0,0,0.1)" }} />
             <span className="text-[10px] tracking-[0.3em] uppercase" style={{ color: "#999" }}>MCP Integration</span>

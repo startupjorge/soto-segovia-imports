@@ -291,8 +291,8 @@ export default function Footer() {
   const d = footerData[lang];
   const [comingSoonCountry, setComingSoonCountry] = useState<string | null>(null);
 
-  const topRow    = [d.services, d.products, d.industries];
-  const bottomRow = [d.blog, d.recipes, d.subscriptions, d.company, d.origins];
+  const topRow    = [d.services, d.products, d.industries, d.company];
+  const bottomRow = [d.blog, d.recipes, d.subscriptions, d.origins];
 
   const renderCol = (col: typeof d.services) => (
     <div key={col.heading}>
@@ -344,7 +344,7 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 py-14">
 
         {/* Top section: logo + first row of columns */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
           {/* Logo column */}
           <div className="md:pr-6" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -392,7 +392,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mb-12" />
 
         {/* Bottom row: 4 columns offset to align with top row */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div /> {/* spacer to align with logo column */}
           {bottomRow.map(renderCol)}
         </div>

@@ -294,46 +294,59 @@ export default function Footer() {
   const topRow    = [d.services, d.products, d.industries, d.company];
   const bottomRow = [d.blog, d.recipes, d.subscriptions, d.origins];
 
-  const renderCol = (col: typeof d.services) => (
-    <div key={col.heading}>
-      <h4 className="text-[11px] font-bold tracking-widest uppercase mb-4" style={{ color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>{col.heading}</h4>
-      <ul className="flex flex-col gap-1.5">
-        {col.links.map((link) => {
-          const isSoon = !!(link as { soon?: boolean }).soon;
-          const isVip = !!(link as { vip?: boolean }).vip;
-          const countryMatch = link.label.match(/From (.+)$/);
-          const country = countryMatch ? countryMatch[1] : "";
+  const renderLink = (link: (typeof d.services.links)[number]) => {
+    const isSoon = !!(link as { soon?: boolean }).soon;
+    const isVip = !!(link as { vip?: boolean }).vip;
+    const countryMatch = link.label.match(/From (.+)$/) || link.label.match(/de (.+)$/);
+    const country = countryMatch ? countryMatch[1] : "";
 
-          if (isSoon) {
-            return (
-              <li key={link.label}>
-                <button
-                  onClick={() => setComingSoonCountry(country)}
-                  className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2 text-left"
-                  style={{ color: "#888", background: "none", border: "none", padding: 0, cursor: "pointer" }}
-                >
-                  {link.label}
-                  <span className="text-[7px] tracking-wide uppercase px-0.5 py-px whitespace-nowrap" style={{ color: "#444", border: "1px solid #2A2A2A" }}>Soon</span>
-                </button>
-              </li>
-            );
-          }
+    if (isSoon) {
+      return (
+        <li key={link.label}>
+          <button
+            onClick={() => setComingSoonCountry(country)}
+            className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2 text-left"
+            style={{ color: "#888", background: "none", border: "none", padding: 0, cursor: "pointer" }}
+          >
+            {link.label}
+            <span className="text-[7px] tracking-wide uppercase px-0.5 py-px whitespace-nowrap" style={{ color: "#444", border: "1px solid #2A2A2A" }}>Soon</span>
+          </button>
+        </li>
+      );
+    }
 
-          return (
-            <li key={link.label}>
-              <Link
-                href={link.href}
-                className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2"
-                style={{ color: isVip ? "#C9A227" : "#888", fontWeight: isVip ? 700 : 400 }}
-              >
-                {link.label}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
+    return (
+      <li key={link.label}>
+        <Link
+          href={link.href}
+          className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2"
+          style={{ color: isVip ? "#C9A227" : "#888", fontWeight: isVip ? 700 : 400 }}
+        >
+          {link.label}
+        </Link>
+      </li>
+    );
+  };
+
+  const renderCol = (col: typeof d.services) => {
+    const isOrigins = col === d.origins;
+    return (
+      <div key={col.heading} className={isOrigins ? "md:col-span-2" : ""}>
+        <h4 className="text-[11px] font-bold tracking-widest uppercase mb-4" style={{ color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>{col.heading}</h4>
+        {isOrigins ? (
+          <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+            {col.links.map((link) => (
+              <div key={link.label}>{renderLink(link)}</div>
+            ))}
+          </div>
+        ) : (
+          <ul className="flex flex-col gap-1.5">
+            {col.links.map(renderLink)}
+          </ul>
+        )}
+      </div>
+    );
+  };
 
   return (
     <>
@@ -392,7 +405,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mb-12" />
 
         {/* Bottom row: 4 columns offset to align with top row */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
           <div /> {/* spacer to align with logo column */}
           {bottomRow.map(renderCol)}
         </div>

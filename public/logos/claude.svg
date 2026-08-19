@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none">
+  <!-- Anthropic "A" mark simplified -->
+  <path d="M22 46 L30 20 L38 46" stroke="#D97757" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M25 37 L35 37" stroke="#D97757" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- "Claude" wordmark -->
+  <text
+    x="52"
+    y="42"
+    font-family="'Georgia', 'Times New Roman', serif"
+    font-weight="400"
+    font-size="30"
+    fill="#1A1A1A"
+    letter-spacing="0.5"
+  >Claude</text>
+</svg>

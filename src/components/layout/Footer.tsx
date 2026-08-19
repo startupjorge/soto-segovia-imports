@@ -20,9 +20,14 @@ function ComingSoonModal({ country, onClose }: { country: string; onClose: () =>
     e.preventDefault();
     const scriptUrl = process.env.NEXT_PUBLIC_WAITLIST_SCRIPT_URL;
     if (!scriptUrl) return;
-    const message = `Country: ${country}\nGift Types: ${selected.join(", ") || "Not specified"}\nEmail: ${email}`;
-    const url = `${scriptUrl}?name=Interest&email=${encodeURIComponent(email)}&message=${encodeURIComponent(`[COUNTRY INTEREST - ${country.toUpperCase()}]\n\n${message}`)}&type=Country+Interest`;
-    fetch(url, { method: "GET", mode: "no-cors" }).catch(() => {});
+    const params = new URLSearchParams({
+      name: "Interest",
+      email,
+      type: `Country Interest - ${country}`,
+      lang: "EN",
+      message: `[COUNTRY INTEREST - ${country.toUpperCase()}]\n\nGift Types: ${selected.join(", ") || "Not specified"}`,
+    });
+    fetch(`${scriptUrl}?${params.toString()}`, { method: "GET", mode: "no-cors" }).catch(() => {});
     setSubmitted(true);
   };
 
@@ -300,7 +305,7 @@ export default function Footer() {
                   style={{ color: "#888", background: "none", border: "none", padding: 0, cursor: "pointer" }}
                 >
                   {link.label}
-                  <span className="text-[9px] tracking-wider uppercase px-1 py-0.5 whitespace-nowrap" style={{ color: "#555", border: "1px solid #333" }}>Coming Soon</span>
+                  <span className="text-[7px] tracking-wide uppercase px-0.5 py-px whitespace-nowrap" style={{ color: "#444", border: "1px solid #2A2A2A" }}>Soon</span>
                 </button>
               </li>
             );

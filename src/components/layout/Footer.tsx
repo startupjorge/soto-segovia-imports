@@ -2,7 +2,91 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { useLang } from "@/components/LanguageContext";
+
+const GIFT_TYPES = ["Olive Oils", "Wines", "Vinegars", "Salts", "Cheeses", "Pasta & Grains", "Honey & Preserves", "Gourmet Snacks", "Gift Boxes", "Other"];
+
+function ComingSoonModal({ country, onClose }: { country: string; onClose: () => void }) {
+  const [selected, setSelected] = useState<string[]>([]);
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const toggle = (type: string) => setSelected((prev) =>
+    prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
+  );
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const scriptUrl = process.env.NEXT_PUBLIC_WAITLIST_SCRIPT_URL;
+    if (!scriptUrl) return;
+    const message = `Country: ${country}\nGift Types: ${selected.join(", ") || "Not specified"}\nEmail: ${email}`;
+    const url = `${scriptUrl}?name=Interest&email=${encodeURIComponent(email)}&message=${encodeURIComponent(`[COUNTRY INTEREST - ${country.toUpperCase()}]\n\n${message}`)}&type=Country+Interest`;
+    fetch(url, { method: "GET", mode: "no-cors" }).catch(() => {});
+    setSubmitted(true);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4" style={{ background: "rgba(0,0,0,0.75)" }} onClick={onClose}>
+      <div className="w-full max-w-[480px] p-8 relative" style={{ background: "#1A1A1A", border: "1px solid #2A2A2A" }} onClick={(e) => e.stopPropagation()}>
+        <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+
+        {submitted ? (
+          <div className="text-center py-6">
+            <p className="text-[11px] tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Thank You</p>
+            <p className="text-white text-[15px] mb-2">We noted your interest in {country}.</p>
+            <p className="text-[13px]" style={{ color: "#888" }}>We will reach out when {country} products become available.</p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <p className="text-[11px] tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Coming Soon</p>
+            <h2 className="text-[20px] font-bold text-white mb-6" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+              What types of gifts do you want from {country}?
+            </h2>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              {GIFT_TYPES.map((type) => (
+                <button
+                  key={type}
+                  type="button"
+                  onClick={() => toggle(type)}
+                  className="px-3 py-1.5 text-[12px] border transition-all"
+                  style={{
+                    borderColor: selected.includes(type) ? "#C9A227" : "#333",
+                    color: selected.includes(type) ? "#C9A227" : "#888",
+                    background: "transparent",
+                  }}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+
+            <input
+              type="email"
+              required
+              placeholder="Your email — we will notify you when available"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-3 text-[13px] mb-4 outline-none"
+              style={{ background: "#111", border: "1px solid #2A2A2A", color: "#ccc" }}
+            />
+
+            <button
+              type="submit"
+              className="w-full py-3 text-[12px] font-bold tracking-wider text-white transition-opacity hover:opacity-90"
+              style={{ background: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}
+            >
+              Notify Me
+            </button>
+          </form>
+        )}
+      </div>
+    </div>
+  );
+}
 
 const footerData = {
   EN: {
@@ -192,6 +276,7 @@ const footerData = {
 export default function Footer() {
   const { lang } = useLang();
   const d = footerData[lang];
+  const [comingSoonCountry, setComingSoonCountry] = useState<string | null>(null);
 
   const topRow    = [d.services, d.products, d.industries, d.origins];
   const bottomRow = [d.blog, d.recipes, d.subscriptions, d.company];
@@ -200,25 +285,48 @@ export default function Footer() {
     <div key={col.heading}>
       <h4 className="text-[11px] font-bold tracking-widest uppercase mb-4" style={{ color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>{col.heading}</h4>
       <ul className="flex flex-col gap-1.5">
-        {col.links.map((link) => (
-          <li key={link.label}>
-            <Link
-              href={link.href}
-              className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2"
-              style={{ color: (link as { vip?: boolean }).vip ? "#C9A227" : "#888", fontWeight: (link as { vip?: boolean }).vip ? 700 : 400 }}
-            >
-              {link.label}
-              {(link as { soon?: boolean }).soon && (
-                <span className="text-[9px] tracking-wider uppercase px-1 py-0.5" style={{ color: "#555", border: "1px solid #333" }}>Soon</span>
-              )}
-            </Link>
-          </li>
-        ))}
+        {col.links.map((link) => {
+          const isSoon = !!(link as { soon?: boolean }).soon;
+          const isVip = !!(link as { vip?: boolean }).vip;
+          const countryMatch = link.label.match(/From (.+)$/);
+          const country = countryMatch ? countryMatch[1] : "";
+
+          if (isSoon) {
+            return (
+              <li key={link.label}>
+                <button
+                  onClick={() => setComingSoonCountry(country)}
+                  className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2 text-left"
+                  style={{ color: "#888", background: "none", border: "none", padding: 0, cursor: "pointer" }}
+                >
+                  {link.label}
+                  <span className="text-[9px] tracking-wider uppercase px-1 py-0.5 whitespace-nowrap" style={{ color: "#555", border: "1px solid #333" }}>Coming Soon</span>
+                </button>
+              </li>
+            );
+          }
+
+          return (
+            <li key={link.label}>
+              <Link
+                href={link.href}
+                className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2"
+                style={{ color: isVip ? "#C9A227" : "#888", fontWeight: isVip ? 700 : 400 }}
+              >
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
 
   return (
+    <>
+    {comingSoonCountry && (
+      <ComingSoonModal country={comingSoonCountry} onClose={() => setComingSoonCountry(null)} />
+    )}
     <footer style={{ background: "#141414", color: "#ccc" }}>
       <div className="max-w-[1400px] mx-auto px-6 py-14">
 
@@ -281,5 +389,6 @@ export default function Footer() {
         <p className="text-[11px]" style={{ color: "#444" }}>© {new Date().getFullYear()} Soto &amp; Segovia Imports. {d.copyright}</p>
       </div>
     </footer>
+    </>
   );
 }

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Top peg shaft -->
+  <rect x="44" y="4" width="12" height="26" rx="6" fill="#FF7A59"/>
+  <!-- Signal dot -->
+  <circle cx="50" cy="4" r="7" fill="#FF7A59"/>
+  <!-- Left peg -->
+  <rect x="4" y="44" width="26" height="12" rx="6" fill="#FF7A59"/>
+  <!-- Right peg -->
+  <rect x="70" y="44" width="26" height="12" rx="6" fill="#FF7A59"/>
+  <!-- Bottom peg -->
+  <rect x="44" y="70" width="12" height="26" rx="6" fill="#FF7A59"/>
+  <!-- Main body -->
+  <circle cx="50" cy="50" r="22" fill="#FF7A59"/>
+  <!-- Inner ring (white hole) -->
+  <circle cx="50" cy="50" r="10" fill="white"/>
+</svg>

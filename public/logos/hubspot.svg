@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" fill="none">
+  <!-- Sprocket icon -->
+  <!-- Top tooth with signal dot -->
+  <circle cx="88" cy="18" r="12" fill="#FF7A59"/>
+  <!-- Top tooth shaft -->
+  <rect x="80" y="26" width="16" height="24" rx="8" fill="#FF7A59"/>
+  <!-- Main body circle -->
+  <circle cx="88" cy="72" r="34" fill="#FF7A59"/>
+  <!-- Center hole -->
+  <circle cx="88" cy="72" r="14" fill="white"/>
+  <!-- Left tooth -->
+  <rect x="30" y="64" width="24" height="16" rx="8" fill="#FF7A59"/>
+  <!-- Right tooth -->
+  <rect x="98" y="64" width="24" height="16" rx="8" fill="#FF7A59"/>
+  <!-- Bottom tooth -->
+  <rect x="80" y="90" width="16" height="24" rx="8" fill="#FF7A59"/>
+
+  <!-- HubSpot wordmark -->
+  <!-- H -->
+  <rect x="160" y="36" width="10" height="68" rx="2" fill="white"/>
+  <rect x="196" y="36" width="10" height="68" rx="2" fill="white"/>
+  <rect x="160" y="66" width="46" height="10" rx="2" fill="white"/>
+  <!-- u -->
+  <path d="M222 58 L222 90 Q222 104 236 104 Q250 104 250 90 L250 58 L260 58 L260 104 L250 104" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <rect x="215" y="58" width="10" height="52" rx="2" fill="white"/>
+  <rect x="245" y="58" width="10" height="46" rx="2" fill="white"/>
+  <path d="M215 104 Q215 110 225 110 Q241 112 248 104" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <!-- b -->
+  <rect x="275" y="36" width="10" height="68" rx="2" fill="white"/>
+  <circle cx="300" cy="84" r="20" stroke="white" stroke-width="10" fill="none"/>
+  <!-- S -->
+  <path d="M336 70 Q336 58 350 58 Q364 58 364 68 Q364 78 336 82 Q320 86 320 98 Q320 110 336 110 Q354 110 356 98" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <!-- p -->
+  <rect x="375" y="58" width="10" height="68" rx="2" fill="white"/>
+  <circle cx="400" cy="82" r="20" stroke="white" stroke-width="10" fill="none"/>
+  <!-- o -->
+  <circle cx="440" cy="84" r="20" stroke="white" stroke-width="10" fill="none"/>
+  <!-- t -->
+  <rect x="472" y="36" width="10" height="68" rx="2" fill="white"/>
+  <rect x="460" y="58" width="34" height="10" rx="2" fill="white"/>
+</svg>

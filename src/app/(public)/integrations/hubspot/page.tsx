@@ -119,29 +119,80 @@ export default function HubSpotIntegrationPage() {
     <div style={{ background: "#fff" }}>
 
       {/* Hero */}
-      <section style={{ background: "#1A1A1A" }} className="px-6 py-20 text-center">
-        <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+      <section style={{ background: "#1A1A1A" }} className="px-6 pt-20 pb-0 text-center overflow-hidden">
+        <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-10" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
           Integrations · CRM
         </p>
-        <div className="flex items-center justify-center gap-4 mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 512 512" fill="#FF7A59">
-            <path d="M267.4 211.6c-25.1 23.7-40.8 57-40.8 94 0 29.3 9.7 56.3 26 78L203.3 434c-6-2-12.4-3.2-19.1-3.2-34.5 0-62.4 28-62.4 62.6S149.8 556 184.2 556s62.4-28 62.4-62.6c0-9.7-2.2-18.9-6.2-27l49.5-50.2a158 158 0 0 0 78.2 20.5c87.6 0 158.6-71.4 158.6-159.5S455.7 117.7 368.1 117.7c-44.9 0-85.5 18.4-114.7 48zm159.9 158.9c-46.5 0-84.2-37.9-84.2-84.9s37.7-84.9 84.2-84.9S511.5 238 511.5 285s-37.7 85.5-84.2 85.5zM160 399.4c0-17.6 14.4-32 32-32s32 14.4 32 32-14.3 32-32 32-32-14.4-32-32z"/>
-          </svg>
-          <span className="text-white text-[28px] font-bold" style={{ fontFamily: "var(--font-cinzel), serif" }}>HubSpot</span>
+
+        {/* Logo lockup */}
+        <div className="flex flex-col items-center gap-5 mb-10">
+          {/* HubSpot sprocket + wordmark */}
+          <div className="flex items-center gap-4">
+            {/* Sprocket icon */}
+            <div className="relative" style={{ width: 56, height: 56 }}>
+              {/* Signal dot (top of top peg) */}
+              <div className="absolute rounded-full" style={{ width: 14, height: 14, background: "#FF7A59", top: 0, left: "50%", transform: "translateX(-50%)" }} />
+              {/* Top peg */}
+              <div className="absolute rounded-full" style={{ width: 12, height: 22, background: "#FF7A59", top: 8, left: "50%", transform: "translateX(-50%)" }} />
+              {/* Left peg */}
+              <div className="absolute rounded-full" style={{ width: 22, height: 12, background: "#FF7A59", top: "50%", left: 0, transform: "translateY(-50%)" }} />
+              {/* Right peg */}
+              <div className="absolute rounded-full" style={{ width: 22, height: 12, background: "#FF7A59", top: "50%", right: 0, transform: "translateY(-50%)" }} />
+              {/* Bottom peg */}
+              <div className="absolute rounded-full" style={{ width: 12, height: 22, background: "#FF7A59", bottom: 0, left: "50%", transform: "translateX(-50%)" }} />
+              {/* Main circle */}
+              <div className="absolute rounded-full" style={{ width: 36, height: 36, background: "#FF7A59", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
+              {/* Center hole */}
+              <div className="absolute rounded-full" style={{ width: 14, height: 14, background: "#1A1A1A", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
+            </div>
+            {/* Wordmark */}
+            <span style={{ fontSize: 36, fontWeight: 700, color: "white", letterSpacing: "-0.5px", fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              Hub<span style={{ color: "#FF7A59" }}>Spot</span>
+            </span>
+          </div>
+
+          {/* Integration badge */}
+          <div className="flex items-center gap-3">
+            <div className="h-px w-12" style={{ background: "rgba(255,255,255,0.15)" }} />
+            <span className="text-[10px] tracking-[0.3em] uppercase" style={{ color: "rgba(255,255,255,0.4)" }}>CRM Integration</span>
+            <div className="h-px w-12" style={{ background: "rgba(255,255,255,0.15)" }} />
+          </div>
         </div>
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-5 max-w-[700px] mx-auto leading-tight" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-5 max-w-[700px] mx-auto leading-tight" style={{ fontFamily: "var(--font-cinzel), serif" }}>
           Every Order, Automatically Synced to HubSpot
         </h1>
-        <p className="text-[15px] max-w-[560px] mx-auto mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
+        <p className="text-[16px] max-w-[560px] mx-auto mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
           When a client places an order through your storefront, their contact record, deal, and full purchase history appear in HubSpot without any manual entry.
         </p>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <a href="#setup" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider text-white" style={{ background: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+        <div className="flex gap-4 justify-center flex-wrap mb-14">
+          <a href="#setup" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider text-white" style={{ background: "#FF7A59", fontFamily: "var(--font-cinzel), serif" }}>
             Request Setup
           </a>
-          <Link href="/integrations/salesforce" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider border" style={{ borderColor: "rgba(255,255,255,0.3)", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-cinzel), serif" }}>
+          <Link href="/integrations/salesforce" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider border" style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-cinzel), serif" }}>
             View Salesforce Integration
           </Link>
+        </div>
+
+        {/* Bottom brand strip */}
+        <div className="flex items-center justify-center gap-8 py-5 border-t" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
+          <span className="text-[11px] tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>Powered by</span>
+          <div className="flex items-center gap-2">
+            <div className="relative" style={{ width: 18, height: 18 }}>
+              <div className="absolute rounded-full" style={{ width: 5, height: 5, background: "#FF7A59", top: 0, left: "50%", transform: "translateX(-50%)" }} />
+              <div className="absolute rounded-full" style={{ width: 4, height: 7, background: "#FF7A59", top: 2, left: "50%", transform: "translateX(-50%)" }} />
+              <div className="absolute rounded-full" style={{ width: 7, height: 4, background: "#FF7A59", top: "50%", left: 0, transform: "translateY(-50%)" }} />
+              <div className="absolute rounded-full" style={{ width: 7, height: 4, background: "#FF7A59", top: "50%", right: 0, transform: "translateY(-50%)" }} />
+              <div className="absolute rounded-full" style={{ width: 4, height: 7, background: "#FF7A59", bottom: 0, left: "50%", transform: "translateX(-50%)" }} />
+              <div className="absolute rounded-full" style={{ width: 12, height: 12, background: "#FF7A59", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
+              <div className="absolute rounded-full" style={{ width: 5, height: 5, background: "#1A1A1A", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
+            </div>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.5)", fontFamily: "system-ui, sans-serif" }}>HubSpot</span>
+          </div>
+          <span style={{ color: "rgba(255,255,255,0.15)" }}>·</span>
+          <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.5)", fontFamily: "system-ui, sans-serif" }}>Stripe Webhooks</span>
+          <span style={{ color: "rgba(255,255,255,0.15)" }}>·</span>
+          <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.5)", fontFamily: "system-ui, sans-serif" }}>Soto & Segovia Portal</span>
         </div>
       </section>
 

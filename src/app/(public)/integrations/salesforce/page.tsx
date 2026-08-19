@@ -145,32 +145,58 @@ export default function SalesforceIntegrationPage() {
     <div style={{ background: "#fff" }}>
 
       {/* Hero */}
-      <section style={{ background: "#1A1A1A" }} className="px-6 py-20 text-center">
-        <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-4" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+      <section style={{ background: "#0B0E1A" }} className="px-6 pt-20 pb-0 text-center overflow-hidden">
+        <p className="text-[11px] tracking-[0.3em] uppercase font-semibold mb-10" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
           Integrations · CRM
         </p>
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 48 48" fill="none">
-            <ellipse cx="19.2" cy="28.8" rx="10.8" ry="7.2" fill="#00A1E0"/>
-            <ellipse cx="30" cy="22.8" rx="8.4" ry="5.6" fill="#00A1E0"/>
-            <ellipse cx="36.6" cy="28.2" rx="6.6" ry="4.4" fill="#00A1E0"/>
-            <ellipse cx="12" cy="31.8" rx="7.8" ry="5.2" fill="#00A1E0"/>
-          </svg>
-          <span className="text-white text-[28px] font-bold" style={{ fontFamily: "var(--font-cinzel), serif" }}>Salesforce</span>
+
+        {/* Logo lockup */}
+        <div className="flex flex-col items-center gap-5 mb-10">
+          <div className="flex items-center gap-4">
+            {/* Salesforce cloud icon */}
+            <svg width="64" height="44" viewBox="0 0 128 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M52 76 C34 76 20 63 20 47 C20 31 33 19 49 19 C52 10 61 4 72 4 C83 4 92 10 96 19 C97 19 98 19 99 19 C113 19 124 30 124 44 C124 58 113 69 99 69 L52 76 Z" fill="#00A1E0"/>
+              <path d="M52 72 C36 72 24 60 24 47 C24 34 35 23 49 23 C52 14 61 8 72 8 C83 8 91 14 95 23 C96 23 98 22 99 22 C111 22 120 31 120 43 C120 55 111 65 99 65 Z" fill="#00A1E0"/>
+            </svg>
+            {/* Wordmark */}
+            <span style={{ fontSize: 36, fontWeight: 700, color: "white", letterSpacing: "-0.5px", fontFamily: "system-ui, -apple-system, sans-serif" }}>
+              <span style={{ color: "#00A1E0" }}>sales</span>force
+            </span>
+          </div>
+
+          {/* Integration badge */}
+          <div className="flex items-center gap-3">
+            <div className="h-px w-12" style={{ background: "rgba(255,255,255,0.1)" }} />
+            <span className="text-[10px] tracking-[0.3em] uppercase" style={{ color: "rgba(255,255,255,0.35)" }}>CRM Integration</span>
+            <div className="h-px w-12" style={{ background: "rgba(255,255,255,0.1)" }} />
+          </div>
         </div>
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-5 max-w-[740px] mx-auto leading-tight" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-5 max-w-[740px] mx-auto leading-tight" style={{ fontFamily: "var(--font-cinzel), serif" }}>
           Orders Sync to Accounts, Contacts, and Opportunities Automatically
         </h1>
-        <p className="text-[15px] max-w-[580px] mx-auto mb-8" style={{ color: "rgba(255,255,255,0.65)" }}>
+        <p className="text-[16px] max-w-[580px] mx-auto mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
           Every completed purchase writes a full set of linked Salesforce records. No manual entry, no partial data, no lost deals.
         </p>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <a href="#setup" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider text-white" style={{ background: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>
+        <div className="flex gap-4 justify-center flex-wrap mb-14">
+          <a href="#setup" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider text-white" style={{ background: "#00A1E0", fontFamily: "var(--font-cinzel), serif" }}>
             Request Setup
           </a>
-          <Link href="/integrations/hubspot" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider border" style={{ borderColor: "rgba(255,255,255,0.3)", color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-cinzel), serif" }}>
+          <Link href="/integrations/hubspot" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider border" style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-cinzel), serif" }}>
             View HubSpot Integration
           </Link>
+        </div>
+
+        {/* Bottom brand strip */}
+        <div className="flex items-center justify-center gap-8 py-5 border-t" style={{ borderColor: "rgba(255,255,255,0.07)" }}>
+          <span className="text-[11px] tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.3)" }}>Powered by</span>
+          <span style={{ fontSize: 13, fontWeight: 700, color: "rgba(255,255,255,0.5)", fontFamily: "system-ui, sans-serif" }}>
+            <span style={{ color: "rgba(0,161,224,0.7)" }}>sales</span>force
+          </span>
+          <span style={{ color: "rgba(255,255,255,0.15)" }}>·</span>
+          <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.5)", fontFamily: "system-ui, sans-serif" }}>Stripe Webhooks</span>
+          <span style={{ color: "rgba(255,255,255,0.15)" }}>·</span>
+          <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(255,255,255,0.5)", fontFamily: "system-ui, sans-serif" }}>Soto & Segovia Portal</span>
         </div>
       </section>
 

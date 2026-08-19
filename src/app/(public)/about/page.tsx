@@ -20,9 +20,17 @@ export default function AboutPage() {
       <WaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
 
       {/* Hero Timeline */}
-      <section className="relative w-full overflow-hidden" style={{ minHeight: "90vh" }}>
+      <section className="relative w-full overflow-hidden">
+        {/* Mobile headline — shown above the grid on small screens */}
+        <div className="md:hidden bg-[#111] py-10 px-6 text-center">
+          <p className="text-[10px] tracking-[0.4em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Our Story</p>
+          <h1 className="text-2xl font-bold text-white leading-tight" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+            A Shared Heritage.<br />A Passion for<br />Exceptional Spanish Food.
+          </h1>
+        </div>
+
         {/* 4-panel photo grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 h-[90vh]">
+        <div className="grid grid-cols-2 md:grid-cols-4 h-[55vw] md:h-[90vh]">
           {[
             { src: "/city-marseille.jpg", city: "Marseille", country: "France", note: "Where it began" },
             { src: "/city-altea.jpg",     city: "Altea",     country: "Spain",  note: "Production" },
@@ -35,14 +43,14 @@ export default function AboutPage() {
                 alt={item.city}
                 fill
                 style={{ objectFit: "cover", objectPosition: "center" }}
-                sizes="25vw"
+                sizes="(max-width: 768px) 50vw, 25vw"
                 priority={i === 0}
               />
               {/* dark gradient overlay */}
               <div className="absolute inset-0 transition-opacity duration-500"
                 style={{ background: "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.3) 100%)" }} />
 
-              {/* connector arrow, hidden on last panel */}
+              {/* connector arrow, desktop only */}
               {i < 3 && (
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center justify-center w-8">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A227" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -52,25 +60,25 @@ export default function AboutPage() {
               )}
 
               {/* City label */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
-                <p className="text-[10px] tracking-[0.25em] uppercase font-semibold mb-1" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>{item.note}</p>
-                <h3 className="text-xl font-bold text-white leading-none" style={{ fontFamily: "var(--font-cinzel), serif" }}>{item.city}</h3>
-                <p className="text-[11px] tracking-widest uppercase text-white/60 mt-0.5" style={{ fontFamily: "var(--font-cinzel), serif" }}>{item.country}</p>
+              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 z-10">
+                <p className="text-[8px] md:text-[10px] tracking-[0.2em] uppercase font-semibold mb-0.5" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>{item.note}</p>
+                <h3 className="text-sm md:text-xl font-bold text-white leading-none" style={{ fontFamily: "var(--font-cinzel), serif" }}>{item.city}</h3>
+                <p className="text-[9px] md:text-[11px] tracking-widest uppercase text-white/60 mt-0.5" style={{ fontFamily: "var(--font-cinzel), serif" }}>{item.country}</p>
               </div>
 
               {/* step number */}
-              <div className="absolute top-5 left-5 z-10 w-7 h-7 flex items-center justify-center border border-[#C9A227] text-[#C9A227] text-[11px] font-bold" style={{ fontFamily: "var(--font-cinzel), serif" }}>
+              <div className="absolute top-3 left-3 md:top-5 md:left-5 z-10 w-6 h-6 md:w-7 md:h-7 flex items-center justify-center border border-[#C9A227] text-[#C9A227] text-[10px] md:text-[11px] font-bold" style={{ fontFamily: "var(--font-cinzel), serif" }}>
                 {i + 1}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Centered headline overlay */}
-        <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+        {/* Desktop-only centered headline overlay */}
+        <div className="hidden md:flex absolute inset-0 items-center justify-center z-20 pointer-events-none">
           <div className="text-center px-6">
             <p className="text-[11px] tracking-[0.4em] uppercase font-semibold mb-3" style={{ color: "#C9A227", fontFamily: "var(--font-cinzel), serif" }}>Our Story</p>
-            <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight drop-shadow-lg" style={{ fontFamily: "var(--font-cinzel), serif", textShadow: "0 2px 20px rgba(0,0,0,0.6)" }}>
+            <h1 className="text-5xl font-bold text-white leading-tight drop-shadow-lg" style={{ fontFamily: "var(--font-cinzel), serif", textShadow: "0 2px 20px rgba(0,0,0,0.6)" }}>
               A Shared Heritage.<br />A Passion for<br />Exceptional Spanish Food.
             </h1>
           </div>

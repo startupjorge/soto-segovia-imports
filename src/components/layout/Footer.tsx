@@ -334,7 +334,7 @@ export default function Footer() {
       <div key={col.heading} className={isOrigins ? "md:col-span-2" : ""}>
         <h4 className="text-[11px] font-bold tracking-widest uppercase mb-4" style={{ color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>{col.heading}</h4>
         {isOrigins ? (
-          <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
             {col.links.map((link) => (
               <div key={link.label}>{renderLink(link)}</div>
             ))}

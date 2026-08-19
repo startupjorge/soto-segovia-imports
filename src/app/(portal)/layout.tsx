@@ -21,6 +21,7 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
               { label: "Dashboard", href: "/portal/dashboard" },
               { label: "Orders", href: "/portal/orders" },
               { label: "Invoices", href: "/portal/invoices" },
+              { label: "Integrations", href: "/portal/integrations" },
             ].map(({ label, href }) => (
               <Link
                 key={href}

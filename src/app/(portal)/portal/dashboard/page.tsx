@@ -176,6 +176,32 @@ export default function PortalDashboard() {
             </div>
           </div>
 
+          {/* Integrations */}
+          <div className="border p-6" style={{ background: "#0D0D0A", borderColor: "#2A2A1A" }}>
+            <p
+              className="text-[9px] tracking-[0.2em] uppercase mb-3"
+              style={{ color: "#D4AF37", fontFamily: "var(--font-cinzel), serif" }}
+            >
+              Integrations
+            </p>
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-3">
+                <img src="/logos/hubspot.png" alt="HubSpot" style={{ height: 20, width: "auto" }} />
+                <span className="text-xs" style={{ color: "#888" }}>HubSpot CRM</span>
+              </div>
+              <span className="text-[9px] px-2 py-0.5 uppercase tracking-widest" style={{ background: "#1A1A0D", color: "#666", border: "1px solid #2A2A1A" }}>
+                Not Connected
+              </span>
+            </div>
+            <Link
+              href="/portal/integrations"
+              className="block text-center py-2.5 text-[9px] tracking-[0.15em] uppercase border transition-all hover:border-[#D4AF37] hover:text-[#D4AF37]"
+              style={{ fontFamily: "var(--font-cinzel), serif", color: "#888", borderColor: "#2A2A1A" }}
+            >
+              Manage Integrations
+            </Link>
+          </div>
+
           {/* Account manager */}
           <div className="border p-6" style={{ background: "#0D0D0A", borderColor: "#2A2A1A" }}>
             <p

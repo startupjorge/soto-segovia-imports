@@ -296,15 +296,16 @@ export default function Footer() {
   const topRow    = [d.services, d.products, d.industries, d.company];
   const bottomRow = [d.blog, d.recipes, d.subscriptions, d.origins];
 
-  const renderLink = (link: (typeof d.services.links)[number]) => {
+  const renderLink = (link: (typeof d.services.links)[number], wrap: "li" | "div" = "li") => {
     const isSoon = !!(link as { soon?: boolean }).soon;
     const isVip = !!(link as { vip?: boolean }).vip;
     const countryMatch = link.label.match(/From (.+)$/) || link.label.match(/de (.+)$/);
     const country = countryMatch ? countryMatch[1] : "";
+    const Wrap = wrap;
 
     if (isSoon) {
       return (
-        <li key={link.label}>
+        <Wrap key={link.label}>
           <button
             onClick={() => setComingSoonCountry(country)}
             className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2 text-left"
@@ -313,12 +314,12 @@ export default function Footer() {
             {link.label}
             <span className="text-[7px] tracking-wide uppercase px-0.5 py-px whitespace-nowrap" style={{ color: "#444", border: "1px solid #2A2A2A" }}>Soon</span>
           </button>
-        </li>
+        </Wrap>
       );
     }
 
     return (
-      <li key={link.label}>
+      <Wrap key={link.label}>
         <Link
           href={link.href}
           className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2"
@@ -326,7 +327,7 @@ export default function Footer() {
         >
           {link.label}
         </Link>
-      </li>
+      </Wrap>
     );
   };
 
@@ -337,13 +338,11 @@ export default function Footer() {
         <h4 className="text-[11px] font-bold tracking-widest uppercase mb-4" style={{ color: "#fff", fontFamily: "var(--font-cinzel), serif" }}>{col.heading}</h4>
         {isOrigins ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
-            {col.links.map((link) => (
-              <div key={link.label}>{renderLink(link)}</div>
-            ))}
+            {col.links.map((link) => renderLink(link, "div"))}
           </div>
         ) : (
           <ul className="flex flex-col gap-1.5">
-            {col.links.map(renderLink)}
+            {col.links.map((link) => renderLink(link, "li"))}
           </ul>
         )}
       </div>

@@ -72,6 +72,15 @@ const footerData = {
         { label: "VIP Membership · Invite Only", href: "/subscriptions/vip-membership", vip: true },
       ],
     },
+    origins: {
+      heading: "Countries of Origin",
+      links: [
+        { label: "Gourmet Food Gifts From Spain", href: "/products" },
+        { label: "Gourmet Food Gifts From Italy", href: "#", soon: true },
+        { label: "Gourmet Food Gifts From Greece", href: "#", soon: true },
+        { label: "Gourmet Food Gifts From France", href: "#", soon: true },
+      ],
+    },
     company: {
       heading: "Company",
       links: [
@@ -154,6 +163,15 @@ const footerData = {
         { label: "Membresía VIP · Solo por Invitación", href: "/subscriptions/vip-membership", vip: true },
       ],
     },
+    origins: {
+      heading: "Países de Origen",
+      links: [
+        { label: "Regalos Gourmet de España", href: "/products" },
+        { label: "Regalos Gourmet de Italia", href: "#", soon: true },
+        { label: "Regalos Gourmet de Grecia", href: "#", soon: true },
+        { label: "Regalos Gourmet de Francia", href: "#", soon: true },
+      ],
+    },
     company: {
       heading: "Empresa",
       links: [
@@ -175,11 +193,11 @@ export default function Footer() {
   const { lang } = useLang();
   const d = footerData[lang];
 
-  const columns = [d.services, d.products, d.blog, d.recipes, d.industries, d.subscriptions, d.company];
+  const columns = [d.services, d.products, d.blog, d.recipes, d.industries, d.origins, d.subscriptions, d.company];
 
   return (
     <footer style={{ background: "#141414", color: "#ccc" }}>
-      <div className="max-w-[1400px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-8 gap-8">
+      <div className="max-w-[1400px] mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-9 gap-8">
         {/* Logo column */}
         <div className="md:col-span-1 md:pr-6" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -230,10 +248,13 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-[12px] transition-colors hover:text-[#C9A227]"
+                    className="text-[12px] transition-colors hover:text-[#C9A227] inline-flex items-center gap-2"
                     style={{ color: (link as { vip?: boolean }).vip ? "#C9A227" : "#888", fontWeight: (link as { vip?: boolean }).vip ? 700 : 400 }}
                   >
                     {link.label}
+                    {(link as { soon?: boolean }).soon && (
+                      <span className="text-[9px] tracking-wider uppercase px-1 py-0.5" style={{ color: "#555", border: "1px solid #333" }}>Soon</span>
+                    )}
                   </Link>
                 </li>
               ))}

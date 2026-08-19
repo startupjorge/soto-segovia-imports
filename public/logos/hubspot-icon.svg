@@ -1,16 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <!-- Top peg shaft -->
-  <rect x="44" y="4" width="12" height="26" rx="6" fill="#FF7A59"/>
-  <!-- Signal dot -->
-  <circle cx="50" cy="4" r="7" fill="#FF7A59"/>
-  <!-- Left peg -->
-  <rect x="4" y="44" width="26" height="12" rx="6" fill="#FF7A59"/>
-  <!-- Right peg -->
-  <rect x="70" y="44" width="26" height="12" rx="6" fill="#FF7A59"/>
-  <!-- Bottom peg -->
-  <rect x="44" y="70" width="12" height="26" rx="6" fill="#FF7A59"/>
-  <!-- Main body -->
-  <circle cx="50" cy="50" r="22" fill="#FF7A59"/>
-  <!-- Inner ring (white hole) -->
-  <circle cx="50" cy="50" r="10" fill="white"/>
+  <!-- Center circle -->
+  <circle cx="50" cy="55" r="18" fill="#FF7A59"/>
+  <!-- Top connector line -->
+  <rect x="47" y="22" width="6" height="20" rx="3" fill="#FF7A59"/>
+  <!-- Top dot -->
+  <circle cx="50" cy="19" r="8" fill="#FF7A59"/>
+  <!-- Left connector line -->
+  <rect x="18" y="52" width="16" height="6" rx="3" fill="#FF7A59"/>
+  <!-- Left dot -->
+  <circle cx="14" cy="55" r="6" fill="#FF7A59"/>
+  <!-- Right connector line -->
+  <rect x="66" y="52" width="16" height="6" rx="3" fill="#FF7A59"/>
+  <!-- Right dot -->
+  <circle cx="86" cy="55" r="6" fill="#FF7A59"/>
+  <!-- Bottom connector line -->
+  <rect x="47" y="73" width="6" height="14" rx="3" fill="#FF7A59"/>
+  <!-- Bottom dot -->
+  <circle cx="50" cy="91" r="6" fill="#FF7A59"/>
+  <!-- Inner white ring on center circle -->
+  <circle cx="50" cy="55" r="8" fill="white"/>
 </svg>

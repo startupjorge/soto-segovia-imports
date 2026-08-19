@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_WAITLIST_SCRIPT_URL || "";
 
@@ -126,30 +125,8 @@ export default function HubSpotIntegrationPage() {
 
         {/* Logo lockup */}
         <div className="flex flex-col items-center gap-5 mb-10">
-          {/* HubSpot sprocket + wordmark */}
-          <div className="flex items-center gap-4">
-            {/* Sprocket icon */}
-            <div className="relative" style={{ width: 56, height: 56 }}>
-              {/* Signal dot (top of top peg) */}
-              <div className="absolute rounded-full" style={{ width: 14, height: 14, background: "#FF7A59", top: 0, left: "50%", transform: "translateX(-50%)" }} />
-              {/* Top peg */}
-              <div className="absolute rounded-full" style={{ width: 12, height: 22, background: "#FF7A59", top: 8, left: "50%", transform: "translateX(-50%)" }} />
-              {/* Left peg */}
-              <div className="absolute rounded-full" style={{ width: 22, height: 12, background: "#FF7A59", top: "50%", left: 0, transform: "translateY(-50%)" }} />
-              {/* Right peg */}
-              <div className="absolute rounded-full" style={{ width: 22, height: 12, background: "#FF7A59", top: "50%", right: 0, transform: "translateY(-50%)" }} />
-              {/* Bottom peg */}
-              <div className="absolute rounded-full" style={{ width: 12, height: 22, background: "#FF7A59", bottom: 0, left: "50%", transform: "translateX(-50%)" }} />
-              {/* Main circle */}
-              <div className="absolute rounded-full" style={{ width: 36, height: 36, background: "#FF7A59", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
-              {/* Center hole */}
-              <div className="absolute rounded-full" style={{ width: 14, height: 14, background: "#1A1A1A", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
-            </div>
-            {/* Wordmark */}
-            <span style={{ fontSize: 36, fontWeight: 700, color: "white", letterSpacing: "-0.5px", fontFamily: "system-ui, -apple-system, sans-serif" }}>
-              Hub<span style={{ color: "#FF7A59" }}>Spot</span>
-            </span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logos/hubspot.png" alt="HubSpot" style={{ height: 52, width: "auto" }} />
 
           {/* Integration badge */}
           <div className="flex items-center gap-3">
@@ -169,9 +146,6 @@ export default function HubSpotIntegrationPage() {
           <a href="#setup" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider text-white" style={{ background: "#FF7A59", fontFamily: "var(--font-cinzel), serif" }}>
             Request Setup
           </a>
-          <Link href="/integrations/salesforce" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider border" style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-cinzel), serif" }}>
-            View Salesforce Integration
-          </Link>
         </div>
 
         {/* Bottom brand strip */}

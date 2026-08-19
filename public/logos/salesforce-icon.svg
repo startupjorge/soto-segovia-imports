@@ -1,15 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" fill="none">
-  <!-- Salesforce cloud shape -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" fill="none">
+  <!-- Cloud shape matching official Salesforce logo -->
   <path d="
-    M42 62
-    C30 62 20 53 20 42
-    C20 31 29 22 40 22
-    C41 22 42 22 43 22
-    C46 14 54 8 64 8
-    C74 8 83 14 86 23
-    C87 23 88 23 89 23
-    C100 23 109 32 109 43
-    C109 54 100 62 89 62
+    M116 158
+    C90 158 68 138 68 112
+    C68 100 72 89 79 81
+    C76 75 74 68 74 61
+    C74 38 93 20 116 20
+    C126 20 135 24 142 30
+    C150 20 163 14 177 14
+    C203 14 224 35 224 61
+    C224 64 224 67 223 70
+    C232 77 238 88 238 100
+    C238 122 220 140 198 140
+    C194 140 190 139 186 138
+    C179 150 166 158 151 158
+    C145 158 139 156 134 153
+    C129 156 123 158 116 158
     Z
   " fill="#00A1E0"/>
+
+  <!-- salesforce text in white -->
+  <text
+    x="154"
+    y="110"
+    text-anchor="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="28"
+    font-weight="400"
+    letter-spacing="-0.5"
+    fill="white"
+  >salesforce</text>
 </svg>

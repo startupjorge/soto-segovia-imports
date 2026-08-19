@@ -191,6 +191,7 @@ const footerData = {
       links: [
         { label: "CRM - HubSpot", href: "/integrations/hubspot" },
         { label: "CRM - Salesforce", href: "/integrations/salesforce" },
+        { label: "Outbound - Clay", href: "/integrations/clay" },
       ],
     },
     tagline1: "Headquarters in Miami, FL",
@@ -294,6 +295,7 @@ const footerData = {
       links: [
         { label: "CRM - HubSpot", href: "/integrations/hubspot" },
         { label: "CRM - Salesforce", href: "/integrations/salesforce" },
+        { label: "Outbound - Clay", href: "/integrations/clay" },
       ],
     },
     tagline1: "Sede en Miami, FL",

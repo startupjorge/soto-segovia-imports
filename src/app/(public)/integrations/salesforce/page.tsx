@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_WAITLIST_SCRIPT_URL || "";
 
@@ -152,16 +151,9 @@ export default function SalesforceIntegrationPage() {
 
         {/* Logo lockup */}
         <div className="flex flex-col items-center gap-5 mb-10">
-          <div className="flex items-center gap-4">
-            {/* Salesforce cloud icon */}
-            <svg width="64" height="44" viewBox="0 0 128 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M52 76 C34 76 20 63 20 47 C20 31 33 19 49 19 C52 10 61 4 72 4 C83 4 92 10 96 19 C97 19 98 19 99 19 C113 19 124 30 124 44 C124 58 113 69 99 69 L52 76 Z" fill="#00A1E0"/>
-              <path d="M52 72 C36 72 24 60 24 47 C24 34 35 23 49 23 C52 14 61 8 72 8 C83 8 91 14 95 23 C96 23 98 22 99 22 C111 22 120 31 120 43 C120 55 111 65 99 65 Z" fill="#00A1E0"/>
-            </svg>
-            {/* Wordmark */}
-            <span style={{ fontSize: 36, fontWeight: 700, color: "white", letterSpacing: "-0.5px", fontFamily: "system-ui, -apple-system, sans-serif" }}>
-              <span style={{ color: "#00A1E0" }}>sales</span>force
-            </span>
+          <div className="flex items-center justify-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logos/salesforce.webp" alt="Salesforce" style={{ height: 90, width: "auto" }} />
           </div>
 
           {/* Integration badge */}
@@ -182,9 +174,6 @@ export default function SalesforceIntegrationPage() {
           <a href="#setup" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider text-white" style={{ background: "#00A1E0", fontFamily: "var(--font-cinzel), serif" }}>
             Request Setup
           </a>
-          <Link href="/integrations/hubspot" className="inline-block px-8 py-3 font-bold text-[12px] tracking-wider border" style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-cinzel), serif" }}>
-            View HubSpot Integration
-          </Link>
         </div>
 
         {/* Bottom brand strip */}

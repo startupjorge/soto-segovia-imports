@@ -6,7 +6,7 @@ const getSecret = () =>
     process.env.PORTAL_JWT_SECRET || "dev-secret-please-set-in-env"
   );
 
-const PROTECTED = ["/portal/dashboard", "/portal/orders", "/portal/invoices"];
+const PROTECTED = ["/portal/dashboard", "/portal/orders", "/portal/invoices", "/portal/integrations"];
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
@@ -34,5 +34,6 @@ export const config = {
     "/portal/dashboard/:path*",
     "/portal/orders/:path*",
     "/portal/invoices/:path*",
+    "/portal/integrations/:path*",
   ],
 };

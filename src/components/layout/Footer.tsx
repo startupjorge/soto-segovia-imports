@@ -189,8 +189,8 @@ const footerData = {
     integrations: {
       heading: "Integrations",
       links: [
-        { label: "CRM - HubSpot", href: "/contact" },
-        { label: "CRM - Salesforce", href: "/contact" },
+        { label: "CRM - HubSpot", href: "/portal/login" },
+        { label: "CRM - Salesforce", href: "/portal/login" },
       ],
     },
     tagline1: "Headquarters in Miami, FL",
@@ -292,8 +292,8 @@ const footerData = {
     integrations: {
       heading: "Integraciones",
       links: [
-        { label: "CRM - HubSpot", href: "/contact" },
-        { label: "CRM - Salesforce", href: "/contact" },
+        { label: "CRM - HubSpot", href: "/portal/login" },
+        { label: "CRM - Salesforce", href: "/portal/login" },
       ],
     },
     tagline1: "Sede en Miami, FL",

@@ -186,6 +186,13 @@ const footerData = {
         { label: "Refund Policy", href: "/refund-policy" },
       ],
     },
+    integrations: {
+      heading: "Integrations",
+      links: [
+        { label: "CRM - HubSpot", href: "/contact" },
+        { label: "CRM - Salesforce", href: "/contact" },
+      ],
+    },
     tagline1: "Headquarters in Miami, FL",
     tagline2: "Products Made in Spain",
     copyright: "All rights reserved.",
@@ -282,6 +289,13 @@ const footerData = {
         { label: "Política de Devoluciones", href: "/refund-policy" },
       ],
     },
+    integrations: {
+      heading: "Integraciones",
+      links: [
+        { label: "CRM - HubSpot", href: "/contact" },
+        { label: "CRM - Salesforce", href: "/contact" },
+      ],
+    },
     tagline1: "Sede en Miami, FL",
     tagline2: "Productos Elaborados en España",
     copyright: "Todos los derechos reservados.",
@@ -294,7 +308,7 @@ export default function Footer() {
   const [comingSoonCountry, setComingSoonCountry] = useState<string | null>(null);
 
   const topRow    = [d.services, d.products, d.industries, d.company];
-  const bottomRow = [d.blog, d.recipes, d.subscriptions, d.origins];
+  const bottomRow = [d.blog, d.recipes, d.subscriptions, d.integrations, d.origins];
 
   const renderLink = (link: (typeof d.services.links)[number], wrap: "li" | "div" = "li") => {
     const isSoon = !!(link as { soon?: boolean }).soon;
@@ -406,7 +420,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mb-12" />
 
         {/* Bottom row: 4 columns offset to align with top row */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-8">
           <div /> {/* spacer to align with logo column */}
           {bottomRow.map(renderCol)}
         </div>

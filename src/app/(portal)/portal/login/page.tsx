@@ -146,6 +146,12 @@ function LoginForm() {
           >
             ← Back to Soto & Segovia
           </Link>
+          <p className="text-xs" style={{ color: "#555" }}>
+            New distributor?{" "}
+            <Link href="/portal/signup" className="underline transition-colors hover:text-[#D4AF37]" style={{ color: "#888" }}>
+              Create an account
+            </Link>
+          </p>
           <Link href="/contact?type=wholesale" className="text-[9px] tracking-[0.15em] uppercase transition-colors hover:text-[#D4AF37]" style={{ color: "#444", fontFamily: "var(--font-cinzel), serif" }}>
             Become a Partner
           </Link>

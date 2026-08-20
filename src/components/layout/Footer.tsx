@@ -173,6 +173,7 @@ const footerData = {
         { label: "Gourmet Food Gifts From Portugal", href: "#", soon: true },
         { label: "Gourmet Food Gifts From Mexico", href: "#", soon: true },
         { label: "Gourmet Food Gifts From Peru", href: "#", soon: true },
+        { label: "Gourmet Food Gifts From Turkey", href: "#", soon: true },
       ],
     },
     company: {
@@ -279,6 +280,7 @@ const footerData = {
         { label: "Regalos Gourmet de Portugal", href: "#", soon: true },
         { label: "Regalos Gourmet de México", href: "#", soon: true },
         { label: "Regalos Gourmet de Perú", href: "#", soon: true },
+        { label: "Regalos Gourmet de Turquía", href: "#", soon: true },
       ],
     },
     company: {

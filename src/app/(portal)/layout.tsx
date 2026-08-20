@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const hideNav = pathname === "/portal/login" || pathname.startsWith("/portal/auth");
+  const hideNav = pathname === "/portal/login" || pathname === "/portal/signup" || pathname.startsWith("/portal/auth");
 
   return (
     <div className="min-h-screen" style={{ background: "#050504" }}>

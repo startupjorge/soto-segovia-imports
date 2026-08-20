@@ -21,9 +21,9 @@ export async function POST(req: NextRequest) {
 
   // In production: send via Resend / SendGrid / etc.
   // For now: return the link so you can access it directly (dev mode)
-  const isDev = process.env.NODE_ENV === "development" || !process.env.RESEND_API_KEY;
+  const hasEmail = !!process.env.RESEND_API_KEY;
 
-  if (!isDev && process.env.RESEND_API_KEY) {
+  if (hasEmail) {
     await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {

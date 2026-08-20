@@ -152,9 +152,9 @@ export default function PortalDashboard() {
             </h2>
             <div className="flex flex-col gap-3">
               {[
-                { label: "Place New Order", href: "/products", primary: true },
+                { label: "Place New Order", href: "/portal/orders/new", primary: true },
                 { label: "View Invoices", href: "/portal/invoices", primary: false },
-                { label: "Download Catalog", href: "#", primary: false },
+                { label: "Download Catalog", href: "/portal/catalog", primary: false },
                 { label: "Contact Account Manager", href: "/contact", primary: false },
               ].map(({ label, href, primary }) => (
                 <Link

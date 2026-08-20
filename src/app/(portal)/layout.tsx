@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import Logo from "@/components/ui/Logo";
 import Link from "next/link";
+import { Settings, LogOut } from "lucide-react";
+import PortalChat from "@/components/portal/PortalChat";
 
 export default function PortalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -27,22 +29,37 @@ export default function PortalLayout({ children }: { children: React.ReactNode }
                 key={href}
                 href={href}
                 className="text-[9px] tracking-[0.2em] uppercase transition-colors hover:text-[#D4AF37]"
-                style={{ color: "#666", fontFamily: "var(--font-cinzel), serif" }}
+                style={{
+                  color: pathname === href ? "#D4AF37" : "#666",
+                  fontFamily: "var(--font-cinzel), serif",
+                }}
               >
                 {label}
               </Link>
             ))}
-            <Link
-              href="/"
-              className="text-[9px] tracking-[0.2em] uppercase transition-colors hover:text-white"
-              style={{ color: "#555", fontFamily: "var(--font-cinzel), serif" }}
-            >
-              ← Public Site
-            </Link>
+            <div className="flex items-center gap-4 ml-2 pl-4 border-l" style={{ borderColor: "#2A2A1A" }}>
+              <Link
+                href="/portal/settings"
+                className="transition-colors hover:text-[#D4AF37]"
+                style={{ color: "#555" }}
+                title="Settings"
+              >
+                <Settings size={15} />
+              </Link>
+              <Link
+                href="/api/auth/logout"
+                className="transition-colors hover:text-red-400"
+                style={{ color: "#555" }}
+                title="Sign Out"
+              >
+                <LogOut size={15} />
+              </Link>
+            </div>
           </nav>
         </header>
       )}
       <main className={hideNav ? "" : "pt-16"}>{children}</main>
+      {!hideNav && <PortalChat />}
     </div>
   );
 }

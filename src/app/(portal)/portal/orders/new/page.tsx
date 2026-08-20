@@ -2,23 +2,22 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { allProducts, categories } from "@/lib/products";
+import { allProducts } from "@/lib/products";
 import { ShoppingCart, Plus, Minus, ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 
 type CartItem = { slug: string; qty: number };
 
-const categoryLabels: Record<string, string> = {
-  "olive-oils": "Olive Oils",
-  "salts": "Artisan Salts",
-  "vinegars": "Vinegars",
-  "honeys": "Honeys",
-  "spices": "Spices & Herbs",
-  "gift-sets": "Gift Sets",
-};
+const productCategories = [
+  { slug: "olive-oils", label: "Olive Oils" },
+  { slug: "salts", label: "Artisan Salts" },
+  { slug: "vinegars", label: "Vinegars" },
+  { slug: "wine", label: "Orange Wine" },
+  { slug: "spirits", label: "Spirits" },
+];
 
 export default function PlaceOrderPage() {
   const [cart, setCart] = useState<CartItem[]>([]);
-  const [activeCategory, setActiveCategory] = useState<string>(categories[0] ?? "olive-oils");
+  const [activeCategory, setActiveCategory] = useState<string>("olive-oils");
   const [notes, setNotes] = useState("");
   const [step, setStep] = useState<"browse" | "review" | "done">("browse");
   const [submitting, setSubmitting] = useState(false);
@@ -175,19 +174,19 @@ export default function PlaceOrderPage() {
 
       {/* Category tabs */}
       <div className="flex gap-1 mb-8 overflow-x-auto pb-1">
-        {categories.map((cat) => (
+        {productCategories.map(({ slug, label }) => (
           <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
+            key={slug}
+            onClick={() => setActiveCategory(slug)}
             className="px-4 py-2 text-[9px] tracking-[0.15em] uppercase whitespace-nowrap transition-all"
             style={{
               fontFamily: "var(--font-cinzel), serif",
-              background: activeCategory === cat ? "#D4AF37" : "#0D0D0A",
-              color: activeCategory === cat ? "#000" : "#666",
-              border: `1px solid ${activeCategory === cat ? "#D4AF37" : "#2A2A1A"}`,
+              background: activeCategory === slug ? "#D4AF37" : "#0D0D0A",
+              color: activeCategory === slug ? "#000" : "#666",
+              border: `1px solid ${activeCategory === slug ? "#D4AF37" : "#2A2A1A"}`,
             }}
           >
-            {categoryLabels[cat] ?? cat}
+            {label}
           </button>
         ))}
       </div>

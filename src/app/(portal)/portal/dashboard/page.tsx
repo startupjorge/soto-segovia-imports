@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Package, FileText, ShoppingCart, TrendingUp, ArrowRight, Clock } from "lucide-react";
 
 const stats = [
@@ -24,6 +27,7 @@ const statusColors: Record<string, string> = {
 };
 
 export default function PortalDashboard() {
+  const router = useRouter();
   return (
     <div className="min-h-screen px-6 lg:px-12 py-10" style={{ background: "#080806" }}>
       {/* Greeting */}
@@ -111,6 +115,7 @@ export default function PortalDashboard() {
                 {recentOrders.map((order) => (
                   <tr
                     key={order.id}
+                    onClick={() => router.push(`/portal/orders/${order.id}`)}
                     className="border-b transition-colors hover:bg-white/[0.02] cursor-pointer"
                     style={{ borderColor: "#1A1A12" }}
                   >

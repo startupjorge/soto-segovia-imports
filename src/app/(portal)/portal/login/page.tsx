@@ -147,7 +147,7 @@ function LoginForm() {
             ← Back to Soto & Segovia
           </Link>
           <p className="text-xs" style={{ color: "#555" }}>
-            New distributor?{" "}
+            New client?{" "}
             <Link href="/portal/signup" className="underline transition-colors hover:text-[#D4AF37]" style={{ color: "#888" }}>
               Create an account
             </Link>

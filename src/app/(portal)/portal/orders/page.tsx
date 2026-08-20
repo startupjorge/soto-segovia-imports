@@ -370,8 +370,21 @@ export default function OrdersPage() {
                     <p className="text-[10px]" style={{ color: "#444" }}>{new Date(order.createdAt).toLocaleDateString()}</p>
                   </td>
                   <td className="px-4 py-3">
-                    <p className="text-sm font-semibold" style={{ color: "#ccc" }}>{order.recipient.name}</p>
-                    <p className="text-[10px]" style={{ color: "#555" }}>{order.recipient.email}</p>
+                    <div className="flex items-center gap-2">
+                      <div>
+                        <p className="text-sm font-semibold" style={{ color: "#ccc" }}>{order.recipient.name}</p>
+                        <p className="text-[10px]" style={{ color: "#555" }}>{order.recipient.email}</p>
+                      </div>
+                      <a
+                        href={`https://app.hubspot.com/contacts/search?query=${encodeURIComponent(order.recipient.email)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="View in HubSpot"
+                        className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                      >
+                        <img src="/logos/hubspot.png" alt="HubSpot" style={{ height: 14, width: "auto", opacity: 0.6 }} />
+                      </a>
+                    </div>
                   </td>
                   <td className="px-4 py-3">
                     <p className="text-xs" style={{ color: "#888" }}>{order.items.length} item{order.items.length !== 1 ? "s" : ""}</p>

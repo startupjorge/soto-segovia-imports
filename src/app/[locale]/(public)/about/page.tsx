@@ -8,7 +8,7 @@ export const metadata = {
 const team = [
   {
     name: "Jorge Soto",
-    role: "Co-Founder & CEO",
+    role: "Co-Founder & Co-CEO",
     bio: "Born in Miami to a Spanish family, Jorge grew up with a deep reverence for the traditions of Spanish cuisine. A seasoned entrepreneur with 20 years of experience in luxury goods distribution.",
   },
   {
